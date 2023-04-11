@@ -17,6 +17,13 @@ public class GameObject {
         this.y = y;
     }
 
+//    public GameObject(Bitmap charImage){
+//        this.orientation = 'r';
+//        this.charImage = charImage;
+//        this.x = 700;
+//        this.y = 700;
+//    }
+
     public char getOrientation(){
         return orientation;
     }
