@@ -70,4 +70,12 @@ public class GameActivity extends AppCompatActivity {
     public GameCanvas getGameCanvas(){
         return this.gameCanvas;
     }
+
+    public CharacterThread getCharacterThread(){
+        return this.characterThread;
+    }
+
+    public CollectibleThread getCollectibleThread(){
+        return this.collectibleThread;
+    }
 }

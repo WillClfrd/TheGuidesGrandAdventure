@@ -27,6 +27,7 @@ public class CollectibleThread extends Thread {
             } catch (Exception e) {
             }
             activity.getGameCanvas().setHasCollectible(!(activity.getGameCanvas().objectCollisionCheck(activity.getGameCanvas().getCharacter(), activity.getGameCanvas().getCollectible())));
+            isRunning = activity.getCharacterThread().getIsRunning();
         }
     }
 

@@ -1,6 +1,9 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
+import android.content.Intent;
+
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
+import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 
 public class CharacterThread extends Thread {
     private GameActivity activity;
@@ -17,7 +20,9 @@ public class CharacterThread extends Thread {
         while(this.isRunning){
             try {
                 synchronized (activity.getGameCanvas()) {
-                    activity.getGameCanvas().updateCharacters();
+                    if(!(activity.getGameCanvas().updateCharacters())){
+                        isRunning = false;
+                    }
                     activity.getGameCanvas().invalidate();
                 }
             } catch (Exception e) {
@@ -27,8 +32,12 @@ public class CharacterThread extends Thread {
                 this.sleep(calcInterval());
             } catch (Exception e) {
             }
-            isRunning = !activity.getGameCanvas().boundaryCollisionCheck(activity.getGameCanvas().getCharacter());
+            if(isRunning) {
+                isRunning = !activity.getGameCanvas().boundaryCollisionCheck(activity.getGameCanvas().getCharacter());
+            }
         }
+        Intent endScreenIntent = new Intent(activity, MainActivity.class);
+        activity.startActivity(endScreenIntent);
     }
 
     public void setRunning(boolean isRunning){
@@ -47,4 +56,6 @@ public class CharacterThread extends Thread {
 
         return temp;
     }
+
+    public boolean getIsRunning(){ return this.isRunning; }
 }

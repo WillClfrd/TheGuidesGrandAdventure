@@ -10,6 +10,7 @@ public class GameObject {
     private int prevX;
     private int prevY;
     private int objectOffset;
+    private char objectType;
 
     public GameObject(char orientation, Bitmap charImage, int x, int y){
         this.orientation = orientation;
@@ -57,6 +58,8 @@ public class GameObject {
 
     public int getObjectOffset(){ return objectOffset; }
 
+    public char getObjectType(){ return this.objectType; }
+
     public void setOrientation(char newOrientation){
         this.orientation = newOrientation;
     }
@@ -82,4 +85,6 @@ public class GameObject {
     }
 
     public void setObjectOffset(int objectOffset){ this.objectOffset = objectOffset; }
+
+    public void setObjectType(char objectType){ this.objectType = objectType; }
 }

@@ -12,6 +12,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Random;
 
+import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class GameCanvas extends View {
@@ -20,20 +21,32 @@ public class GameCanvas extends View {
     private GameObject collectible;
     private Bitmap background;
     private ArrayList<GameObject> followers;
-    private Bitmap[] followerImages = new Bitmap[3];
+    private Bitmap[] followerImages;
 
     private int scoreCount;
     private boolean hasCollectible;
     private boolean isInitialDraw;
     private Random rand;
+    private int numberOfFollowers;
+    private int defaultObjectOffset;
 
     public GameCanvas(Context context) {
         super(context);
+
         paint = new Paint();
+
         rand = new Random();
 
+        numberOfFollowers = 3;
+
+        defaultObjectOffset = 100;
+
+        followerImages = new Bitmap[numberOfFollowers];
+
         character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
+
         collectible = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
+
         background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
 
         followerImages[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1);
@@ -41,30 +54,40 @@ public class GameCanvas extends View {
         followerImages[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3);
 
         followers = new ArrayList<GameObject>();
+
         character.setX(getWidth() / 2);
         character.setY(getHeight() / 2);
-        character.setObjectOffset(100);
-        collectible.setObjectOffset(100);
+        character.setObjectOffset(defaultObjectOffset);
+        character.setObjectType('p');
+
+        collectible.setObjectOffset(defaultObjectOffset);
+
         isInitialDraw = true;
     }
 
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
-
         int i;
 
         if(isInitialDraw) {
             background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
+
             character.setCharImage(Bitmap.createScaledBitmap(character.getCharImage(), character.getObjectOffset(),character.getObjectOffset(),true));
+
             collectible.setCharImage(Bitmap.createScaledBitmap(collectible.getCharImage(), collectible.getObjectOffset(), collectible.getObjectOffset(), true));
+
             character.setX(getWidth() / 2);
             character.setY(getHeight() / 2);
-            character.setObjectOffset(100);
-            collectible.setObjectOffset(100);
+
+//            character.setObjectOffset(defaultObjectOffset);
+//            collectible.setObjectOffset(defaultObjectOffset);
+
             collectible.setX(rand.nextInt(getWidth() - collectible.getObjectOffset()));
             collectible.setY(rand.nextInt(getHeight() - collectible.getObjectOffset()));
+
             isInitialDraw = false;
+
             hasCollectible = true;
         }
 
@@ -77,28 +100,36 @@ public class GameCanvas extends View {
         }
     }
 
-    public void updateCharacters(){
+    public boolean updateCharacters(){
         int i;
         this.character.setPrevY(character.getY());
         this.character.setPrevX(character.getX());
         switch(this.character.getOrientation()){
             case 'u':
-                this.character.setY(character.getY() - 100);
+                this.character.setY(character.getY() - character.getObjectOffset());
                 break;
             case 'd':
-                this.character.setY(character.getY() + 100);
+                this.character.setY(character.getY() + character.getObjectOffset());
                 break;
             case 'l':
-                this.character.setX(character.getX() - 100);
+                this.character.setX(character.getX() - character.getObjectOffset());
                 break;
             case 'r':
-                this.character.setX(character.getX() + 100);
+                this.character.setX(character.getX() + character.getObjectOffset());
                 break;
         }
+
+        for(i = 0; i < followers.size(); ++i){
+            if(objectCollisionCheck(character, followers.get(i))){
+                return false;
+            }
+        }
+
         if((scoreCount / 5) > followers.size()){
-            GameObject temp = new GameObject(followerImages[rand.nextInt(3)]);
-            temp.setObjectOffset(100);
+            GameObject temp = new GameObject(followerImages[rand.nextInt(numberOfFollowers)]);
+            temp.setObjectOffset(defaultObjectOffset);
             temp.setCharImage(Bitmap.createScaledBitmap(temp.getCharImage(), temp.getObjectOffset(), temp.getObjectOffset(), true));
+            temp.setObjectType('p');
 
             if(followers.size() == 0){
                 temp.setX(character.getPrevX());
@@ -124,7 +155,7 @@ public class GameCanvas extends View {
                 followers.get(i).setY(followers.get(i - 1).getPrevY());
             }
         }
-
+        return true;
     }
 
     public void updateCollectibles(){
@@ -143,6 +174,15 @@ public class GameCanvas extends View {
     }
 
     public boolean objectCollisionCheck(GameObject gameOb1, GameObject gameOb2){
+        if((gameOb1.getObjectType() == 'p') && (gameOb2.getObjectType() == 'p')){
+            if((Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) <= 10) && (Math.abs(gameOb1.getRight() - gameOb2.getRight()) <= 10) && (Math.abs(gameOb1.getTop() - gameOb2.getTop()) <= 10) && (Math.abs(gameOb1.getBottom() - gameOb2.getBottom()) <= 10)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
         if((gameOb1.getLeft() >= gameOb2.getLeft() && gameOb1.getLeft() <= gameOb2.getRight()) && ((gameOb1.getTop() >= gameOb2.getTop() && gameOb1.getTop() <= gameOb2.getBottom()) || (gameOb1.getBottom() >= gameOb2.getTop() && gameOb1.getBottom() <= gameOb2.getBottom()))){
             return true;
         }
