@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.GameThread;
 
 //GameView activity
 //William
@@ -20,6 +21,7 @@ public class GameActivity extends AppCompatActivity {
     private LinearLayout ll;
     private GameCanvas gameCanvas;
     private GameController controller;
+    private GameThread gameThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         ll = findViewById(R.id.game_view_ll);
-        gameCanvas = new GameCanvas(this, ll.getWidth(), ll.getHeight());
+        gameCanvas = new GameCanvas(this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
         ll.addView(gameCanvas, lp);
 
@@ -49,13 +51,17 @@ public class GameActivity extends AppCompatActivity {
         setupButton(rightButton);
         setupButton(leftButton);
         setupButton(inGameMenuButton);
+
+        gameThread = new GameThread(this);
+        gameThread.setRunning(true);
+        gameThread.start();
     }
 
     private void setupButton(View view){
         view.setOnClickListener(controller);
     }
 
-    public GameCanvas getCanvas(){
+    public GameCanvas getGameCanvas(){
         return this.gameCanvas;
     }
 }

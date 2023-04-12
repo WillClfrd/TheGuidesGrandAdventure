@@ -9,6 +9,7 @@ public class GameObject {
     private int y;
     private int prevX;
     private int prevY;
+    private int objectOffset;
 
     public GameObject(char orientation, Bitmap charImage, int x, int y){
         this.orientation = orientation;
@@ -46,6 +47,16 @@ public class GameObject {
         return prevY;
     }
 
+    public int getLeft(){ return x; }
+
+    public int getRight(){ return x + objectOffset; }
+
+    public int getTop(){ return y; }
+
+    public int getBottom(){ return y + objectOffset; }
+
+    public int getObjectOffset(){ return objectOffset; }
+
     public void setOrientation(char newOrientation){
         this.orientation = newOrientation;
     }
@@ -69,4 +80,6 @@ public class GameObject {
     public void setPrevY(int newPrevY){
         this.prevY = newPrevY;
     }
+
+    public void setObjectOffset(int objectOffset){ this.objectOffset = objectOffset; }
 }

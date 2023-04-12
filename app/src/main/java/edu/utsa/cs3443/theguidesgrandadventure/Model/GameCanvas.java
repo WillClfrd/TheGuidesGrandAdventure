@@ -9,29 +9,42 @@ import android.graphics.Paint;
 import android.util.Log;
 import android.view.View;
 
+import java.util.ArrayList;
+
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class GameCanvas extends View {
     private Paint paint;
     private GameObject character;
     private Bitmap background;
+    private ArrayList<GameObject> followers;
 
     private int scoreCount;
-    private boolean needsCollectable;
+    private boolean hasCollectable;
+    private boolean isInitialDraw;
 
-    public GameCanvas(Context context, int width, int height) {
+    public GameCanvas(Context context) {
         super(context);
         paint = new Paint();
         character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
         background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+        followers = new ArrayList<GameObject>();
+        character.setX(getWidth() / 2);
+        character.setY(getHeight() / 2);
+        isInitialDraw = true;
     }
 
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
         background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
-        character.setX(getWidth() / 2);
-        character.setY(getHeight() / 2);
+        character.setCharImage(Bitmap.createScaledBitmap(character.getCharImage(), 100,100,true));
+
+        if(isInitialDraw) {
+            character.setX(getWidth() / 2);
+            character.setY(getHeight() / 2);
+            isInitialDraw = false;
+        }
 
         paint.setColor(Color.WHITE);
         canvas.drawBitmap(background, 0,0,paint);
@@ -41,16 +54,20 @@ public class GameCanvas extends View {
     public void update(){
         switch(this.character.getOrientation()){
             case 'u':
-                this.character.setY(character.getY() - 10);
+                this.character.setPrevY(character.getY());
+                this.character.setY(character.getY() - 100);
                 break;
             case 'd':
-                this.character.setY(character.getY() + 10);
+                this.character.setPrevY(character.getY());
+                this.character.setY(character.getY() + 100);
                 break;
             case 'l':
-                this.character.setX(character.getX() - 10);
+                this.character.setPrevX(character.getX());
+                this.character.setX(character.getX() - 100);
                 break;
             case 'r':
-                this.character.setX(character.getX() + 10);
+                this.character.setPrevX(character.getX());
+                this.character.setX(character.getX() + 100);
                 break;
         }
     }
@@ -62,6 +79,7 @@ public class GameCanvas extends View {
     public int getScoreCount(){
         return this.scoreCount;
     }
+    public boolean getHasCollectable(){return this.hasCollectable;}
 
     public void setScoreCount(int newScoreCount){
         this.scoreCount = newScoreCount;
