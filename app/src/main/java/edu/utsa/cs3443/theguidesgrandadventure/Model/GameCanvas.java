@@ -80,9 +80,6 @@ public class GameCanvas extends View {
             character.setX(getWidth() / 2);
             character.setY(getHeight() / 2);
 
-//            character.setObjectOffset(defaultObjectOffset);
-//            collectible.setObjectOffset(defaultObjectOffset);
-
             collectible.setX(rand.nextInt(getWidth() - collectible.getObjectOffset()));
             collectible.setY(rand.nextInt(getHeight() - collectible.getObjectOffset()));
 
