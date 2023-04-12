@@ -22,7 +22,7 @@
         </activity>
         <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.InGameMenuActivity" />
         <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity" />
-        <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.GameActivity" />
+        <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.GameActivity" android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

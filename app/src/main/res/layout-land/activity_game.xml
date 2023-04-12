@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:orientation="horizontal"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="10dp">
+
+            <ImageButton
+                android:id="@+id/in_game_menu_button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:srcCompat="@drawable/in_game_menu_icon"
+                android:background="@color/clear"
+                android:contentDescription="@string/placeholder_string"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/arrow_layout_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/up_arrow"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/clear"
+                android:contentDescription="@string/placeholder_string"
+                app:srcCompat="@drawable/up_arrow" />
+
+            <ImageButton
+                android:id="@+id/down_arrow"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="end"
+                android:background="@color/clear"
+                android:contentDescription="@string/placeholder_string"
+                app:srcCompat="@drawable/down_arrow"/>
+        </LinearLayout>
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/game_view_ll"
+    android:layout_width="450dp"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500"
+    android:orientation="horizontal">
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/arrow_layout_2"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|start"
+    android:paddingStart="10dp"
+    android:paddingEnd="0dp"
+    android:background="@color/black">
+
+    <ImageButton
+        android:id="@+id/left_arrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/left_arrow"
+        android:background="@color/clear"
+        android:contentDescription="@string/placeholder_string"/>
+
+    <ImageButton
+        android:id="@+id/right_arrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/right_arrow"
+        android:background="@color/clear"
+        android:contentDescription="@string/placeholder_string"/>
+
+</LinearLayout>
+
+</LinearLayout>

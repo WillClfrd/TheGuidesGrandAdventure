@@ -16,6 +16,7 @@ public class GameCanvas extends View {
     private Bitmap background;
 
     private int scoreCount;
+    private boolean needsCollectable;
 
     public GameCanvas(Context context) {
         super(context);
@@ -31,5 +32,6 @@ public class GameCanvas extends View {
 
         paint.setColor(Color.WHITE);
         canvas.drawBitmap(background, 0,0,paint);
+        canvas.drawBitmap(character.getCharImage(), character.getX(), character.getY(), paint);
     }
 }
