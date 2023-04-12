@@ -34,4 +34,33 @@ public class GameCanvas extends View {
         canvas.drawBitmap(background, 0,0,paint);
         canvas.drawBitmap(character.getCharImage(), character.getX(), character.getY(), paint);
     }
+
+    public void update(){
+        switch(this.character.getOrientation()){
+            case 'u':
+                this.character.setY(character.getY() - 10);
+                break;
+            case 'd':
+                this.character.setY(character.getY() + 10);
+                break;
+            case 'l':
+                this.character.setX(character.getX() - 10);
+                break;
+            case 'r':
+                this.character.setX(character.getX() + 10);
+                break;
+        }
+    }
+
+    public GameObject getCharacter(){
+        return this.character;
+    }
+
+    public int getScoreCount(){
+        return this.scoreCount;
+    }
+
+    public void setScoreCount(int newScoreCount){
+        this.scoreCount = newScoreCount;
+    }
 }
