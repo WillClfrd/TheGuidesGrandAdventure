@@ -20,6 +20,7 @@ public class GameCanvas extends View {
     private GameObject collectible;
     private Bitmap background;
     private ArrayList<GameObject> followers;
+    private Bitmap[] followerImages = new Bitmap[3];
 
     private int scoreCount;
     private boolean hasCollectible;
@@ -34,6 +35,11 @@ public class GameCanvas extends View {
         character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
         collectible = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
         background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+
+        followerImages[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1);
+        followerImages[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2);
+        followerImages[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3);
+
         followers = new ArrayList<GameObject>();
         character.setX(getWidth() / 2);
         character.setY(getHeight() / 2);
@@ -45,6 +51,8 @@ public class GameCanvas extends View {
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
+
+        int i;
 
         if(isInitialDraw) {
             background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
@@ -64,33 +72,66 @@ public class GameCanvas extends View {
         canvas.drawBitmap(background, 0,0,paint);
         canvas.drawBitmap(character.getCharImage(), character.getX(), character.getY(), paint);
         canvas.drawBitmap(collectible.getCharImage(), collectible.getX(), collectible.getY(), paint);
+        for(i = 0; i < followers.size(); ++i){
+            canvas.drawBitmap(followers.get(i).getCharImage(), followers.get(i).getX(), followers.get(i).getY(), paint);
+        }
     }
 
     public void updateCharacters(){
+        int i;
+        this.character.setPrevY(character.getY());
+        this.character.setPrevX(character.getX());
         switch(this.character.getOrientation()){
             case 'u':
-                this.character.setPrevY(character.getY());
                 this.character.setY(character.getY() - 100);
                 break;
             case 'd':
-                this.character.setPrevY(character.getY());
                 this.character.setY(character.getY() + 100);
                 break;
             case 'l':
-                this.character.setPrevX(character.getX());
                 this.character.setX(character.getX() - 100);
                 break;
             case 'r':
-                this.character.setPrevX(character.getX());
                 this.character.setX(character.getX() + 100);
                 break;
         }
+        if((scoreCount / 5) > followers.size()){
+            GameObject temp = new GameObject(followerImages[rand.nextInt(3)]);
+            temp.setObjectOffset(100);
+            temp.setCharImage(Bitmap.createScaledBitmap(temp.getCharImage(), temp.getObjectOffset(), temp.getObjectOffset(), true));
+
+            if(followers.size() == 0){
+                temp.setX(character.getPrevX());
+                temp.setY(character.getPrevY());
+            }
+            else{
+                temp.setX(followers.get(followers.size() - 1).getPrevX());
+                temp.setY(followers.get(followers.size() - 1).getPrevY());
+            }
+
+            followers.add(temp);
+        }
+
+        for(i = 0; i < followers.size(); ++i){
+            followers.get(i).setPrevX(followers.get(i).getX());
+            followers.get(i).setPrevY(followers.get(i).getY());
+            if(i == 0){
+                followers.get(i).setX(character.getPrevX());
+                followers.get(i).setY(character.getPrevY());
+            }
+            else {
+                followers.get(i).setX(followers.get(i - 1).getPrevX());
+                followers.get(i).setY(followers.get(i - 1).getPrevY());
+            }
+        }
+
     }
 
     public void updateCollectibles(){
         if(!(this.hasCollectible)){
             this.collectible.setX(rand.nextInt(getWidth() - collectible.getObjectOffset()));
             this.collectible.setY(rand.nextInt(getHeight() - collectible.getObjectOffset()));
+            ++this.scoreCount;
         }
     }
 
