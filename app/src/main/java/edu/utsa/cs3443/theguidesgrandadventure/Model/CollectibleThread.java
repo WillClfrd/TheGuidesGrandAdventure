@@ -2,48 +2,35 @@ package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 
-public class GameThread extends Thread {
+public class CollectibleThread extends Thread {
     private GameActivity activity;
     private boolean isRunning;
-    private int initInterval;
+    private int interval;
 
-    public GameThread(GameActivity activity){
+    public CollectibleThread(GameActivity activity){
         this.activity = activity;
-        initInterval = 500;
-        activity.getGameCanvas().setScoreCount(0);
+        this.interval = 50;
     }
 
     public void run(){
         while(this.isRunning){
             try {
                 synchronized (activity.getGameCanvas()) {
-                    activity.getGameCanvas().update();
+                    activity.getGameCanvas().updateCollectibles();
                     activity.getGameCanvas().invalidate();
                 }
             } catch (Exception e) {
             }
 
             try {
-                this.sleep(calcInterval());
+                this.sleep(interval);
             } catch (Exception e) {
             }
+            activity.getGameCanvas().setHasCollectible(!(activity.getGameCanvas().objectCollisionCheck(activity.getGameCanvas().getCharacter(), activity.getGameCanvas().getCollectible())));
         }
     }
 
     public void setRunning(boolean isRunning){
         this.isRunning = isRunning;
-    }
-
-    private int calcInterval(){
-        int temp;
-
-        if(initInterval - (50 * (activity.getGameCanvas().getScoreCount() / 10)) <= 50){
-            temp = 50;
-        }
-        else{
-            temp = initInterval - (50 * (activity.getGameCanvas().getScoreCount() / 10));
-        }
-
-        return temp;
     }
 }

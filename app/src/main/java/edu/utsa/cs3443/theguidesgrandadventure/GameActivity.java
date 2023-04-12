@@ -12,8 +12,9 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameController;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.CollectibleThread;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
-import edu.utsa.cs3443.theguidesgrandadventure.Model.GameThread;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.CharacterThread;
 
 //GameView activity
 //William
@@ -21,7 +22,8 @@ public class GameActivity extends AppCompatActivity {
     private LinearLayout ll;
     private GameCanvas gameCanvas;
     private GameController controller;
-    private GameThread gameThread;
+    private CharacterThread characterThread;
+    private CollectibleThread collectibleThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +54,13 @@ public class GameActivity extends AppCompatActivity {
         setupButton(leftButton);
         setupButton(inGameMenuButton);
 
-        gameThread = new GameThread(this);
-        gameThread.setRunning(true);
-        gameThread.start();
+        collectibleThread = new CollectibleThread(this);
+        collectibleThread.setRunning(true);
+        collectibleThread.start();
+
+        characterThread = new CharacterThread(this);
+        characterThread.setRunning(true);
+        characterThread.start();
     }
 
     private void setupButton(View view){
