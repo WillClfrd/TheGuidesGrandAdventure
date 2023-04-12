@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.View;
 
 import edu.utsa.cs3443.theguidesgrandadventure.R;
@@ -18,17 +19,19 @@ public class GameCanvas extends View {
     private int scoreCount;
     private boolean needsCollectable;
 
-    public GameCanvas(Context context) {
+    public GameCanvas(Context context, int width, int height) {
         super(context);
         paint = new Paint();
-        character = new GameObject('r', BitmapFactory.decodeResource(getResources(), R.drawable.character), (getWidth() / 2), (getHeight() / 2));
+        character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
         background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
-        background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
     }
 
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
+        background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
+        character.setX(getWidth() / 2);
+        character.setY(getHeight() / 2);
 
         paint.setColor(Color.WHITE);
         canvas.drawBitmap(background, 0,0,paint);

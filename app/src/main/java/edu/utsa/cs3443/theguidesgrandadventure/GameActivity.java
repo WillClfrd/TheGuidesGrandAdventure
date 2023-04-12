@@ -24,14 +24,15 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
+        setContentView(R.layout.activity_game);
+
         ll = findViewById(R.id.game_view_ll);
-        gameCanvas = new GameCanvas(this);
+        gameCanvas = new GameCanvas(this, ll.getWidth(), ll.getHeight());
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
         ll.addView(gameCanvas, lp);
 
