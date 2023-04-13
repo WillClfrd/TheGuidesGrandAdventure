@@ -33,7 +33,8 @@ public class GameController implements View.OnClickListener{
         }
         else if(view.getId() == R.id.in_game_menu_button){
             Intent inGameMenuIntent = new Intent(activity, InGameMenuActivity.class);
-            //look up android overlay menu implementation
+            //pause game
+            //open dialog for menu maybe
         }
     }
 }

@@ -62,9 +62,7 @@
     android:layout_height="match_parent"
     android:background="@color/purple_500"
     android:orientation="horizontal"
-    android:layout_weight="1">
-
-</LinearLayout>
+    android:layout_weight="1"/>
 
 <LinearLayout
     android:id="@+id/arrow_layout_2"

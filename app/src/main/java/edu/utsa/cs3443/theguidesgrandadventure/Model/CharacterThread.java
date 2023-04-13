@@ -3,12 +3,14 @@ package edu.utsa.cs3443.theguidesgrandadventure.Model;
 import android.content.Intent;
 
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
+import edu.utsa.cs3443.theguidesgrandadventure.GameOverActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 
 public class CharacterThread extends Thread {
     private GameActivity activity;
     private boolean isRunning;
     private int initInterval;
+    private String key = "score";
 
     public CharacterThread(GameActivity activity){
         this.activity = activity;
@@ -36,7 +38,8 @@ public class CharacterThread extends Thread {
                 isRunning = !activity.getGameCanvas().boundaryCollisionCheck(activity.getGameCanvas().getCharacter());
             }
         }
-        Intent endScreenIntent = new Intent(activity, MainActivity.class);
+        Intent endScreenIntent = new Intent(activity, GameOverActivity.class);
+        endScreenIntent.putExtra(key, activity.getGameCanvas().getScoreCount());
         activity.startActivity(endScreenIntent);
     }
 

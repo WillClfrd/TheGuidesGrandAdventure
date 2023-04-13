@@ -33,36 +33,36 @@ public class GameCanvas extends View {
     public GameCanvas(Context context) {
         super(context);
 
-        paint = new Paint();
+        this.paint = new Paint();
 
-        rand = new Random();
+        this.rand = new Random();
 
-        numberOfFollowers = 3;
+        this.numberOfFollowers = 3;
 
-        defaultObjectOffset = 100;
+        this.defaultObjectOffset = 100;
 
-        followerImages = new Bitmap[numberOfFollowers];
+        this.followerImages = new Bitmap[this.numberOfFollowers];
 
-        character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
+        this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
 
-        collectible = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
+        this.collectible = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
 
-        background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+        this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
 
-        followerImages[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1);
-        followerImages[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2);
-        followerImages[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3);
+        this.followerImages[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1);
+        this.followerImages[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2);
+        this.followerImages[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3);
 
-        followers = new ArrayList<GameObject>();
+        this.followers = new ArrayList<GameObject>();
 
-        character.setX(getWidth() / 2);
-        character.setY(getHeight() / 2);
-        character.setObjectOffset(defaultObjectOffset);
-        character.setObjectType('p');
+        this.character.setX(getWidth() / 2);
+        this.character.setY(getHeight() / 2);
+        this.character.setObjectOffset(this.defaultObjectOffset);
+        this.character.setObjectType('p');
 
-        collectible.setObjectOffset(defaultObjectOffset);
+        this.collectible.setObjectOffset(this.defaultObjectOffset);
 
-        isInitialDraw = true;
+        this.isInitialDraw = true;
     }
 
     @Override
@@ -70,90 +70,92 @@ public class GameCanvas extends View {
         super.onDraw(canvas);
         int i;
 
-        if(isInitialDraw) {
-            background = Bitmap.createScaledBitmap(background, getWidth(), getHeight(), true);
+        if(this.isInitialDraw) {
+            this.background = Bitmap.createScaledBitmap(this.background, getWidth(), getHeight(), true);
 
-            character.setCharImage(Bitmap.createScaledBitmap(character.getCharImage(), character.getObjectOffset(),character.getObjectOffset(),true));
+            this.character.setCharImage(Bitmap.createScaledBitmap(this.character.getCharImage(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
 
-            collectible.setCharImage(Bitmap.createScaledBitmap(collectible.getCharImage(), collectible.getObjectOffset(), collectible.getObjectOffset(), true));
+            this.collectible.setCharImage(Bitmap.createScaledBitmap(this.collectible.getCharImage(), this.collectible.getObjectOffset(), this.collectible.getObjectOffset(), true));
 
-            character.setX((int)((int)(getWidth() / 2) / character.getObjectOffset()) * character.getObjectOffset());
-            character.setY((int)((int)(getHeight() / 2) / character.getObjectOffset()) * character.getObjectOffset());
+            this.character.setX((int)((int)(getWidth() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
+            this.character.setY((int)((int)(getHeight() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
 
-            collectible.setX((int)((int)(getWidth() / 2) / collectible.getObjectOffset()) * collectible.getObjectOffset());
-            collectible.setY((int)((int)(getHeight() / 2) / collectible.getObjectOffset()) * collectible.getObjectOffset());
+            this.collectible.setX((int)((int)(this.rand.nextInt(getWidth())) / this.collectible.getObjectOffset()) * this.collectible.getObjectOffset());
+            this.collectible.setY((int)((int)(this.rand.nextInt(getHeight())) / this.collectible.getObjectOffset()) * this.collectible.getObjectOffset());
 
-            isInitialDraw = false;
+            this.hasCollectible = true;
 
-            hasCollectible = true;
+            this.scoreCount = 0;
+
+            this.isInitialDraw = false;
         }
 
-        paint.setColor(Color.WHITE);
+        this.paint.setColor(Color.WHITE);
 
-        canvas.drawBitmap(background, 0,0,paint);
-        canvas.drawBitmap(character.getCharImage(), character.getX(), character.getY(), paint);
-        canvas.drawBitmap(collectible.getCharImage(), collectible.getX(), collectible.getY(), paint);
-        for(i = 0; i < followers.size(); ++i){
-            canvas.drawBitmap(followers.get(i).getCharImage(), followers.get(i).getX(), followers.get(i).getY(), paint);
+        canvas.drawBitmap(this.background, 0,0,this.paint);
+        canvas.drawBitmap(this.character.getCharImage(), this.character.getX(), this.character.getY(), this.paint);
+        canvas.drawBitmap(this.collectible.getCharImage(), this.collectible.getX(), this.collectible.getY(), this.paint);
+        for(i = 0; i < this.followers.size(); ++i){
+            canvas.drawBitmap(this.followers.get(i).getCharImage(), this.followers.get(i).getX(), this.followers.get(i).getY(), this.paint);
         }
 
-        paint.setTextSize(75);
-        canvas.drawText("Score: " + scoreCount, 50, 100, paint);
+        this.paint.setTextSize(75);
+        canvas.drawText("Score: " + this.scoreCount, 50, 100, this.paint);
     }
 
     public boolean updateCharacters(){
         int i;
-        this.character.setPrevY(character.getY());
-        this.character.setPrevX(character.getX());
+        this.character.setPrevY(this.character.getY());
+        this.character.setPrevX(this.character.getX());
         switch(this.character.getOrientation()){
             case 'u':
-                this.character.setY(character.getY() - character.getObjectOffset());
+                this.character.setY(this.character.getY() - this.character.getObjectOffset());
                 break;
             case 'd':
-                this.character.setY(character.getY() + character.getObjectOffset());
+                this.character.setY(this.character.getY() + this.character.getObjectOffset());
                 break;
             case 'l':
-                this.character.setX(character.getX() - character.getObjectOffset());
+                this.character.setX(this.character.getX() - this.character.getObjectOffset());
                 break;
             case 'r':
-                this.character.setX(character.getX() + character.getObjectOffset());
+                this.character.setX(this.character.getX() + this.character.getObjectOffset());
                 break;
         }
 
-        for(i = 0; i < followers.size(); ++i){
-            if(objectCollisionCheck(character, followers.get(i))){
+        for(i = 0; i < this.followers.size(); ++i){
+            if(objectCollisionCheck(this.character, this.followers.get(i))){
                 return false;
             }
         }
 
-        if((scoreCount / 5) > followers.size()){
-            GameObject temp = new GameObject(followerImages[rand.nextInt(numberOfFollowers)]);
-            temp.setObjectOffset(defaultObjectOffset);
+        if((this.scoreCount / 5) > this.followers.size()){
+            GameObject temp = new GameObject(this.followerImages[this.rand.nextInt(this.numberOfFollowers)]);
+            temp.setObjectOffset(this.defaultObjectOffset);
             temp.setCharImage(Bitmap.createScaledBitmap(temp.getCharImage(), temp.getObjectOffset(), temp.getObjectOffset(), true));
             temp.setObjectType('p');
 
-            if(followers.size() == 0){
-                temp.setX(character.getPrevX());
-                temp.setY(character.getPrevY());
+            if(this.followers.size() == 0){
+                temp.setX(this.character.getPrevX());
+                temp.setY(this.character.getPrevY());
             }
             else{
-                temp.setX(followers.get(followers.size() - 1).getPrevX());
-                temp.setY(followers.get(followers.size() - 1).getPrevY());
+                temp.setX(this.followers.get(this.followers.size() - 1).getPrevX());
+                temp.setY(this.followers.get(this.followers.size() - 1).getPrevY());
             }
 
-            followers.add(temp);
+            this.followers.add(temp);
         }
 
-        for(i = 0; i < followers.size(); ++i){
-            followers.get(i).setPrevX(followers.get(i).getX());
-            followers.get(i).setPrevY(followers.get(i).getY());
+        for(i = 0; i < this.followers.size(); ++i){
+            this.followers.get(i).setPrevX(this.followers.get(i).getX());
+            this.followers.get(i).setPrevY(this.followers.get(i).getY());
             if(i == 0){
-                followers.get(i).setX(character.getPrevX());
-                followers.get(i).setY(character.getPrevY());
+                this.followers.get(i).setX(this.character.getPrevX());
+                this.followers.get(i).setY(this.character.getPrevY());
             }
             else {
-                followers.get(i).setX(followers.get(i - 1).getPrevX());
-                followers.get(i).setY(followers.get(i - 1).getPrevY());
+                this.followers.get(i).setX(this.followers.get(i - 1).getPrevX());
+                this.followers.get(i).setY(this.followers.get(i - 1).getPrevY());
             }
         }
         return true;
@@ -161,8 +163,8 @@ public class GameCanvas extends View {
 
     public void updateCollectibles(){
         if(!(this.hasCollectible)){
-            this.collectible.setX(collectible.getObjectOffset() * (rand.nextInt(getWidth() - collectible.getObjectOffset()) / collectible.getObjectOffset()));
-            this.collectible.setY(collectible.getObjectOffset() * (rand.nextInt(getHeight() - collectible.getObjectOffset()) / collectible.getObjectOffset()));
+            this.collectible.setX(this.collectible.getObjectOffset() * (this.rand.nextInt(getWidth() - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset()));
+            this.collectible.setY(this.collectible.getObjectOffset() * (this.rand.nextInt(getHeight() - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset()));
             ++this.scoreCount;
         }
     }
