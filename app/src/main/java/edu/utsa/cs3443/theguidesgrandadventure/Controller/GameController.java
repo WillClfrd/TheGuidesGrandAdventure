@@ -95,7 +95,7 @@ public class GameController implements View.OnClickListener{
         inGameMenu.setGravity(CENTER);
         inGameMenu.setBackgroundColor(Color.BLACK);
         inGameMenu.setAlpha((float)0.9);
-        inGameMenu.setId(this.inGameMenuId);
+//        inGameMenu.setId(this.inGameMenuId);
         this.gameLayout.addView(inGameMenu, menuParams);
 
         TextView menuHeader = new TextView(this.activity);

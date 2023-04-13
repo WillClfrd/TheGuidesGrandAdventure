@@ -80,8 +80,10 @@ public class GameCanvas extends View {
             this.character.setX((int)((int)(getWidth() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
             this.character.setY((int)((int)(getHeight() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
 
-            this.collectible.setX((int)((int)(this.rand.nextInt(getWidth())) / this.collectible.getObjectOffset()) * this.collectible.getObjectOffset());
-            this.collectible.setY((int)((int)(this.rand.nextInt(getHeight())) / this.collectible.getObjectOffset()) * this.collectible.getObjectOffset());
+            do {
+                this.collectible.setX(generateCollectibleCoordinate(getWidth()));
+                this.collectible.setY(generateCollectibleCoordinate(getHeight()));
+            }while(!(isValidCollectibleLocation()));
 
             this.hasCollectible = true;
 
@@ -163,11 +165,34 @@ public class GameCanvas extends View {
 
     public void updateCollectibles(){
         if(!(this.hasCollectible)){
-            this.collectible.setX(this.collectible.getObjectOffset() * (this.rand.nextInt(getWidth() - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset()));
-            this.collectible.setY(this.collectible.getObjectOffset() * (this.rand.nextInt(getHeight() - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset()));
+            do {
+                this.collectible.setX(generateCollectibleCoordinate(getWidth()));
+                this.collectible.setY(generateCollectibleCoordinate(getHeight()));
+            }while(!(isValidCollectibleLocation()));
             ++this.scoreCount;
         }
     }
+
+    private int generateCollectibleCoordinate(int upperBound){
+        int temp = this.collectible.getObjectOffset() * (this.rand.nextInt(upperBound - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset());
+        return temp;
+    }
+
+    private boolean isValidCollectibleLocation(){
+        int i;
+
+        if(objectCollisionCheck(this.character, this.collectible)){
+            return false;
+        }
+
+        for(i = 0; i < followers.size(); ++i){
+            if(objectCollisionCheck(followers.get(i), this.collectible)){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean boundaryCollisionCheck(GameObject gameOb){
         if((gameOb.getLeft() < 0) || (gameOb.getRight() > getWidth()) || (gameOb.getTop() < 0) || (gameOb.getBottom() >getHeight())){
             return true;
