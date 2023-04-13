@@ -77,11 +77,11 @@ public class GameCanvas extends View {
 
             collectible.setCharImage(Bitmap.createScaledBitmap(collectible.getCharImage(), collectible.getObjectOffset(), collectible.getObjectOffset(), true));
 
-            character.setX(getWidth() / 2);
-            character.setY(getHeight() / 2);
+            character.setX((int)((int)(getWidth() / 2) / character.getObjectOffset()) * character.getObjectOffset());
+            character.setY((int)((int)(getHeight() / 2) / character.getObjectOffset()) * character.getObjectOffset());
 
-            collectible.setX(rand.nextInt(getWidth() - collectible.getObjectOffset()));
-            collectible.setY(rand.nextInt(getHeight() - collectible.getObjectOffset()));
+            collectible.setX((int)((int)(getWidth() / 2) / collectible.getObjectOffset()) * collectible.getObjectOffset());
+            collectible.setY((int)((int)(getHeight() / 2) / collectible.getObjectOffset()) * collectible.getObjectOffset());
 
             isInitialDraw = false;
 
@@ -89,12 +89,16 @@ public class GameCanvas extends View {
         }
 
         paint.setColor(Color.WHITE);
+
         canvas.drawBitmap(background, 0,0,paint);
         canvas.drawBitmap(character.getCharImage(), character.getX(), character.getY(), paint);
         canvas.drawBitmap(collectible.getCharImage(), collectible.getX(), collectible.getY(), paint);
         for(i = 0; i < followers.size(); ++i){
             canvas.drawBitmap(followers.get(i).getCharImage(), followers.get(i).getX(), followers.get(i).getY(), paint);
         }
+
+        paint.setTextSize(75);
+        canvas.drawText("Score: " + scoreCount, 50, 100, paint);
     }
 
     public boolean updateCharacters(){
@@ -157,12 +161,11 @@ public class GameCanvas extends View {
 
     public void updateCollectibles(){
         if(!(this.hasCollectible)){
-            this.collectible.setX(rand.nextInt(getWidth() - collectible.getObjectOffset()));
-            this.collectible.setY(rand.nextInt(getHeight() - collectible.getObjectOffset()));
+            this.collectible.setX(collectible.getObjectOffset() * (rand.nextInt(getWidth() - collectible.getObjectOffset()) / collectible.getObjectOffset()));
+            this.collectible.setY(collectible.getObjectOffset() * (rand.nextInt(getHeight() - collectible.getObjectOffset()) / collectible.getObjectOffset()));
             ++this.scoreCount;
         }
     }
-
     public boolean boundaryCollisionCheck(GameObject gameOb){
         if((gameOb.getLeft() < 0) || (gameOb.getRight() > getWidth()) || (gameOb.getTop() < 0) || (gameOb.getBottom() >getHeight())){
             return true;
@@ -171,6 +174,21 @@ public class GameCanvas extends View {
     }
 
     public boolean objectCollisionCheck(GameObject gameOb1, GameObject gameOb2){
+        int sideCollCount = 0;
+
+        if(Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) < 10){ ++sideCollCount; }
+        else if(Math.abs(gameOb1.getLeft() - gameOb2.getRight()) < 10){ ++sideCollCount; }
+        if(Math.abs(gameOb1.getRight() - gameOb2.getRight()) < 10){ ++sideCollCount; }
+        else if(Math.abs(gameOb1.getRight() - gameOb2.getLeft()) < 10){ ++ sideCollCount; }
+        if(Math.abs(gameOb1.getTop() - gameOb2.getTop()) < 10){ ++sideCollCount; }
+        else if(Math.abs(gameOb1.getTop() - gameOb2.getBottom()) < 10){ ++sideCollCount; }
+        if(Math.abs(gameOb1.getBottom() - gameOb2.getBottom()) < 10){ ++sideCollCount; }
+        else if(Math.abs(gameOb1.getBottom() - gameOb2.getTop()) < 10){ ++sideCollCount; }
+
+        if(sideCollCount < 4 && sideCollCount > 0) {
+            return false;
+        }
+
         if((gameOb1.getObjectType() == 'p') && (gameOb2.getObjectType() == 'p')){
             if((Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) <= 10) && (Math.abs(gameOb1.getRight() - gameOb2.getRight()) <= 10) && (Math.abs(gameOb1.getTop() - gameOb2.getTop()) <= 10) && (Math.abs(gameOb1.getBottom() - gameOb2.getBottom()) <= 10)){
                 return true;
