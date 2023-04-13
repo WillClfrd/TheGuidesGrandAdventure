@@ -9,6 +9,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 public class CharacterThread extends Thread {
     private GameActivity activity;
     private boolean isRunning;
+    private boolean isPaused;
     private int initInterval;
     private String key = "score";
 
@@ -16,10 +17,14 @@ public class CharacterThread extends Thread {
         this.activity = activity;
         initInterval = 500;
         activity.getGameCanvas().setScoreCount(0);
+        this.isPaused = false;
     }
 
     public void run(){
         while(this.isRunning){
+            if(this.isPaused){
+                continue;
+            }
             try {
                 synchronized (activity.getGameCanvas()) {
                     if(!(activity.getGameCanvas().updateCharacters())){
@@ -45,6 +50,10 @@ public class CharacterThread extends Thread {
 
     public void setRunning(boolean isRunning){
         this.isRunning = isRunning;
+    }
+
+    public void setIsPaused(boolean isPaused){
+        this.isPaused = isPaused;
     }
 
     private int calcInterval(){
