@@ -2,9 +2,13 @@ package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
 import android.graphics.Bitmap;
 
+import androidx.annotation.Nullable;
+
 public class GameObject {
     private char orientation;
     private Bitmap charImage;
+    private Bitmap charImageRight;
+    private Bitmap charImageLeft;
     private int x;
     private int y;
     private int prevX;
@@ -19,9 +23,11 @@ public class GameObject {
         this.y = y;
     }
 
-    public GameObject(Bitmap charImage){
+    public GameObject(Bitmap charImageRight, Bitmap charImageLeft){
         this.orientation = 'r';
-        this.charImage = charImage;
+        this.charImage = charImageRight;
+        this.charImageRight = charImageRight;
+        this.charImageLeft = charImageLeft;
     }
 
     public char getOrientation(){
@@ -31,6 +37,8 @@ public class GameObject {
     public Bitmap getCharImage(){
         return charImage;
     }
+    public Bitmap getCharImageRight(){ return this.charImageRight; }
+    public Bitmap getCharImageLeft(){ return this.charImageLeft; }
 
     public int getX(){
         return x;
@@ -66,6 +74,14 @@ public class GameObject {
 
     public void setCharImage(Bitmap newCharImage){
         this.charImage = newCharImage;
+    }
+
+    public void setCharImageRight(Bitmap newCharImageRight){
+        this.charImageRight = newCharImageRight;
+    }
+
+    public void setCharImageLeft(Bitmap newCharImageLeft){
+        this.charImageLeft = newCharImageLeft;
     }
 
     public void setX(int newX){

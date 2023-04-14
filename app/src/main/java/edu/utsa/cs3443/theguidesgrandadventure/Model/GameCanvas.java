@@ -6,13 +6,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class GameCanvas extends View {
@@ -21,8 +19,8 @@ public class GameCanvas extends View {
     private GameObject collectible;
     private Bitmap background;
     private ArrayList<GameObject> followers;
-    private Bitmap[] followerImages;
-
+    private Bitmap[] followerImagesRight;
+    private Bitmap[] followerImagesLeft;
     private int scoreCount;
     private boolean hasCollectible;
     private boolean isInitialDraw;
@@ -37,21 +35,44 @@ public class GameCanvas extends View {
 
         this.rand = new Random();
 
-        this.numberOfFollowers = 3;
+        this.numberOfFollowers = 6;
 
         this.defaultObjectOffset = 100;
 
-        this.followerImages = new Bitmap[this.numberOfFollowers];
+        this.followerImagesRight = new Bitmap[this.numberOfFollowers];
+        this.followerImagesLeft = new Bitmap[this.numberOfFollowers];
 
-        this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character));
-
-        this.collectible = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
+        this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
 
         this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
 
-        this.followerImages[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1);
-        this.followerImages[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2);
-        this.followerImages[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3);
+        this.followerImagesRight[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1_right);
+        this.followerImagesRight[0] = Bitmap.createScaledBitmap(this.followerImagesRight[0], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesRight[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2_right);
+        this.followerImagesRight[1] = Bitmap.createScaledBitmap(this.followerImagesRight[1], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesRight[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3_right);
+        this.followerImagesRight[2] = Bitmap.createScaledBitmap(this.followerImagesRight[2], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesRight[3] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_4_right);
+        this.followerImagesRight[3] = Bitmap.createScaledBitmap(this.followerImagesRight[3], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesRight[4] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_5_right);
+        this.followerImagesRight[4] = Bitmap.createScaledBitmap(this.followerImagesRight[4], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesRight[5] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_6_right);
+        this.followerImagesRight[5] = Bitmap.createScaledBitmap(this.followerImagesRight[5], this.defaultObjectOffset, this.defaultObjectOffset,true);
+
+        this.followerImagesLeft[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1_left);
+        this.followerImagesLeft[0] = Bitmap.createScaledBitmap(this.followerImagesLeft[0], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesLeft[1] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_2_left);
+        this.followerImagesLeft[1] = Bitmap.createScaledBitmap(this.followerImagesLeft[1], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesLeft[2] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_3_left);
+        this.followerImagesLeft[2] = Bitmap.createScaledBitmap(this.followerImagesLeft[2], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesLeft[3] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_4_left);
+        this.followerImagesLeft[3] = Bitmap.createScaledBitmap(this.followerImagesLeft[3], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesLeft[4] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_5_left);
+        this.followerImagesLeft[4] = Bitmap.createScaledBitmap(this.followerImagesLeft[4], this.defaultObjectOffset, this.defaultObjectOffset,true);
+        this.followerImagesLeft[5] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_6_left);
+        this.followerImagesLeft[5] = Bitmap.createScaledBitmap(this.followerImagesLeft[5], this.defaultObjectOffset, this.defaultObjectOffset,true);
+
+        this.collectible = new GameObject(followerImagesRight[rand.nextInt(numberOfFollowers)], BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
 
         this.followers = new ArrayList<GameObject>();
 
@@ -73,7 +94,9 @@ public class GameCanvas extends View {
         if(this.isInitialDraw) {
             this.background = Bitmap.createScaledBitmap(this.background, getWidth(), getHeight(), true);
 
-            this.character.setCharImage(Bitmap.createScaledBitmap(this.character.getCharImage(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
+            this.character.setCharImageRight(Bitmap.createScaledBitmap(this.character.getCharImageRight(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
+            this.character.setCharImageLeft(Bitmap.createScaledBitmap(this.character.getCharImageLeft(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
+            this.character.setCharImage(this.character.getCharImageRight());
 
             this.collectible.setCharImage(Bitmap.createScaledBitmap(this.collectible.getCharImage(), this.collectible.getObjectOffset(), this.collectible.getObjectOffset(), true));
 
@@ -131,7 +154,8 @@ public class GameCanvas extends View {
         }
 
         if((this.scoreCount / 5) > this.followers.size()){
-            GameObject temp = new GameObject(this.followerImages[this.rand.nextInt(this.numberOfFollowers)]);
+            int followerIndex = this.rand.nextInt(this.numberOfFollowers);
+            GameObject temp = new GameObject(this.followerImagesRight[followerIndex], this.followerImagesLeft[followerIndex]);
             temp.setObjectOffset(this.defaultObjectOffset);
             temp.setCharImage(Bitmap.createScaledBitmap(temp.getCharImage(), temp.getObjectOffset(), temp.getObjectOffset(), true));
             temp.setObjectType('p');
@@ -139,10 +163,12 @@ public class GameCanvas extends View {
             if(this.followers.size() == 0){
                 temp.setX(this.character.getPrevX());
                 temp.setY(this.character.getPrevY());
+                temp.setOrientation(this.character.getOrientation());
             }
             else{
                 temp.setX(this.followers.get(this.followers.size() - 1).getPrevX());
                 temp.setY(this.followers.get(this.followers.size() - 1).getPrevY());
+                temp.setOrientation(this.followers.get(this.followers.size() - 1).getOrientation());
             }
 
             this.followers.add(temp);
@@ -154,10 +180,23 @@ public class GameCanvas extends View {
             if(i == 0){
                 this.followers.get(i).setX(this.character.getPrevX());
                 this.followers.get(i).setY(this.character.getPrevY());
+                this.followers.get(i).setOrientation(this.character.getOrientation());
             }
             else {
                 this.followers.get(i).setX(this.followers.get(i - 1).getPrevX());
                 this.followers.get(i).setY(this.followers.get(i - 1).getPrevY());
+                this.followers.get(i).setOrientation(this.followers.get(i - 1).getOrientation());
+            }
+
+            switch(this.followers.get(i).getOrientation()){
+                case 'r':
+                    this.followers.get(i).setCharImage(this.followers.get(i).getCharImageRight());
+                    break;
+                case 'l':
+                    this.followers.get(i).setCharImage(this.followers.get(i).getCharImageLeft());
+                    break;
+                default:
+                    break;
             }
         }
         return true;
@@ -168,6 +207,7 @@ public class GameCanvas extends View {
             do {
                 this.collectible.setX(generateCollectibleCoordinate(getWidth()));
                 this.collectible.setY(generateCollectibleCoordinate(getHeight()));
+                this.collectible.setCharImage(followerImagesRight[rand.nextInt(numberOfFollowers)]);
             }while(!(isValidCollectibleLocation()));
             ++this.scoreCount;
         }
