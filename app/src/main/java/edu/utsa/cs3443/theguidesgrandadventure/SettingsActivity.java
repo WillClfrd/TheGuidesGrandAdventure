@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 //Settings menu activity
-//Jose - testing my local repo
+//Jose - testing my local repo again
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
