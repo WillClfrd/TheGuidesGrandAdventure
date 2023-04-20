@@ -1,30 +1,32 @@
-## GuidesGrandAdventure
+# GuidesGrandAdventure
 
 Temporary Repository for the RRI (Group 11) CS App Programming project. 
 
-### Code Example
+## Code Example
 
 TODO
 
-### Motivation
+## Motivation
 
 TODO
 
-### Installation
+## Installation
 
 TODO
 
-### API Reference
+## API Reference
 
 TODO
 
-### Tests
+## Tests
 
 TODO
 
-### Contributors
+## Contributors
 
 TODO
 
-### License
+## License
+
+MIT
 
