@@ -30,7 +30,11 @@ TODO
 
 Made with [contrib.rocks](https://contrib.rocks).
 
+## Credits
+
+https://pixabay.com/ - Royalty Free Music and Sounds
+
 ## License
 
-MIT
+MIT © RR Interactive Team
 
