@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="#000C38">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/game_settings_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,7 +15,10 @@
             android:id="@+id/game_test_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"
             android:text="START"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,9 +28,13 @@
             app:layout_constraintVertical_bias="0.499" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/game_settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"
             android:onClick="game_settings_button"
             android:text="Settings"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,27 +43,26 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.569" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="258dp"
-            android:layout_height="108dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Guild Grand Adventure"
-            android:textColor="@color/black"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.359" />
+            app:layout_constraintVertical_bias="0.359"
+            app:srcCompat="@drawable/tgga" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="86dp"
-            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="10sp"
+            android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
             android:text="Made By: WillClfrd, Jrgg1, and Mea08"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -91,5 +97,4 @@
             app:srcCompat="@drawable/character_left" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </LinearLayout>

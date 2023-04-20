@@ -20,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
         controller = new MainController(this);
 
         Button gameTestButton = findViewById(R.id.game_test_button);
+        Button settingsButton = findViewById(R.id.game_settings_button);
         setupButton(gameTestButton);
+        setupButton(settingsButton);
     }
 
     private void setupButton(View view){

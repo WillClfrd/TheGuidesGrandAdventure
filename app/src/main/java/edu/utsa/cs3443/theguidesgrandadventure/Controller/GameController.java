@@ -5,9 +5,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static android.widget.LinearLayout.VERTICAL;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
-import edu.utsa.cs3443.theguidesgrandadventure.InGameMenuActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
@@ -29,7 +26,6 @@ public class GameController implements View.OnClickListener{
     private FrameLayout gameLayout;
     private LinearLayout inGameMenu;
     private boolean isInGameMenuUp;
-    private int inGameMenuId = 99;
     private int menuHeaderId = 1;
     private int mainMenuId = 2;
     private int settingsId = 3;
@@ -98,7 +94,6 @@ public class GameController implements View.OnClickListener{
         inGameMenu.setGravity(CENTER);
         inGameMenu.setBackgroundColor(Color.BLACK);
         inGameMenu.setAlpha((float)0.9);
-//        inGameMenu.setId(this.inGameMenuId);
         this.gameLayout.addView(inGameMenu, menuParams);
 
         TextView menuHeader = new TextView(this.activity);

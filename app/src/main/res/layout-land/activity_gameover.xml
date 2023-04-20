@@ -4,30 +4,37 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/game_over_background">
+    android:background="#000C38">
 
     <LinearLayout
         android:layout_width="700dp"
         android:layout_height="200dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/stats_background">
+        android:backgroundTint="#0C2E8E"
+        android:background="@color/white">
 
     <TextView
         android:id="@+id/score_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:backgroundTint="#0C2E8E"
+        android:fontFamily="@font/mainfont"
+        android:textColor="#A6F2FF"
         android:paddingTop="25dp"
+        android:paddingBottom="20dp"
         android:textSize="50sp"
-        android:textColor="@color/black"
         android:text="@string/placeholder_string"/>
 
     <TextView
         android:id="@+id/follower_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/mainfont"
+        android:textColor="#A6F2FF"
         android:textSize="30sp"
-        android:textColor="@color/black"
         android:text="@string/placeholder_string"/>
 
     </LinearLayout>
@@ -41,6 +48,10 @@
             android:id="@+id/end_game_main_menu_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"
             android:layout_weight="1"
             android:text="Main Menu"
             android:paddingRight="20dp"/>
@@ -55,6 +66,10 @@
             android:id="@+id/end_game_restart_game_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"
             android:layout_weight="1"
             android:paddingLeft="20dp"
             android:text="New Game" />

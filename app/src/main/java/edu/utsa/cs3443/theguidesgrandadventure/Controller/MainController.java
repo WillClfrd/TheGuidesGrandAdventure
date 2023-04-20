@@ -8,14 +8,13 @@ import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
+
 //Main Menu controller
 //Meagan
 public class MainController implements View.OnClickListener{
     private MainActivity activity;
     private Intent gameIntent;
-
     private Intent settingsIntent;
-
     public MainController(MainActivity activity){
         this.activity = activity;
     }

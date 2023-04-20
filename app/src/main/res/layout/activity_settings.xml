@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000C38">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/settings_header"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/mainfont"
+            android:text="SETTINGS"
+            android:textAlignment="center"
+            android:textColor="#A6F2FF"
+            android:textSize="36dp" />
+
+        <ToggleButton
+            android:id="@+id/music_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textOff="Toggle Music"
+            android:textOn="Toggle Music"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"/>
+
+        <ToggleButton
+            android:id="@+id/sound_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:textOff="Toggle SFX"
+            android:textOn="Toggle SFX"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/char_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:text="Swap Character"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/bkg_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:text="Background"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/return_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="#0C2E8E"
+            android:fontFamily="@font/mainfont"
+            android:text="Return to Menu"
+            android:textColor="#A6F2FF"
+            android:textSize="20dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150sp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                app:srcCompat="@drawable/tgga" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                app:srcCompat="@drawable/rri" />
+        </FrameLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
