@@ -24,8 +24,10 @@ TODO
 
 ## Contributors
 
-TODO
-
+<a href = "https://github.com/WillClfrd/GuidesGrandAdventure/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo = jrgg1/GuidesGrandAdventure"/>
+</a>
+Made with [contributors-img](https://contrib.rocks).
 ## License
 
 MIT
