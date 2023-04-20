@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
      * onCreate method for SettingsActivity that creates a controller, mediaPlayer, and buttons on
      * startup for use by the program.
      *
-     * @param savedInstanceState - Instance state of the class.
+     * @param savedInstanceState - Instance state of the settings class.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
