@@ -21,7 +21,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
-
 //Main Menu controller
 //Meagan
 public class MainController implements View.OnClickListener{
@@ -37,9 +36,16 @@ public class MainController implements View.OnClickListener{
             gameIntent = new Intent(activity, GameActivity.class);
             activity.startActivity(gameIntent);
         }
-        if(view.getId() == R.id.game_settings_button){
+        else if(view.getId() == R.id.settings_button){
+            gameIntent = new Intent(activity, SettingsActivity.class);
+            activity.startActivity(gameIntent);
+        }
+        else if(view.getId() == R.id.credits_button){
             gameIntent = new Intent(activity, CreditsActivity.class);
             activity.startActivity(gameIntent);
+        }
+        else if(view.getId() == R.id.exit_button){
+            activity.finish();
         }
     }
 }

@@ -80,7 +80,7 @@ public class MediaPlayerManager {
             isPlaying = false;
         }
         else {
-            mediaPlayer.setVolume(0.1f,0.1f);
+            mediaPlayer.setVolume(0.02f,0.02f);
             isPlaying = true;
         }
     }

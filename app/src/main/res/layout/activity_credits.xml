@@ -81,11 +81,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
                     android:text="WillClfrd"
                     android:textColor="#A6F2FF"
-                    android:textSize="14dp" />
+                    android:textSize="24sp" />
             </LinearLayout>
 
         </TableRow>
@@ -131,11 +131,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
                     android:text="Mea08"
                     android:textColor="#A6F2FF"
-                    android:textSize="14dp" />
+                    android:textSize="24dp" />
             </LinearLayout>
 
         </TableRow>
@@ -181,14 +181,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
                     android:text="Jrgg1"
                     android:textColor="#A6F2FF"
-                    android:textSize="14dp" />
+                    android:textSize="24dp" />
             </LinearLayout>
 
         </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dev_name"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-condensed-light"
+                android:gravity="center"
+                android:text="Free Music from:"
+                android:textColor="#A6F2FF"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/pixabay_logo" />
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"

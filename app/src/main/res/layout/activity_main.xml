@@ -40,7 +40,7 @@
 
             <Button
                 android:id="@+id/game_test_button"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#0C2E8E"
@@ -50,14 +50,37 @@
                 android:textSize="20dp" />
 
             <Button
-                android:id="@+id/game_settings_button"
-                android:layout_width="200dp"
+                android:id="@+id/settings_button"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#0C2E8E"
                 android:fontFamily="@font/mainfont"
-                android:onClick="game_settings_button"
+                android:text="SETTINGS"
+                android:textColor="#A6F2FF"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/credits_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#0C2E8E"
+                android:fontFamily="@font/mainfont"
+                android:onClick="Credit"
                 android:text="CREDITS"
+                android:textColor="#A6F2FF"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/exit_button"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#0C2E8E"
+                android:fontFamily="@font/mainfont"
+                android:onClick="Credit"
+                android:text="EXIT"
                 android:textColor="#A6F2FF"
                 android:textSize="20dp" />
 

@@ -24,9 +24,13 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayerManager.playMusic(R.raw.mainmenu);
 
         Button gameTestButton = findViewById(R.id.game_test_button);
-        Button settingsButton = findViewById(R.id.game_settings_button);
+        Button settingsButton = findViewById(R.id.settings_button);
+        Button creditsButton = findViewById(R.id.credits_button);
+        Button exitButton = findViewById(R.id.exit_button);
         setupButton(gameTestButton);
         setupButton(settingsButton);
+        setupButton(creditsButton);
+        setupButton(exitButton);
     }
 
     private void setupButton(View view){

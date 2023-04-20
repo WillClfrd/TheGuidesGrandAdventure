@@ -30,55 +30,60 @@
 
         <ToggleButton
             android:id="@+id/music_button"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
             android:textOff="Toggle Music"
             android:textOn="Toggle Music"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <ToggleButton
             android:id="@+id/sound_button"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
+            android:textColor="#A6F2FF"
             android:textOff="Toggle SFX"
             android:textOn="Toggle SFX"
-            android:textColor="#A6F2FF"
             android:textSize="20dp" />
 
         <Button
             android:id="@+id/char_button"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
             android:text="Swap Character"
             android:textColor="#A6F2FF"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/bkg_button"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
             android:text="Background"
             android:textColor="#A6F2FF"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/return_button"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
             android:text="Return to Menu"
             android:textColor="#A6F2FF"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <FrameLayout
             android:layout_width="match_parent"
