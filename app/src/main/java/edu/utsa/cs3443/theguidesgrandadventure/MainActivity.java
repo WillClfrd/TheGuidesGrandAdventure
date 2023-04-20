@@ -13,14 +13,14 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 //Meagan
 public class MainActivity extends AppCompatActivity {
     private MainController controller;
-    private MediaPlayerManager mediaPlayerManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         controller = new MainController(this);
-        mediaPlayerManager = MediaPlayerManager.getInstance(this);
+        MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
         mediaPlayerManager.playMusic(R.raw.mainmenu);
 
         Button gameTestButton = findViewById(R.id.game_test_button);
