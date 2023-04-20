@@ -6,7 +6,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
 //Settings Menu Controller
 //Jose
-public class SettingsController implements View.OnClickListener{
+public class SettingsController implements View.OnClickListener {
 
     private SettingsActivity activity;
     public static boolean musicOn = true; // For use later.

@@ -11,66 +11,94 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/game_test_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#0C2E8E"
-            android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp"
-            android:text="START"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.499" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/game_settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#0C2E8E"
-            android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp"
-            android:onClick="game_settings_button"
-            android:text="Settings"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.569" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="150sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.359"
-            app:srcCompat="@drawable/tgga" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                app:srcCompat="@drawable/tgga" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="86dp"
-            android:gravity="center"
-            android:textSize="10sp"
-            android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
-            android:text="Made By: WillClfrd, Jrgg1, and Mea08"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.702"
-            tools:ignore="MissingConstraints" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15sp" />
+
+            <Button
+                android:id="@+id/game_test_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#0C2E8E"
+                android:fontFamily="@font/mainfont"
+                android:text="START"
+                android:textColor="#A6F2FF"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/game_settings_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="#0C2E8E"
+                android:fontFamily="@font/mainfont"
+                android:onClick="game_settings_button"
+                android:text="CREDITS"
+                android:textColor="#A6F2FF"
+                android:textSize="20dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="50sp">
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/mainfont"
+                    android:gravity="center"
+                    android:text="© 2023 RR Interactive"
+                    android:textColor="#A6F2FF"
+                    android:textSize="16sp"
+                    tools:ignore="MissingConstraints" />
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="10dp"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/rri" />
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView2"

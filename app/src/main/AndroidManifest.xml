@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity" />
+        <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.CreditsActivity" />
         <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.GameActivity" android:screenOrientation="landscape"/>
         <activity android:name="edu.utsa.cs3443.theguidesgrandadventure.GameOverActivity" android:screenOrientation="landscape"/>
     </application>
