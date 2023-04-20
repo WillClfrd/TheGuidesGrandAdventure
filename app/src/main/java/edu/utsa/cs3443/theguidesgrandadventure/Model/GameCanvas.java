@@ -6,7 +6,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.view.View;
+
+import androidx.core.content.res.ResourcesCompat;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,6 +30,7 @@ public class GameCanvas extends View {
     private Random rand;
     private int numberOfFollowers;
     private int defaultObjectOffset;
+    private Typeface typeface;
 
     public GameCanvas(Context context) {
         super(context);
@@ -115,7 +119,7 @@ public class GameCanvas extends View {
             this.isInitialDraw = false;
         }
 
-        this.paint.setColor(Color.WHITE);
+
 
         canvas.drawBitmap(this.background, 0,0,this.paint);
         canvas.drawBitmap(this.character.getCharImage(), this.character.getX(), this.character.getY(), this.paint);
@@ -123,8 +127,16 @@ public class GameCanvas extends View {
         for(i = 0; i < this.followers.size(); ++i){
             canvas.drawBitmap(this.followers.get(i).getCharImage(), this.followers.get(i).getX(), this.followers.get(i).getY(), this.paint);
         }
+        this.paint.setColor(getResources().getColor(R.color.blue_200));
+        this.paint.setTextSize(60);
+        typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
+        this.paint.setTypeface(typeface);
+        canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
 
-        this.paint.setTextSize(75);
+        this.paint.setColor(getResources().getColor(R.color.light_blue));
+        this.paint.setTextSize(60);
+        typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
+        this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 50, 100, this.paint);
     }
 

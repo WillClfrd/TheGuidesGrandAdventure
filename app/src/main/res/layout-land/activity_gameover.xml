@@ -7,35 +7,40 @@
     android:background="#000C38">
 
     <LinearLayout
-        android:layout_width="700dp"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:backgroundTint="#0C2E8E"
-        android:background="@color/white">
+        android:layout_width="750dp"
+        android:layout_height="150dp"
+        android:background="@drawable/gameoverb"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/score_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:backgroundTint="#0C2E8E"
-        android:fontFamily="@font/mainfont"
-        android:textColor="#A6F2FF"
-        android:paddingTop="25dp"
-        android:paddingBottom="20dp"
-        android:textSize="50sp"
-        android:text="@string/placeholder_string"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
-    <TextView
-        android:id="@+id/follower_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:fontFamily="@font/mainfont"
-        android:textColor="#A6F2FF"
-        android:textSize="30sp"
-        android:text="@string/placeholder_string"/>
+        <TextView
+            android:id="@+id/score_textview"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mainfont"
+            android:gravity="center_horizontal"
+            android:paddingTop="25dp"
+            android:text="@string/placeholder_string"
+            android:textColor="@color/light_blue"
+            android:textSize="30sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/follower_textview"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mainfont"
+            android:gravity="center_horizontal"
+            android:text="@string/placeholder_string"
+            android:textColor="@color/light_blue"
+            android:textSize="20sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -48,11 +53,10 @@
             android:id="@+id/end_game_main_menu_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#0C2E8E"
-            android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp"
             android:layout_weight="1"
+            android:fontFamily="@font/mainfont"
+            android:textColor="@color/light_blue"
+            android:backgroundTint="#0C2E8E"
             android:text="Main Menu"
             android:paddingRight="20dp"/>
 
@@ -66,11 +70,10 @@
             android:id="@+id/end_game_restart_game_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#0C2E8E"
-            android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp"
             android:layout_weight="1"
+            android:fontFamily="@font/mainfont"
+            android:textColor="@color/light_blue"
+            android:backgroundTint="#0C2E8E"
             android:paddingLeft="20dp"
             android:text="New Game" />
     </LinearLayout>

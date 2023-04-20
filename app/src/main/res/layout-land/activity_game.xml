@@ -9,26 +9,26 @@
     <LinearLayout
         android:layout_width="140dp"
         android:layout_height="match_parent"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
+        android:layout_weight="0"
+        android:background="@color/navy"
         android:orientation="horizontal"
-        android:background="@color/black"
-        android:layout_weight="0">
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
-            android:paddingEnd="0dp"
-            android:paddingTop="10dp">
+            android:paddingTop="10dp"
+            android:paddingEnd="0dp">
 
             <ImageButton
                 android:id="@+id/in_game_menu_button"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                app:srcCompat="@drawable/in_game_menu_icon"
                 android:background="@color/clear"
-                android:contentDescription="@string/placeholder_string"/>
+                android:contentDescription="@string/placeholder_string"
+                app:srcCompat="@drawable/menuicon" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,7 +52,7 @@
                 android:layout_height="60dp"
                 android:background="@color/clear"
                 android:contentDescription="@string/placeholder_string"
-                app:srcCompat="@drawable/down_arrow"/>
+                app:srcCompat="@drawable/down_arrow" />
         </LinearLayout>
     </LinearLayout>
 
@@ -74,27 +74,27 @@
         android:id="@+id/arrow_layout_2"
         android:layout_width="140dp"
         android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:background="@color/navy"
         android:gravity="center|start"
         android:paddingStart="10dp"
-        android:paddingEnd="0dp"
-        android:background="@color/black"
-        android:layout_weight="0">
+        android:paddingEnd="0dp">
 
         <ImageButton
             android:id="@+id/left_arrow"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/left_arrow"
             android:background="@color/clear"
-            android:contentDescription="@string/placeholder_string"/>
+            android:contentDescription="@string/placeholder_string"
+            app:srcCompat="@drawable/left_arrow" />
 
         <ImageButton
             android:id="@+id/right_arrow"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/right_arrow"
             android:background="@color/clear"
-            android:contentDescription="@string/placeholder_string"/>
+            android:contentDescription="@string/placeholder_string"
+            app:srcCompat="@drawable/right_arrow" />
 
     </LinearLayout>
 
