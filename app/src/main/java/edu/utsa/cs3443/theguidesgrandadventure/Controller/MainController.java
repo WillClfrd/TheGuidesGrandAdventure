@@ -27,12 +27,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 public class MainController implements View.OnClickListener{
     private MainActivity activity;
     private Intent gameIntent;
-    private Intent settingsIntent;
-
-    private FrameLayout gameLayout;
-    private LinearLayout inGameMenu;
-
-    private int menuHeaderId = 1;
     public MainController(MainActivity activity){
         this.activity = activity;
     }

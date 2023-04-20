@@ -15,6 +15,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.CollectibleThread;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.CharacterThread;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
 //GameView activity
 //William
@@ -24,6 +25,7 @@ public class GameActivity extends AppCompatActivity {
     private GameController controller;
     private CharacterThread characterThread;
     private CollectibleThread collectibleThread;
+    private MediaPlayerManager mediaPlayerManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,9 @@ public class GameActivity extends AppCompatActivity {
         ll.addView(gameCanvas, lp);
 
         controller = new GameController(this);
+
+        mediaPlayerManager = MediaPlayerManager.getInstance(this);
+        mediaPlayerManager.playMusic(R.raw.gamemusic);
 
         ImageButton upButton = findViewById(R.id.up_arrow);
         ImageButton downButton = findViewById(R.id.down_arrow);

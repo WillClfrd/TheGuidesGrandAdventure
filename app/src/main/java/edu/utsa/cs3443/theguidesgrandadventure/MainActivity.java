@@ -7,17 +7,21 @@ import android.view.View;
 import android.widget.Button;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.MainController;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
 //Main Menu activity
 //Meagan
 public class MainActivity extends AppCompatActivity {
     private MainController controller;
+    private MediaPlayerManager mediaPlayerManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         controller = new MainController(this);
+        mediaPlayerManager = MediaPlayerManager.getInstance(this);
+        mediaPlayerManager.playMusic(R.raw.mainmenu);
 
         Button gameTestButton = findViewById(R.id.game_test_button);
         Button settingsButton = findViewById(R.id.game_settings_button);

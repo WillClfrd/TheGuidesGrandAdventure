@@ -9,6 +9,7 @@ public class CreditsController implements View.OnClickListener {
 
     private CreditsActivity activity;
 
+
     public CreditsController(CreditsActivity activity) {
         this.activity = activity;
     }
