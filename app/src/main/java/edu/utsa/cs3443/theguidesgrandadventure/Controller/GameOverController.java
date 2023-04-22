@@ -18,13 +18,10 @@ public class GameOverController implements View.OnClickListener{
     private TextView scoreText;
     private TextView followerText;
 
-
     @SuppressLint("SetTextI18n")
     public GameOverController(GameOverActivity activity){
         this.activity = activity;
-
         this.score = activity.getIntent().getIntExtra(key, 0);
-
         scoreText = activity.findViewById(R.id.score_textview);
         scoreText.setText("Score: " + score);
 

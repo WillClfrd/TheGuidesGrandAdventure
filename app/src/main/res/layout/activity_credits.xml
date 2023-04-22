@@ -233,7 +233,7 @@
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="#0C2E8E"
+            android:backgroundTint="#000C38"
             android:fontFamily="@font/mainfont"
             android:text="Back"
             android:textColor="#A6F2FF"
