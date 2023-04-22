@@ -44,19 +44,9 @@ public class MediaPlayerManager {
             }
         }
         mediaPlayer.setLooping(true);
-        mediaPlayer.setVolume(0.02f,0.02f);
+        mediaPlayer.setVolume(0.25f,0.25f);
         mediaPlayer.start();
         isPlaying = true;
-    }
-
-    public void pauseMusic() {
-        if (mediaPlayer != null && isPlaying) {
-            mediaPlayer.pause();
-            isPlaying = false;
-        }
-        else {
-
-        }
     }
 
     public void stopMusic() {
@@ -83,7 +73,7 @@ public class MediaPlayerManager {
             isPlaying = false;
         }
         else {
-            mediaPlayer.setVolume(0.02f,0.02f);
+            mediaPlayer.setVolume(0.25f,0.25f);
             isPlaying = true;
         }
     }

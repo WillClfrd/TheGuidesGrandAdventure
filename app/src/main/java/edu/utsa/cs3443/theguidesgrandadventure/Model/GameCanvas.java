@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -31,6 +32,7 @@ public class GameCanvas extends View {
     private int numberOfFollowers;
     private int defaultObjectOffset;
     private Typeface typeface;
+    private SoundManager soundManager;
 
     public GameCanvas(Context context) {
         super(context);
@@ -38,6 +40,8 @@ public class GameCanvas extends View {
         this.paint = new Paint();
 
         this.rand = new Random();
+
+        this.soundManager = new SoundManager(context);
 
         this.numberOfFollowers = 6;
 
@@ -166,6 +170,7 @@ public class GameCanvas extends View {
         }
 
         if((this.scoreCount / 5) > this.followers.size()){
+
             int followerIndex = this.rand.nextInt(this.numberOfFollowers);
             GameObject temp = new GameObject(this.followerImagesRight[followerIndex], this.followerImagesLeft[followerIndex]);
             temp.setObjectOffset(this.defaultObjectOffset);
@@ -221,6 +226,16 @@ public class GameCanvas extends View {
                 this.collectible.setY(generateCollectibleCoordinate(getHeight()));
                 this.collectible.setCharImage(followerImagesRight[rand.nextInt(numberOfFollowers)]);
             }while(!(isValidCollectibleLocation()));
+
+            if(SoundManager.soundPlaying) {
+                if((this.scoreCount + 1) % 5 == 0) {
+                    soundManager.playSound(R.raw.upgrade);
+                }
+                else {
+                    soundManager.playSound(R.raw.pointget);
+                }
+            }
+
             ++this.scoreCount;
         }
     }
@@ -247,6 +262,9 @@ public class GameCanvas extends View {
 
     public boolean boundaryCollisionCheck(GameObject gameOb){
         if((gameOb.getLeft() < 0) || (gameOb.getRight() > getWidth()) || (gameOb.getTop() < 0) || (gameOb.getBottom() >getHeight())){
+            if(SoundManager.soundPlaying) {
+                soundManager.playSound(R.raw.boundaryhit);
+            }
             return true;
         }
         return false;
@@ -254,7 +272,6 @@ public class GameCanvas extends View {
 
     public boolean objectCollisionCheck(GameObject gameOb1, GameObject gameOb2){
         int sideCollCount = 0;
-
         if(Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) < 10){ ++sideCollCount; }
         else if(Math.abs(gameOb1.getLeft() - gameOb2.getRight()) < 10){ ++sideCollCount; }
         if(Math.abs(gameOb1.getRight() - gameOb2.getRight()) < 10){ ++sideCollCount; }

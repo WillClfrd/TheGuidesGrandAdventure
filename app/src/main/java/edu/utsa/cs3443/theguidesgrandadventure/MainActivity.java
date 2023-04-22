@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.MainController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 
 //Main Menu activity
 //Meagan

@@ -1,6 +1,10 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Controller;
 
 import android.view.View;
+import android.widget.Toast;
+
+import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
@@ -15,6 +19,10 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 public class SettingsController implements View.OnClickListener {
 
     private final SettingsActivity activity;
+
+    private boolean soundPlaying = true;
+
+    private boolean musicPlaying = true;
 
     /**
      * Constructor method for SettingsController.
@@ -35,6 +43,18 @@ public class SettingsController implements View.OnClickListener {
     public void onClick(View view) {
         if(view.getId() == R.id.return_button) {
             activity.finish(); // This will end the settings activity.
+        }
+        else if(view.getId() == R.id.music_button) {
+            MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(activity);
+            musicPlaying = !musicPlaying;
+
+            Toast.makeText(activity, "Music: " + (musicPlaying? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
+            mediaPlayerManager.toggleSound();
+        }
+        else if(view.getId() == R.id.sound_button) {
+            soundPlaying = !soundPlaying;
+            Toast.makeText(activity, "Sound: " + (soundPlaying? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
+            SoundManager.setSound();
         }
     }
 }

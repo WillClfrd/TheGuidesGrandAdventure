@@ -18,6 +18,8 @@ import androidx.core.content.res.ResourcesCompat;
 import edu.utsa.cs3443.theguidesgrandadventure.CreditsActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
