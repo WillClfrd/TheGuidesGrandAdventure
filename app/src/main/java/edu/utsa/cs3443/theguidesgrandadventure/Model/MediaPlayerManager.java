@@ -49,24 +49,6 @@ public class MediaPlayerManager {
         isPlaying = true;
     }
 
-    public void stopMusic() {
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-            mediaPlayer.release();
-            mediaPlayer = null;
-            isPlaying = false;
-        }
-    }
-
-    public void releaseMediaPlayer() {
-        stopMusic();
-    }
-
-    public boolean isPlaying() {
-        return isPlaying;
-    }
-
-
     public void toggleSound() {
         if(isPlaying) {
             mediaPlayer.setVolume(0f,0f);

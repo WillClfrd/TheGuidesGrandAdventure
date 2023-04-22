@@ -4,7 +4,6 @@ import android.content.Intent;
 
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.GameOverActivity;
-import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class CharacterThread extends Thread {

@@ -94,39 +94,39 @@ public class SettingsController implements View.OnClickListener {
 
         else if(view.getId() == R.id.chr_button1) {
             chrId = 1;
-            Toast.makeText(activity, "You chose the Guide", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: THE GUIDE", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button2) {
             chrId = 2;
-            Toast.makeText(activity, "You chose Robert", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: ROBERT", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button3) {
             chrId = 3;
-            Toast.makeText(activity, "You chose Will", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: WILL", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button4) {
             chrId = 4;
-            Toast.makeText(activity, "You chose Meagan", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: MEAGAN", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button5) {
             chrId = 5;
-            Toast.makeText(activity, "You chose Iker", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: IKER", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button6) {
             chrId = 6;
-            Toast.makeText(activity, "You chose Joao", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: JOAO", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button7) {
             chrId = 7;
-            Toast.makeText(activity, "You chose Addy", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: ADDY", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button8) {
             chrId = 8;
-            Toast.makeText(activity, "You chose Trent", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: TRENT", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.chr_button9) {
             chrId = 9;
-            Toast.makeText(activity, "You chose Serena", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Character selected: SERENA", Toast.LENGTH_SHORT).show();
         }
     }
 }

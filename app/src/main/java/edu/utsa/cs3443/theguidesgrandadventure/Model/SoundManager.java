@@ -14,7 +14,6 @@ public class SoundManager {
     private static final int DEFAULT_PRIORITY = 1;
     private static final int DEFAULT_LOOP = 0;
     private static final float DEFAULT_RATE = 1f;
-    private static final int DEFAULT_QUALITY = 0;
     static boolean soundPlaying = true;
     private final Context context;
     private final SoundPool soundPool;
@@ -47,15 +46,6 @@ public class SoundManager {
     }
 
     public static void setSound() {
-        if(soundPlaying) {
-            soundPlaying = false;
-        }
-        else {
-            soundPlaying = true;
-        }
-    }
-
-    public void release() {
-        soundPool.release();
+        soundPlaying = !soundPlaying;
     }
 }
