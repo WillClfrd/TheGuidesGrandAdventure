@@ -34,6 +34,17 @@ public class SettingsActivity extends AppCompatActivity {
         settingsController = new SettingsController(this);
         ToggleButton musicToggleButton = findViewById(R.id.music_button);
         ToggleButton soundToggleButton = findViewById(R.id.sound_button);
+
+        Button characterButton = findViewById(R.id.chr_button1);
+        Button characterButton2 = findViewById(R.id.chr_button2);
+        Button characterButton3 = findViewById(R.id.chr_button3);
+        Button characterButton4 = findViewById(R.id.chr_button4);
+        Button characterButton5 = findViewById(R.id.chr_button5);
+        Button characterButton6 = findViewById(R.id.chr_button6);
+        Button characterButton7 = findViewById(R.id.chr_button7);
+        Button characterButton8 = findViewById(R.id.chr_button8);
+        Button characterButton9 = findViewById(R.id.chr_button9);
+
         Button backgroundButton = findViewById(R.id.bkg_button1);
         Button backgroundButton2 = findViewById(R.id.bkg_button2);
         Button backgroundButton3 = findViewById(R.id.bkg_button3);
@@ -45,6 +56,17 @@ public class SettingsActivity extends AppCompatActivity {
 
         setupButton(musicToggleButton);
         setupButton(soundToggleButton);
+
+        setupButton(characterButton);
+        setupButton(characterButton2);
+        setupButton(characterButton3);
+        setupButton(characterButton4);
+        setupButton(characterButton5);
+        setupButton(characterButton6);
+        setupButton(characterButton7);
+        setupButton(characterButton8);
+        setupButton(characterButton9);
+
         setupButton(backgroundButton);
         setupButton(backgroundButton2);
         setupButton(backgroundButton3);
@@ -52,6 +74,7 @@ public class SettingsActivity extends AppCompatActivity {
         setupButton(backgroundButton5);
         setupButton(backgroundButton6);
         setupButton(backgroundButton7);
+
         setupButton(returnMenuButton);
     }
 

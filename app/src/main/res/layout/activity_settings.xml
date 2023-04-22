@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:background="#000C38">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +44,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#0C2E8E"
+            android:backgroundTint="#000C38"
             android:fontFamily="@font/mainfont"
             android:textColor="#A6F2FF"
             android:textOff="Toggle Music"
@@ -45,32 +56,199 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#0C2E8E"
+            android:backgroundTint="#000C38"
             android:fontFamily="@font/mainfont"
             android:textColor="#A6F2FF"
             android:textOff="Toggle SFX"
             android:textOn="Toggle SFX"
             android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/char_button"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#0C2E8E"
-            android:fontFamily="@font/mainfont"
-            android:text="Swap Character"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp" />
-
         <TextView
-            android:id="@+id/settings_header2"
+            android:id="@+id/chr_header"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:layout_gravity="center"
             android:fontFamily="@font/mainfont"
             android:gravity="center"
-            android:text="Choose Background:"
+            android:text="CHOOSE CHARACTER:"
+            android:textAlignment="center"
+            android:textColor="#A6F2FF"
+            android:textSize="16dp" />
+
+        <HorizontalScrollView
+            android:layout_width="300sp"
+            android:layout_height="60sp"
+            android:layout_gravity="center_horizontal"
+            android:scrollbars="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/chr_button1"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#181245"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Guide"
+                    android:textColor="#78d1f2"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/chr_button2"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#455daa"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Rob"
+                    android:textColor="#FF8F8F"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/chr_button3"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#b8b8c0"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Will"
+                    android:textColor="#302f2f"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0" />
+
+                <Button
+                    android:id="@+id/chr_button4"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#b71f40"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Megan"
+                    android:textColor="#49030f"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/chr_button5"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#313050"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Iker"
+                    android:textColor="#a1b9c9"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/chr_button6"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#141414"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Joao"
+                    android:textColor="#eebf1c"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/chr_button7"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#a21d21"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Addy"
+                    android:textColor="#fedf8b"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/chr_button8"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#9b1c1f"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Trent"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/chr_button9"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#ECEBEB"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="Serena"
+                    android:textColor="#171717"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/bkg_header"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/mainfont"
+            android:gravity="center"
+            android:text="CHOOSE BACKGROUND:"
             android:textAlignment="center"
             android:textColor="#A6F2FF"
             android:textSize="16dp" />
@@ -93,10 +271,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#036304"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Grass"
                     android:textColor="#ACFFA6"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -109,10 +287,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#d0c880"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Sand"
                     android:textColor="#7A6D4D"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -125,10 +303,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#d8e8f0"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Snow"
                     android:textColor="#387695"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -143,10 +321,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#5878d8"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Ocean"
                     android:textColor="#08257C"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -161,10 +339,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#b8a088"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Cave"
                     android:textColor="#5E4B38"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -179,10 +357,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#c8c8c8"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="City"
                     android:textColor="#5C5C5C"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -197,10 +375,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#e08878"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="Volcano"
                     android:textColor="#752F23"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -210,7 +388,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#0C2E8E"
+            android:backgroundTint="#000C38"
             android:fontFamily="@font/mainfont"
             android:text="Return to Menu"
             android:textColor="#A6F2FF"

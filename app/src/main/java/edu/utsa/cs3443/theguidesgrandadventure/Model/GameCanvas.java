@@ -49,33 +49,65 @@ public class GameCanvas extends View {
         this.followerImagesRight = new Bitmap[this.numberOfFollowers];
         this.followerImagesLeft = new Bitmap[this.numberOfFollowers];
 
-        this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
+            switch (SettingsController.chrId) {
+                case(1):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
+                    break;
+                case(2):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.rob_right), BitmapFactory.decodeResource(getResources(), R.drawable.rob_left));
+                    break;
+                case(3):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.will_right), BitmapFactory.decodeResource(getResources(), R.drawable.will_left));
+                    break;
+                case(4):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.meagan_right), BitmapFactory.decodeResource(getResources(), R.drawable.meagan_left));
+                    break;
+                case(5):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.gman_right), BitmapFactory.decodeResource(getResources(), R.drawable.gman_left));
+                    break;
+                case(6):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.joao_right), BitmapFactory.decodeResource(getResources(), R.drawable.joao_left));
+                    break;
+                case(7):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.addy_right), BitmapFactory.decodeResource(getResources(), R.drawable.addy_left));
+                    break;
+                case(8):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.trent_right), BitmapFactory.decodeResource(getResources(), R.drawable.trent_left));
+                    break;
+                case(9):
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.serena_right), BitmapFactory.decodeResource(getResources(), R.drawable.serena_left));
+                    break;
+                default:
+                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
+                    break;
+            }
 
-        if(SettingsController.bkgId == 1) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
-        }
-        else if(SettingsController.bkgId == 2) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
-        }
-        else if(SettingsController.bkgId == 3) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background);
-        }
-        else if(SettingsController.bkgId == 4) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background);
-        }
-        else if(SettingsController.bkgId == 5) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.cave_background);
-        }
-        else if(SettingsController.bkgId == 6) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.brick_background);
-        }
-        else if(SettingsController.bkgId == 7) {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
-        }
-        else {
-            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
-        }
-
+            switch(SettingsController.bkgId) {
+                case(1):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
+                    break;
+                case(2):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
+                    break;
+                case(3):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background);
+                    break;
+                case(4):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background);
+                    break;
+                case(5):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.cave_background);
+                    break;
+                case(6):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.brick_background);
+                    break;
+                case(7):
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
+                    break;
+                default:
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+                    break;
+            }
 
         this.followerImagesRight[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1_right);
         this.followerImagesRight[0] = Bitmap.createScaledBitmap(this.followerImagesRight[0], this.defaultObjectOffset, this.defaultObjectOffset,true);
@@ -154,13 +186,23 @@ public class GameCanvas extends View {
         for(i = 0; i < this.followers.size(); ++i){
             canvas.drawBitmap(this.followers.get(i).getCharImage(), this.followers.get(i).getX(), this.followers.get(i).getY(), this.paint);
         }
-        this.paint.setColor(getResources().getColor(R.color.blue_200));
+        if(SettingsController.bkgId == 3 || SettingsController.bkgId == 6) {
+            this.paint.setColor(getResources().getColor(R.color.light_blue));
+        }
+        else {
+            this.paint.setColor(getResources().getColor(R.color.blue_200));
+        }
         this.paint.setTextSize(60);
         typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
         this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
 
-        this.paint.setColor(getResources().getColor(R.color.light_blue));
+        if(SettingsController.bkgId == 3 || SettingsController.bkgId == 6) {
+            this.paint.setColor(getResources().getColor(R.color.blue_200));
+        }
+        else {
+            this.paint.setColor(getResources().getColor(R.color.light_blue));
+        }
         this.paint.setTextSize(60);
         typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
         this.paint.setTypeface(typeface);

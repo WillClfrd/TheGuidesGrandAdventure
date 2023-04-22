@@ -53,11 +53,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".75"
-                android:backgroundTint="#A6F2FF"
+                android:backgroundTint="#000C38"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:text="START"
-                android:textColor="#000C38"
+                android:textColor="#A6F2FF"
                 android:textSize="20dp" />
 
             <Button
@@ -66,10 +66,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".75"
-                android:backgroundTint="#A6F2FF"
+                android:backgroundTint="#000C38"
                 android:fontFamily="@font/mainfont"
                 android:text="SETTINGS"
-                android:textColor="#000C38"
+                android:textColor="#A6F2FF"
                 android:textSize="20dp" />
 
             <Button
@@ -78,12 +78,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".75"
-                android:backgroundTint="#A6F2FF"
+                android:backgroundTint="#000C38"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:onClick="Credit"
                 android:text="CREDITS"
-                android:textColor="#000C38"
+                android:textColor="#A6F2FF"
                 android:textSize="20dp" />
 
             <Button
@@ -92,12 +92,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:alpha=".75"
-                android:backgroundTint="#A6F2FF"
+                android:backgroundTint="#000C38"
                 android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:onClick="Credit"
                 android:text="EXIT"
-                android:textColor="#000C38"
+                android:textColor="#A6F2FF"
                 android:textSize="20dp" />
 
             <Space

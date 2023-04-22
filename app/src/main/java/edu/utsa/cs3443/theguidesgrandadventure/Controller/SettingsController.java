@@ -26,6 +26,8 @@ public class SettingsController implements View.OnClickListener {
 
     public static int bkgId = 0;
 
+    public static int chrId = 0;
+
     /**
      * Constructor method for SettingsController.
      *
@@ -46,6 +48,7 @@ public class SettingsController implements View.OnClickListener {
         if(view.getId() == R.id.return_button) {
             activity.finish(); // This will end the settings activity.
         }
+
         else if(view.getId() == R.id.music_button) {
             MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(activity);
             musicPlaying = !musicPlaying;
@@ -53,11 +56,13 @@ public class SettingsController implements View.OnClickListener {
             Toast.makeText(activity, "Music: " + (musicPlaying? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
             mediaPlayerManager.toggleSound();
         }
+
         else if(view.getId() == R.id.sound_button) {
             soundPlaying = !soundPlaying;
             Toast.makeText(activity, "Sound: " + (soundPlaying? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
             SoundManager.setSound();
         }
+
         else if(view.getId() == R.id.bkg_button1) {
             bkgId = 1;
             Toast.makeText(activity, "Background has been changed to GRASS", Toast.LENGTH_SHORT).show();
@@ -85,6 +90,43 @@ public class SettingsController implements View.OnClickListener {
         else if(view.getId() == R.id.bkg_button7) {
             bkgId = 7;
             Toast.makeText(activity, "Background has been changed to VOLCANO", Toast.LENGTH_SHORT).show();
+        }
+
+        else if(view.getId() == R.id.chr_button1) {
+            chrId = 1;
+            Toast.makeText(activity, "You chose the Guide", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button2) {
+            chrId = 2;
+            Toast.makeText(activity, "You chose Robert", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button3) {
+            chrId = 3;
+            Toast.makeText(activity, "You chose Will", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button4) {
+            chrId = 4;
+            Toast.makeText(activity, "You chose Meagan", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button5) {
+            chrId = 5;
+            Toast.makeText(activity, "You chose Iker", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button6) {
+            chrId = 6;
+            Toast.makeText(activity, "You chose Joao", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button7) {
+            chrId = 7;
+            Toast.makeText(activity, "You chose Addy", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button8) {
+            chrId = 8;
+            Toast.makeText(activity, "You chose Trent", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.chr_button9) {
+            chrId = 9;
+            Toast.makeText(activity, "You chose Serena", Toast.LENGTH_SHORT).show();
         }
     }
 }
