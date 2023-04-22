@@ -15,7 +15,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 //Anyone
 public class GameOverActivity extends AppCompatActivity {
     private GameOverController controller;
-    private MediaPlayerManager mediaPlayerManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +26,10 @@ public class GameOverActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_gameover);
 
-        mediaPlayerManager = MediaPlayerManager.getInstance(this);
-        mediaPlayerManager.playMusic(R.raw.gameover);
+        if(MediaPlayerManager.isPlaying) {
+            MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
+            mediaPlayerManager.playMusic(R.raw.gameover);
+        }
 
         controller = new GameOverController(this);
 
@@ -39,13 +40,6 @@ public class GameOverActivity extends AppCompatActivity {
         setupButton(newGameButton);
     }
 
-    protected void onPause() {
-        super.onPause();
-
-        // Pause the music playback and release the media player instance
-        mediaPlayerManager.pauseMusic();
-        mediaPlayerManager.releaseMediaPlayer();
-    }
     private void setupButton(View view){
         view.setOnClickListener(controller);
     }

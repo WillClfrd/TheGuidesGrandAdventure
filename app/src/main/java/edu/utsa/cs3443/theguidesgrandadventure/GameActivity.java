@@ -20,7 +20,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 //GameView activity
 //William
 public class GameActivity extends AppCompatActivity {
-    private LinearLayout ll;
     private GameCanvas gameCanvas;
     private GameController controller;
     private CharacterThread characterThread;
@@ -37,15 +36,17 @@ public class GameActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_game);
 
-        ll = findViewById(R.id.game_view_ll);
+        LinearLayout ll = findViewById(R.id.game_view_ll);
         gameCanvas = new GameCanvas(this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
         ll.addView(gameCanvas, lp);
 
         controller = new GameController(this);
 
-        mediaPlayerManager = MediaPlayerManager.getInstance(this);
-        mediaPlayerManager.playMusic(R.raw.gamemusic);
+        if(MediaPlayerManager.isPlaying) {
+            mediaPlayerManager = MediaPlayerManager.getInstance(this);
+            mediaPlayerManager.playMusic(R.raw.gamemusic);
+        }
 
         ImageButton upButton = findViewById(R.id.up_arrow);
         ImageButton downButton = findViewById(R.id.down_arrow);

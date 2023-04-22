@@ -11,7 +11,7 @@ public class MediaPlayerManager {
     private MediaPlayer mediaPlayer;
     private final Resources resources;
     private int currentResourceId;
-    public static boolean isPlaying;
+    public static boolean isPlaying = true;
 
     private MediaPlayerManager(Context context) {
         resources = context.getResources();
@@ -53,6 +53,9 @@ public class MediaPlayerManager {
         if (mediaPlayer != null && isPlaying) {
             mediaPlayer.pause();
             isPlaying = false;
+        }
+        else {
+
         }
     }
 

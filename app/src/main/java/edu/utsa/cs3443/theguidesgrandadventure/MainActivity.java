@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         controller = new MainController(this);
-        MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
-        mediaPlayerManager.playMusic(R.raw.mainmenu);
+        if(MediaPlayerManager.isPlaying) {
+            MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
+            mediaPlayerManager.playMusic(R.raw.mainmenu);
+        }
 
         Button gameTestButton = findViewById(R.id.game_test_button);
         Button settingsButton = findViewById(R.id.settings_button);
