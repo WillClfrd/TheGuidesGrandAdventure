@@ -1,8 +1,6 @@
 package edu.utsa.cs3443.theguidesgrandadventure;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.ToggleButton;
@@ -10,8 +8,6 @@ import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
-import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
-import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 
 /**
  * The SettingsActivity class creates a SettingsController and acts as the activity for the
@@ -23,11 +19,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
  */
 public class SettingsActivity extends AppCompatActivity {
     private SettingsController settingsController;
-    private MediaPlayerManager mediaPlayerManager;
-    private ToggleButton musicToggleButton;
-    private ToggleButton soundToggleButton;
-    private Button backgroundButton;
-    private Button returnMenuButton;
 
     /**
      * onCreate method for SettingsActivity that creates a controller, mediaPlayer, and buttons on
@@ -41,14 +32,26 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         settingsController = new SettingsController(this);
-        musicToggleButton = findViewById(R.id.music_button);
-        soundToggleButton = findViewById(R.id.sound_button);
-        backgroundButton = findViewById(R.id.bkg_button);
-        returnMenuButton = findViewById(R.id.return_button);
+        ToggleButton musicToggleButton = findViewById(R.id.music_button);
+        ToggleButton soundToggleButton = findViewById(R.id.sound_button);
+        Button backgroundButton = findViewById(R.id.bkg_button1);
+        Button backgroundButton2 = findViewById(R.id.bkg_button2);
+        Button backgroundButton3 = findViewById(R.id.bkg_button3);
+        Button backgroundButton4 = findViewById(R.id.bkg_button4);
+        Button backgroundButton5 = findViewById(R.id.bkg_button5);
+        Button backgroundButton6 = findViewById(R.id.bkg_button6);
+        Button backgroundButton7 = findViewById(R.id.bkg_button7);
+        Button returnMenuButton = findViewById(R.id.return_button);
 
         setupButton(musicToggleButton);
         setupButton(soundToggleButton);
         setupButton(backgroundButton);
+        setupButton(backgroundButton2);
+        setupButton(backgroundButton3);
+        setupButton(backgroundButton4);
+        setupButton(backgroundButton5);
+        setupButton(backgroundButton6);
+        setupButton(backgroundButton7);
         setupButton(returnMenuButton);
     }
 

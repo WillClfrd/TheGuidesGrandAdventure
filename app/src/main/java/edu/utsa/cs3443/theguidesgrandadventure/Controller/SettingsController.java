@@ -24,6 +24,8 @@ public class SettingsController implements View.OnClickListener {
 
     private boolean musicPlaying = true;
 
+    public static int bkgId = 0;
+
     /**
      * Constructor method for SettingsController.
      *
@@ -55,6 +57,34 @@ public class SettingsController implements View.OnClickListener {
             soundPlaying = !soundPlaying;
             Toast.makeText(activity, "Sound: " + (soundPlaying? "ON" : "OFF"), Toast.LENGTH_SHORT).show();
             SoundManager.setSound();
+        }
+        else if(view.getId() == R.id.bkg_button1) {
+            bkgId = 1;
+            Toast.makeText(activity, "Background has been changed to GRASS", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button2) {
+            bkgId = 2;
+            Toast.makeText(activity, "Background has been changed to SAND", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button3) {
+            bkgId = 3;
+            Toast.makeText(activity, "Background has been changed to SNOW", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button4) {
+            bkgId = 4;
+            Toast.makeText(activity, "Background has been changed to OCEAN", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button5) {
+            bkgId = 5;
+            Toast.makeText(activity, "Background has been changed to CAVE", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button6) {
+            bkgId = 6;
+            Toast.makeText(activity, "Background has been changed to CITY", Toast.LENGTH_SHORT).show();
+        }
+        else if(view.getId() == R.id.bkg_button7) {
+            bkgId = 7;
+            Toast.makeText(activity, "Background has been changed to VOLCANO", Toast.LENGTH_SHORT).show();
         }
     }
 }

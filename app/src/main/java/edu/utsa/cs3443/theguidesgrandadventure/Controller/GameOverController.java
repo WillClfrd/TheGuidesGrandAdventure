@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Controller;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class GameOverController implements View.OnClickListener{
     private TextView followerText;
 
 
+    @SuppressLint("SetTextI18n")
     public GameOverController(GameOverActivity activity){
         this.activity = activity;
 
@@ -27,7 +29,14 @@ public class GameOverController implements View.OnClickListener{
         scoreText.setText("Score: " + score);
 
         followerText = activity.findViewById(R.id.follower_textview);
-        followerText.setText("You Found " + (score / 5) + " Lost Tour Members!");
+        System.out.println("testing");
+
+        if((score / 5) == 1) {
+            followerText.setText("You Found " + (score / 5) + " Lost Tour Member!");
+        }
+        else {
+            followerText.setText("You Found " + (score / 5) + " Lost Tour Members!");
+        }
     }
 
     @Override

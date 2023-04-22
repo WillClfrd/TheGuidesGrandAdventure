@@ -13,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import java.util.ArrayList;
 import java.util.Random;
 
+import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class GameCanvas extends View {
@@ -23,7 +24,7 @@ public class GameCanvas extends View {
     private ArrayList<GameObject> followers;
     private Bitmap[] followerImagesRight;
     private Bitmap[] followerImagesLeft;
-    private int scoreCount;
+    public static int scoreCount;
     private boolean hasCollectible;
     private boolean isInitialDraw;
     private Random rand;
@@ -50,7 +51,31 @@ public class GameCanvas extends View {
 
         this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
 
-        this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+        if(SettingsController.bkgId == 1) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
+        }
+        else if(SettingsController.bkgId == 2) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
+        }
+        else if(SettingsController.bkgId == 3) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background);
+        }
+        else if(SettingsController.bkgId == 4) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background);
+        }
+        else if(SettingsController.bkgId == 5) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.cave_background);
+        }
+        else if(SettingsController.bkgId == 6) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.brick_background);
+        }
+        else if(SettingsController.bkgId == 7) {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
+        }
+        else {
+            this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+        }
+
 
         this.followerImagesRight[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1_right);
         this.followerImagesRight[0] = Bitmap.createScaledBitmap(this.followerImagesRight[0], this.defaultObjectOffset, this.defaultObjectOffset,true);
@@ -312,6 +337,11 @@ public class GameCanvas extends View {
 
     public int getScoreCount(){
         return this.scoreCount;
+    }
+
+    public static int getScoreGO(){ // To Will - I added this so that I could pass an int to the gameover activity for sound selection. Sorry in advance if this has any inintended side-effects.
+        int send = scoreCount;
+        return send;
     }
     public boolean getHasCollectible(){return this.hasCollectible;}
 

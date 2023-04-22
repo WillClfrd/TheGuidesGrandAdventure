@@ -63,16 +63,147 @@
             android:textColor="#A6F2FF"
             android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/bkg_button"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/settings_header2"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
             android:layout_gravity="center"
-            android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
-            android:text="Background"
+            android:gravity="center"
+            android:text="Choose Background:"
+            android:textAlignment="center"
             android:textColor="#A6F2FF"
-            android:textSize="20dp" />
+            android:textSize="16dp" />
+
+        <HorizontalScrollView
+            android:layout_width="300sp"
+            android:layout_height="60sp"
+            android:layout_gravity="center_horizontal"
+            android:scrollbars="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bkg_button1"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#036304"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Grass"
+                    android:textColor="#ACFFA6"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/bkg_button2"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#d0c880"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Sand"
+                    android:textColor="#7A6D4D"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/bkg_button3"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:alpha=".75"
+                    android:backgroundTint="#d8e8f0"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Snow"
+                    android:textColor="#387695"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0" />
+
+                <Button
+                    android:id="@+id/bkg_button4"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#5878d8"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Ocean"
+                    android:textColor="#08257C"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/bkg_button5"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#b8a088"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Cave"
+                    android:textColor="#5E4B38"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/bkg_button6"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#c8c8c8"
+                    android:fontFamily="@font/mainfont"
+                    android:text="City"
+                    android:textColor="#5C5C5C"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="15sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/bkg_button7"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:alpha=".75"
+                    android:backgroundTint="#e08878"
+                    android:fontFamily="@font/mainfont"
+                    android:text="Volcano"
+                    android:textColor="#752F23"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
 
         <Button
             android:id="@+id/return_button"

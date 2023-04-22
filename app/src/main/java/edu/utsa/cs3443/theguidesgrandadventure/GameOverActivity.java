@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameOverController;
+import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
 //In game menu activity
@@ -28,7 +29,12 @@ public class GameOverActivity extends AppCompatActivity {
 
         if(MediaPlayerManager.isPlaying) {
             MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
-            mediaPlayerManager.playMusic(R.raw.gameover);
+            if(GameCanvas.getScoreGO() < 10) {
+                mediaPlayerManager.playMusic(R.raw.gameover);
+            }
+            else {
+                mediaPlayerManager.playMusic(R.raw.goodjob);
+            }
         }
 
         controller = new GameOverController(this);
