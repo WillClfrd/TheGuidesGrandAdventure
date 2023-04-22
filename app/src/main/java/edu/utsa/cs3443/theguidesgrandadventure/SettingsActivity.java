@@ -26,14 +26,14 @@ public class SettingsActivity extends AppCompatActivity {
     private MediaPlayerManager mediaPlayerManager;
     private ToggleButton musicToggleButton;
     private ToggleButton soundToggleButton;
-    private Button bkgButton;
+    private Button backgroundButton;
     private Button returnMenuButton;
 
     /**
      * onCreate method for SettingsActivity that creates a controller, mediaPlayer, and buttons on
      * startup for use by the program.
      *
-     * @param savedInstanceState - Instance state of the settings class.
+     * @param savedInstanceState - Bundle of the settings class.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +43,12 @@ public class SettingsActivity extends AppCompatActivity {
         settingsController = new SettingsController(this);
         musicToggleButton = findViewById(R.id.music_button);
         soundToggleButton = findViewById(R.id.sound_button);
-        bkgButton = findViewById(R.id.bkg_button);
+        backgroundButton = findViewById(R.id.bkg_button);
         returnMenuButton = findViewById(R.id.return_button);
 
         setupButton(musicToggleButton);
         setupButton(soundToggleButton);
-        setupButton(bkgButton);
+        setupButton(backgroundButton);
         setupButton(returnMenuButton);
     }
 

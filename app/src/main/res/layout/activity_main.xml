@@ -18,7 +18,7 @@
             android:layout_gravity="center|center_horizontal"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/game_background" />
+            app:srcCompat="@drawable/background" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,10 +52,12 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#000C38"
+                android:alpha=".75"
+                android:backgroundTint="#A6F2FF"
+                android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:text="START"
-                android:textColor="#A6F2FF"
+                android:textColor="#000C38"
                 android:textSize="20dp" />
 
             <Button
@@ -63,10 +65,11 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#000C38"
+                android:alpha=".75"
+                android:backgroundTint="#A6F2FF"
                 android:fontFamily="@font/mainfont"
                 android:text="SETTINGS"
-                android:textColor="#A6F2FF"
+                android:textColor="#000C38"
                 android:textSize="20dp" />
 
             <Button
@@ -74,11 +77,13 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#000C38"
+                android:alpha=".75"
+                android:backgroundTint="#A6F2FF"
+                android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:onClick="Credit"
                 android:text="CREDITS"
-                android:textColor="#A6F2FF"
+                android:textColor="#000C38"
                 android:textSize="20dp" />
 
             <Button
@@ -86,11 +91,13 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="#000C38"
+                android:alpha=".75"
+                android:backgroundTint="#A6F2FF"
+                android:backgroundTintMode="add"
                 android:fontFamily="@font/mainfont"
                 android:onClick="Credit"
                 android:text="EXIT"
-                android:textColor="#A6F2FF"
+                android:textColor="#000C38"
                 android:textSize="20dp" />
 
             <Space
