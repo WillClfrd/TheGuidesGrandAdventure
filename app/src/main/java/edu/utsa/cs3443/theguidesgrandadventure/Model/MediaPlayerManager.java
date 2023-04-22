@@ -59,4 +59,8 @@ public class MediaPlayerManager {
             isPlaying = true;
         }
     }
+
+    public void releasePlayer() {
+        mediaPlayer.release();
+    }
 }

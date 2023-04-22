@@ -13,7 +13,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
  * SettingsActivity. The class also holds a class constructor and onClick for button interactions.
  *
  * @author Jose Gracia
- * @version 1.0
+ * @version 1.0                     REMINDER!!! TALK WITH WILL AND MEAGAN AND FIGURE OUT WHAT WE SHOULD PUT FOR THIS.
  * @since 2023-04-20
  */
 public class SettingsController implements View.OnClickListener {

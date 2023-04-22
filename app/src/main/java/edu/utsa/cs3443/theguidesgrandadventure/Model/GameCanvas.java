@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -33,10 +34,14 @@ public class GameCanvas extends View {
     private Typeface typeface;
     private SoundManager soundManager;
 
+    Activity activity;
+
     public GameCanvas(Context context) {
         super(context);
 
         this.paint = new Paint();
+
+        this.activity = activity;
 
         this.rand = new Random();
 

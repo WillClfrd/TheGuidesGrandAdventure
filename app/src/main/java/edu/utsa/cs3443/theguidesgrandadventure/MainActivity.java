@@ -14,7 +14,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 //Meagan
 public class MainActivity extends AppCompatActivity {
     private MainController controller;
-
+    MediaPlayerManager mediaPlayerManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new MainController(this);
         if(MediaPlayerManager.isPlaying) {
-            MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
+            mediaPlayerManager = MediaPlayerManager.getInstance(this);
             mediaPlayerManager.playMusic(R.raw.mainmenu);
         }
 
@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
         setupButton(settingsButton);
         setupButton(creditsButton);
         setupButton(exitButton);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayerManager.releasePlayer();
     }
 
     private void setupButton(View view){

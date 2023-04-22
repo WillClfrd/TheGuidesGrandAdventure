@@ -41,6 +41,7 @@ public class GameOverController implements View.OnClickListener{
         if(view.getId() == R.id.end_game_main_menu_button){
             intent = new Intent(activity, MainActivity.class);
             activity.startActivity(intent);
+            activity.finish();
         }
         else if(view.getId() == R.id.end_game_restart_game_button){
             intent = new Intent(activity, GameActivity.class);
