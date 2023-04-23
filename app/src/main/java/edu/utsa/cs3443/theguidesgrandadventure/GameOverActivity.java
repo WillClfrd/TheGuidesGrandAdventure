@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,12 +42,18 @@ public class GameOverActivity extends AppCompatActivity {
 
         Button mainMenuButton = findViewById(R.id.end_game_main_menu_button);
         Button newGameButton = findViewById(R.id.end_game_restart_game_button);
+        Button leaderboardButton = findViewById(R.id.leaderboard_button);
+        ImageView userInputEnter = findViewById(R.id.user_input_enter_button);
+        Button backButton = findViewById(R.id.leaderboard_back_button);
 
         setupButton(mainMenuButton);
         setupButton(newGameButton);
+        setupButton(leaderboardButton);
+        setupButton(userInputEnter);
+        setupButton(backButton);
     }
 
-    private void setupButton(View view){
+    public void setupButton(View view){
         view.setOnClickListener(controller);
     }
 }

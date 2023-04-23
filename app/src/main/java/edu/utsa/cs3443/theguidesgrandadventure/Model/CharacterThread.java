@@ -14,10 +14,12 @@ public class CharacterThread extends Thread {
 
     private SoundManager soundManager;
     private String key = "score";
+    private String charImageKey = "character_image";
 
     public CharacterThread(GameActivity activity){
         this.activity = activity;
         this.soundManager = new SoundManager(activity);
+        this.isRunning = false;
         initInterval = 500;
         activity.getGameCanvas().setScoreCount(0);
         this.isPaused = false;
@@ -51,6 +53,7 @@ public class CharacterThread extends Thread {
         }
         Intent endScreenIntent = new Intent(activity, GameOverActivity.class);
         endScreenIntent.putExtra(key, activity.getGameCanvas().getScoreCount());
+        endScreenIntent.putExtra(charImageKey, activity.getGameCanvas().getCharacter().getCharImage());
         activity.startActivity(endScreenIntent);
     }
 
