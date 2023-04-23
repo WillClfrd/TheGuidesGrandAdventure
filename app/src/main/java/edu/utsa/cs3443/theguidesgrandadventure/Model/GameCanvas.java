@@ -18,7 +18,7 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class GameCanvas extends View {
-    private final Paint paint;
+    private Paint paint;
     private GameObject character;
     private GameObject collectible;
     private Bitmap background;
@@ -188,7 +188,7 @@ public class GameCanvas extends View {
         }
         int acTest = SettingsController.bkgId;
 
-        if((acTest == 0) || (acTest == 2) || (acTest == 3) || (acTest == 6)) {
+        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
             this.paint.setColor(getResources().getColor(R.color.light_blue));
         }
         else {
@@ -199,7 +199,7 @@ public class GameCanvas extends View {
         this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
 
-        if((acTest == 0) || (acTest == 2) || (acTest == 3) || (acTest == 6)) {
+        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
             this.paint.setColor(getResources().getColor(R.color.navy_blue));
         }
         else {
