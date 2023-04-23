@@ -1,7 +1,5 @@
 package edu.utsa.cs3443.theguidesgrandadventure;
 
-import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -41,8 +39,8 @@ public class CreditsActivity extends AppCompatActivity {
 
         Button returnMenuButton = findViewById(R.id.credit_return_button);
         ImageView will = findViewById(R.id.dev_image1);
-        ImageView rob = findViewById(R.id.dev_image2);;
-        ImageView meag = findViewById(R.id.dev_image3);;
+        ImageView rob = findViewById(R.id.dev_image2);
+        ImageView meag = findViewById(R.id.dev_image3);
         setupButton(returnMenuButton);
 
         int willLeft = R.drawable.will_left;
@@ -63,7 +61,7 @@ public class CreditsActivity extends AppCompatActivity {
                     meag.setImageResource(meagLeft);
                     countingUp = false;
                 }
-                else if(!countingUp){
+                else {
                     will.setImageResource(willRight);
                     rob.setImageResource(robRight);
                     meag.setImageResource(meagRight);
