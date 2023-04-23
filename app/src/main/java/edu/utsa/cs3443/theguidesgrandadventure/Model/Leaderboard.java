@@ -65,6 +65,24 @@ public class Leaderboard {
         else if(charName.equalsIgnoreCase("Will")){
             return BitmapFactory.decodeResource(activity.getResources(), R.drawable.will_left);
         }
+        else if(charName.equalsIgnoreCase("Meagan")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.meagan_left);
+        }
+        else if(charName.equalsIgnoreCase("Gman")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.gman_left);
+        }
+        else if(charName.equalsIgnoreCase("Joao")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.joao_left);
+        }
+        else if(charName.equalsIgnoreCase("Addy")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.addy_left);
+        }
+        else if(charName.equalsIgnoreCase("Trent")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.trent_left);
+        }
+        else if(charName.equalsIgnoreCase("Serena")){
+            return BitmapFactory.decodeResource(activity.getResources(), R.drawable.serena_left);
+        }
         else{
             return BitmapFactory.decodeResource(activity.getResources(), R.drawable.character_left);
         }
