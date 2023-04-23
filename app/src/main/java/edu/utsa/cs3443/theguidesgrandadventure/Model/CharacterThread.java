@@ -7,13 +7,12 @@ import edu.utsa.cs3443.theguidesgrandadventure.GameOverActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class CharacterThread extends Thread {
-    private GameActivity activity;
+    private final GameActivity activity;
     private boolean isRunning;
     private boolean isPaused;
-    private int initInterval;
+    private final int initInterval;
 
-    private SoundManager soundManager;
-    private String key = "score";
+    private final SoundManager soundManager;
 
     public CharacterThread(GameActivity activity){
         this.activity = activity;
@@ -35,21 +34,24 @@ public class CharacterThread extends Thread {
                     }
                     activity.getGameCanvas().invalidate();
                 }
-            } catch (Exception e) {
+            } catch (Exception ignored) {
             }
 
             try {
-                this.sleep(calcInterval());
+                //noinspection BusyWait
+                sleep(calcInterval());
                 if(SoundManager.soundPlaying) {
                     soundManager.playSound(R.raw.footstep);
                 }
-            } catch (Exception e) {
+
+            } catch (Exception ignored) {
             }
             if(isRunning) {
                 isRunning = !activity.getGameCanvas().boundaryCollisionCheck(activity.getGameCanvas().getCharacter());
             }
         }
         Intent endScreenIntent = new Intent(activity, GameOverActivity.class);
+        String key = "score";
         endScreenIntent.putExtra(key, activity.getGameCanvas().getScoreCount());
         activity.startActivity(endScreenIntent);
     }
@@ -63,16 +65,8 @@ public class CharacterThread extends Thread {
     }
 
     private int calcInterval(){
-        int temp;
 
-        if(initInterval - (50 * (activity.getGameCanvas().getScoreCount() / 10)) <= 50){
-            temp = 50;
-        }
-        else{
-            temp = initInterval - (50 * (activity.getGameCanvas().getScoreCount() / 10));
-        }
-
-        return temp;
+        return Math.max(initInterval - (50 * (activity.getGameCanvas().getScoreCount() / 10)), 50);
     }
 
     public boolean getIsRunning() {

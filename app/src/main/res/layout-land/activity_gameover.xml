@@ -13,19 +13,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/layout_background"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="82dp"
-        android:layout_marginLeft="82dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
         android:layout_marginBottom="21dp"
-        android:background="@drawable/gameoverb"
+        android:background="@drawable/gameover_banner"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/end_game_restart_game_button"
@@ -33,33 +36,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
         <TextView
             android:id="@+id/score_textview"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"
+            android:layout_width="650sp"
+            android:layout_height="75sp"
+            android:layout_gravity="center"
             android:fontFamily="@font/mainfont"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:paddingTop="20dp"
             android:text="@string/placeholder_string"
-            android:textColor="@color/light_blue"
+            android:textColor="#83B6FF"
             android:textSize="30sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="8dp" />
 
         <TextView
             android:id="@+id/follower_textview"
-            android:layout_width="500dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/mainfont"
-            android:gravity="center_horizontal"
+            android:layout_width="600sp"
+            android:layout_height="40sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/retro_computer_personal_use"
+            android:gravity="center"
             android:text="@string/placeholder_string"
-            android:textColor="@color/light_blue"
+            android:textColor="#83B6FF"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -74,12 +71,12 @@
         android:fontFamily="@font/mainfont"
         android:paddingEnd="20dp"
         android:text="Main Menu"
-        android:textColor="@color/light_blue"
+        android:textColor="#83B6FF"
         app:layout_constraintBaseline_toBaselineOf="@+id/end_game_restart_game_button"
         app:layout_constraintEnd_toStartOf="@+id/end_game_restart_game_button"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="HardcodedText,RtlSymmetry" />
 
 
     <Button
@@ -91,12 +88,12 @@
         android:fontFamily="@font/mainfont"
         android:paddingStart="20dp"
         android:text="New Game"
-        android:textColor="@color/light_blue"
+        android:textColor="#83B6FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/end_game_main_menu_button"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="HardcodedText,RtlSymmetry" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

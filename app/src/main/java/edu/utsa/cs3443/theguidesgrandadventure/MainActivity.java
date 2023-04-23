@@ -1,31 +1,51 @@
 package edu.utsa.cs3443.theguidesgrandadventure;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.MainController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
-import edu.utsa.cs3443.theguidesgrandadventure.Model.SoundManager;
 
-//Main Menu activity
-//Meagan
+/**
+ * The MainActivity class creates a MainController and acts as the activity for the
+ * main view of the app.
+ *
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
+ * @version 1.0
+ * @since 2023-04-20
+ */
 public class MainActivity extends AppCompatActivity {
     private MainController controller;
     MediaPlayerManager mediaPlayerManager;
+    double counter = 0;
+    boolean countingUp = true;
+    Handler handler = new Handler();
+
+    /**
+     * onCreate method for MainActivity that creates a controller, mediaPlayer, and buttons on
+     * startup for use by the program.
+     *
+     * @param savedInstanceState - Bundle of the settings class.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         controller = new MainController(this);
+
         if(MediaPlayerManager.isPlaying) {
             mediaPlayerManager = MediaPlayerManager.getInstance(this);
             mediaPlayerManager.playMusic(R.raw.mainmenu);
         }
 
+        ImageView titleImage = findViewById(R.id.title_logo);
         Button gameTestButton = findViewById(R.id.game_test_button);
         Button settingsButton = findViewById(R.id.settings_button);
         Button creditsButton = findViewById(R.id.credits_button);
@@ -34,7 +54,31 @@ public class MainActivity extends AppCompatActivity {
         setupButton(settingsButton);
         setupButton(creditsButton);
         setupButton(exitButton);
-    }
+
+        //Runnable that moves title image (creates sway animation)
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+
+                    if(countingUp) {
+                        counter = counter + 0.25;
+                        titleImage.setRotationY((float) counter);
+                        if (counter == 10) {
+                            countingUp = false;
+                        }
+                    }
+                    else {
+                        counter = counter - 0.25;
+                        titleImage.setRotationY((float) counter);
+                            if (counter == 0) {
+                                countingUp = true;
+                            }
+                        }
+                        handler.postDelayed(this, 100);
+                    }
+                };
+                handler.post(runnable);
+            }
 
     protected void onDestroy() {
         super.onDestroy();

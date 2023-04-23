@@ -13,23 +13,19 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
  * SettingsActivity. The class also holds a class constructor and onClick for button interactions.
  *
  * @author Jose Gracia
- * @version 1.0                     REMINDER!!! TALK WITH WILL AND MEAGAN AND FIGURE OUT WHAT WE SHOULD PUT FOR THIS.
- * @since 2023-04-20
+ * @version 1.0
+ * @since 2023-04-22
  */
 public class SettingsController implements View.OnClickListener {
 
     private final SettingsActivity activity;
-
     private boolean soundPlaying = true;
-
     private boolean musicPlaying = true;
-
     public static int bkgId = 0;
-
     public static int chrId = 0;
 
     /**
-     * Constructor method for SettingsController.
+     * Class constructor that creates a SettingsController.
      *
      * @param activity - This is the activity of SettingsActivity class.
      */
@@ -39,7 +35,7 @@ public class SettingsController implements View.OnClickListener {
 
     /**
      * onClick method for SettingsController, it controls interactions for the
-     * SettingsActivity.class.
+     * SettingsActivity class.
      *
      * @param view - This is a view item from the settings xml file.
      */
@@ -63,35 +59,37 @@ public class SettingsController implements View.OnClickListener {
             SoundManager.setSound();
         }
 
+        // Manages Background Buttons
         else if(view.getId() == R.id.bkg_button1) {
             bkgId = 1;
-            Toast.makeText(activity, "Background has been changed to GRASS", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: GRASS", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button2) {
             bkgId = 2;
-            Toast.makeText(activity, "Background has been changed to SAND", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: SAND", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button3) {
             bkgId = 3;
-            Toast.makeText(activity, "Background has been changed to SNOW", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: SNOW", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button4) {
             bkgId = 4;
-            Toast.makeText(activity, "Background has been changed to OCEAN", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: OCEAN", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button5) {
             bkgId = 5;
-            Toast.makeText(activity, "Background has been changed to CAVE", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: CAVE", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button6) {
             bkgId = 6;
-            Toast.makeText(activity, "Background has been changed to CITY", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: CITY", Toast.LENGTH_SHORT).show();
         }
         else if(view.getId() == R.id.bkg_button7) {
             bkgId = 7;
-            Toast.makeText(activity, "Background has been changed to VOLCANO", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Background selected: VOLCANO", Toast.LENGTH_SHORT).show();
         }
 
+        // Manages Character Buttons
         else if(view.getId() == R.id.chr_button1) {
             chrId = 1;
             Toast.makeText(activity, "Character selected: THE GUIDE", Toast.LENGTH_SHORT).show();

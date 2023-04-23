@@ -2,8 +2,6 @@ package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
 import android.graphics.Bitmap;
 
-import androidx.annotation.Nullable;
-
 public class GameObject {
     private char orientation;
     private Bitmap charImage;

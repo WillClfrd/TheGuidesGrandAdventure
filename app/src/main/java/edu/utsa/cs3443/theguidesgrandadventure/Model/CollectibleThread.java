@@ -3,10 +3,10 @@ package edu.utsa.cs3443.theguidesgrandadventure.Model;
 import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
 
 public class CollectibleThread extends Thread {
-    private GameActivity activity;
+    private final GameActivity activity;
     private boolean isRunning;
     private boolean isPaused;
-    private int interval;
+    private final int interval;
 
     public CollectibleThread(GameActivity activity){
         this.activity = activity;
@@ -24,12 +24,13 @@ public class CollectibleThread extends Thread {
                     activity.getGameCanvas().updateCollectibles();
                     activity.getGameCanvas().invalidate();
                 }
-            } catch (Exception e) {
+            } catch (Exception ignored) {
             }
 
             try {
-                this.sleep(interval);
-            } catch (Exception e) {
+                //noinspection BusyWait
+                sleep(interval);
+            } catch (Exception ignored) {
             }
             activity.getGameCanvas().setHasCollectible(!(activity.getGameCanvas().objectCollisionCheck(activity.getGameCanvas().getCharacter(), activity.getGameCanvas().getCollectible())));
             isRunning = activity.getCharacterThread().getIsRunning();

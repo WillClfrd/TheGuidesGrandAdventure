@@ -4,105 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:divider="@drawable/background"
+    android:baselineAligned="false"
     android:gravity="center_horizontal"
     android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="140dp"
+    <FrameLayout
+        android:layout_width="100sp"
         android:layout_height="match_parent"
         android:layout_weight="0"
-        android:background="@color/navy"
-        android:focusedByDefault="true"
-        android:forceHasOverlappingRendering="false"
-        android:orientation="horizontal"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp">
+        android:background="#050A3A">
+
+        <ImageView
+            android:id="@+id/layout_bkg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/layout_background" />
+
+        <View
+            android:id="@+id/color_bar_l"
+            android:layout_width="3sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#83B6FF" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="false"
-            android:focusedByDefault="false"
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            android:background="@color/clear"
+            android:focusedByDefault="true"
             android:forceHasOverlappingRendering="false"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp"
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
             android:paddingEnd="0dp">
 
-            <ImageButton
-                android:id="@+id/in_game_menu_button"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@color/clear"
-                android:contentDescription="@string/placeholder_string"
-                app:srcCompat="@drawable/menuicon" />
+            <LinearLayout
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:focusableInTouchMode="false"
+                android:focusedByDefault="false"
+                android:forceHasOverlappingRendering="false"
+                android:paddingStart="0dp"
+                android:paddingTop="0dp"
+                android:paddingEnd="0dp">
+
+                <ImageButton
+                    android:id="@+id/in_game_menu_button"
+                    android:layout_width="70sp"
+                    android:layout_height="60sp"
+                    android:layout_gravity="center"
+                    android:background="@color/clear"
+                    android:contentDescription="@string/placeholder_string"
+                    android:scaleType="fitCenter"
+                    android:translationX="15sp"
+                    app:srcCompat="@drawable/menu_bars" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/arrow_layout_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|end"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/up_arrow"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@color/clear"
-                android:contentDescription="@string/placeholder_string"
-                app:srcCompat="@drawable/up_arrow" />
-
-            <ImageButton
-                android:id="@+id/down_arrow"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@color/clear"
-                android:contentDescription="@string/placeholder_string"
-                app:srcCompat="@drawable/down_arrow" />
-        </LinearLayout>
-    </LinearLayout>
+    </FrameLayout>
 
     <FrameLayout
         android:id="@+id/game_frame_layout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/purple_500">
+        android:background="#020621">
 
         <LinearLayout
             android:id="@+id/game_view_ll"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal" />
+            android:orientation="horizontal">
+
+        </LinearLayout>
     </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/arrow_layout_2"
-        android:layout_width="140dp"
+    <FrameLayout
+        android:layout_width="180dp"
         android:layout_height="match_parent"
-        android:layout_weight="0"
-        android:background="@color/navy"
-        android:gravity="center|start"
-        android:paddingStart="10dp"
-        android:paddingEnd="0dp">
+        android:background="#050A3A">
 
-        <ImageButton
-            android:id="@+id/left_arrow"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+        <ImageView
+            android:id="@+id/layout_bkg2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/layout_background" />
+
+        <View
+            android:id="@+id/color_bar_r"
+            android:layout_width="3sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#83B6FF" />
+
+        <ImageView
+            android:id="@+id/team_logo_game"
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:translationY="-10sp"
+            app:srcCompat="@drawable/team_logo2" />
+
+        <LinearLayout
+            android:id="@+id/arrow_layout_2"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0"
             android:background="@color/clear"
-            android:contentDescription="@string/placeholder_string"
-            app:srcCompat="@drawable/left_arrow" />
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            tools:ignore="ObsoleteLayoutParam">
 
-        <ImageButton
-            android:id="@+id/right_arrow"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@color/clear"
-            android:contentDescription="@string/placeholder_string"
-            app:srcCompat="@drawable/right_arrow" />
+            <TableLayout
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:rotationX="0"
+                android:rotationY="0"
+                android:scaleX="1"
+                android:scaleY="1"
+                tools:ignore="UselessParent">
 
-    </LinearLayout>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/up_arrow"
+                        android:layout_width="55sp"
+                        android:layout_height="55sp"
+                        android:layout_gravity="center"
+                        android:background="@color/clear"
+                        android:contentDescription="@string/placeholder_string"
+                        android:foregroundGravity="center"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/up_arrow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/left_arrow"
+                        android:layout_width="55sp"
+                        android:layout_height="55sp"
+                        android:layout_gravity="center"
+                        android:background="@color/clear"
+                        android:contentDescription="@string/placeholder_string"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/left_arrow" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        app:srcCompat="@drawable/pad_center" />
+
+                    <ImageButton
+                        android:id="@+id/right_arrow"
+                        android:layout_width="55sp"
+                        android:layout_height="55sp"
+                        android:layout_gravity="center"
+                        android:background="@color/clear"
+                        android:contentDescription="@string/placeholder_string"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/right_arrow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/down_arrow"
+                        android:layout_width="55sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/clear"
+                        android:contentDescription="@string/placeholder_string"
+                        android:foregroundGravity="center"
+                        android:scaleType="fitCenter"
+                        app:srcCompat="@drawable/down_arrow" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
