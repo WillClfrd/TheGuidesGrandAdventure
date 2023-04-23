@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000C38">
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/layout_background" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,8 +28,8 @@
         <ImageView
             android:id="@+id/rri_logo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/rri2" />
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/team_logo" />
 
         <Space
             android:layout_width="match_parent"
@@ -43,201 +42,303 @@
             android:layout_gravity="center"
             android:fontFamily="@font/mainfont"
             android:gravity="center"
-            android:text="Credits:"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp" />
+            android:text="CREDITS:"
+            android:textColor="#83B6FF"
+            android:textSize="20sp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />
 
-        <TableRow
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="100sp">
-
-            <FrameLayout
-                android:layout_width="100sp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/dev_image1"
-                    android:layout_width="80sp"
-                    android:layout_height="80sp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/will_left" />
-            </FrameLayout>
+            android:layout_height="430sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/dev_name1"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/mainfont"
-                    android:gravity="center"
-                    android:text="Will C."
-                    android:textColor="#A6F2FF"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/dev_title1"
+                    android:id="@+id/developer_header"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center"
-                    android:text="WillClfrd"
-                    android:textColor="#A6F2FF"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-        </TableRow>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="100sp">
-
-            <FrameLayout
-                android:layout_width="100sp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/dev_image2"
-                    android:layout_width="80sp"
-                    android:layout_height="80sp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/meagan_left" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/dev_name2"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
                     android:fontFamily="@font/mainfont"
                     android:gravity="center"
-                    android:text="Meagan B."
-                    android:textColor="#A6F2FF"
-                    android:textSize="20dp" />
+                    android:text="PROJECT DEVELOPERS:"
+                    android:textColor="#83B6FF"
+                    android:textSize="16sp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp">
+
+                    <FrameLayout
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/dev_image1"
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/will_left" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dev_name1"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/mainfont"
+                            android:gravity="center"
+                            android:text="Will C."
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dev_title1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/retro_computer_personal_use"
+                            android:gravity="center"
+                            android:text="WillClfrd"
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp">
+
+                    <FrameLayout
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/dev_image2"
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/rob_left" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dev_name3"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/mainfont"
+                            android:gravity="center"
+                            android:text="Jose G."
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dev_title3"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/retro_computer_personal_use"
+                            android:gravity="center"
+                            android:text="Jrgg1"
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp">
+
+                    <FrameLayout
+                        android:layout_width="100sp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/dev_image3"
+                            android:layout_width="80sp"
+                            android:layout_height="80sp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/meagan_left" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/dev_name2"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/mainfont"
+                            android:gravity="center"
+                            android:text="Meagan B."
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/dev_title2"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/retro_computer_personal_use"
+                            android:gravity="center"
+                            android:text="Mea08"
+                            android:textColor="#83B6FF"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
 
                 <TextView
-                    android:id="@+id/dev_title2"
+                    android:id="@+id/developer_header2"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center"
-                    android:text="Mea08"
-                    android:textColor="#A6F2FF"
-                    android:textSize="24dp" />
-            </LinearLayout>
-
-        </TableRow>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="100sp">
-
-            <FrameLayout
-                android:layout_width="100sp"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/dev_image3"
-                    android:layout_width="80sp"
-                    android:layout_height="80sp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/rob_left" />
-            </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/dev_name3"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
                     android:fontFamily="@font/mainfont"
                     android:gravity="center"
-                    android:text="Jose G."
-                    android:textColor="#A6F2FF"
-                    android:textSize="20dp" />
+                    android:text="SPECIAL THANKS TO:"
+                    android:textColor="#83B6FF"
+                    android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/dev_title3"
+                <Space
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:fontFamily="sans-serif-condensed"
-                    android:gravity="center"
-                    android:text="Jrgg1"
-                    android:textColor="#A6F2FF"
-                    android:textSize="24dp" />
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/music_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/retro_computer_personal_use"
+                        android:gravity="center"
+                        android:text="Music From:"
+                        android:textColor="#83B6FF"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/logo_pixabay"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/pixabay_icon" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sound_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/retro_computer_personal_use"
+                        android:gravity="center"
+                        android:text="Sounds from:"
+                        android:textColor="#83B6FF"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/logo_freesound"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/freesound_icon"
+                        android:contentDescription="" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/gfx_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="40sp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/retro_computer_personal_use"
+                        android:gravity="center"
+                        android:text="Graphics from:"
+                        android:textColor="#83B6FF"
+                        android:textSize="20sp" />
+
+                    <ImageView
+                        android:id="@+id/rrintlogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/team_logo"
+                        android:contentDescription="TODO" />
+
+                    <TextView
+                        android:id="@+id/gfx_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/retro_computer_personal_use"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="#83B6FF"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
             </LinearLayout>
-
-        </TableRow>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/dev_name"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:fontFamily="sans-serif-condensed-light"
-                android:gravity="center"
-                android:text="Free Music from:"
-                android:textColor="#A6F2FF"
-                android:textSize="30dp" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:srcCompat="@drawable/pixabay_logo" />
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+        </ScrollView>
 
         <Button
             android:id="@+id/credit_return_button"
             android:layout_width="200dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="#000C38"
+            android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
             android:text="Back"
-            android:textColor="#A6F2FF"
-            android:textSize="20dp" />
+            android:textColor="#83B6FF"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

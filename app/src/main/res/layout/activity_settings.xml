@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/layout_background" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:fontFamily="@font/mainfont"
             android:text="SETTINGS"
             android:textAlignment="center"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textSize="36dp" />
 
         <ToggleButton
@@ -44,9 +44,10 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#000C38"
+            android:alpha=".9"
+            android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textOff="Toggle Music"
             android:textOn="Toggle Music"
             android:textSize="20dp" />
@@ -56,9 +57,10 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#000C38"
+            android:alpha=".9"
+            android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textOff="Toggle SFX"
             android:textOn="Toggle SFX"
             android:textSize="20dp" />
@@ -72,7 +74,7 @@
             android:gravity="center"
             android:text="CHOOSE CHARACTER:"
             android:textAlignment="center"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textSize="16dp" />
 
         <HorizontalScrollView
@@ -250,7 +252,7 @@
             android:gravity="center"
             android:text="CHOOSE BACKGROUND:"
             android:textAlignment="center"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textSize="16dp" />
 
         <HorizontalScrollView
@@ -388,34 +390,35 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:backgroundTint="#000C38"
+            android:alpha=".9"
+            android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
             android:text="Back"
-            android:textColor="#A6F2FF"
+            android:textColor="#83B6FF"
             android:textSize="20dp" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="150sp">
+            android:layout_height="140sp">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="120sp"
                 android:layout_gravity="center|center_horizontal"
-                app:srcCompat="@drawable/tgga" />
+                app:srcCompat="@drawable/main_menu_logo3" />
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="80sp">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="250sp"
+                android:layout_height="80sp"
                 android:layout_gravity="center|center_horizontal"
-                app:srcCompat="@drawable/rri" />
+                app:srcCompat="@drawable/team_logo" />
         </FrameLayout>
 
     </LinearLayout>

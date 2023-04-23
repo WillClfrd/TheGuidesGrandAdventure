@@ -6,6 +6,15 @@ import android.media.MediaPlayer;
 
 import java.io.IOException;
 
+/**
+ * MediaPlayerManager.java is a class that creates a MediaPlayer object and manages its use
+ * across the different views of the app, more specifically for playing/pausing or changing
+ * the audio being played.
+ *
+ * @author Jose Gracia
+ * @version 1.0
+ * @since 2023-04-22
+ */
 public class MediaPlayerManager {
     private static MediaPlayerManager instance;
     private MediaPlayer mediaPlayer;
@@ -13,10 +22,20 @@ public class MediaPlayerManager {
     private int currentResourceId;
     public static boolean isPlaying = true;
 
+    /**
+     * Class constructor that creates a MediaPlayerManager.
+     *
+     * @param context - Context object that is used to open resources.
+     */
     private MediaPlayerManager(Context context) {
         resources = context.getResources();
     }
 
+    /**
+     * Gets instance of Mediaplayer for the activity calling it.
+     *
+     * @param context - Context object that is used to open resources.
+     */
     public static synchronized MediaPlayerManager getInstance(Context context) {
         if (instance == null) {
             instance = new MediaPlayerManager(context);
@@ -24,6 +43,12 @@ public class MediaPlayerManager {
         return instance;
     }
 
+    /**
+     * Enables MediaPlayer object to play audio for the app, if the global boolean is set to true
+     * (changed in settings).
+     *
+     * @param resourceId - Integer id of the specific audio file passed.
+     */
     public void playMusic(int resourceId) {
         if (resourceId != currentResourceId) {
             try {
@@ -44,11 +69,14 @@ public class MediaPlayerManager {
             }
         }
         mediaPlayer.setLooping(true);
-        mediaPlayer.setVolume(0.25f,0.25f);
+        mediaPlayer.setVolume(0.25f,0.25f); // Too loud :(
         mediaPlayer.start();
         isPlaying = true;
     }
 
+    /**
+     * Toggles whether the Mediaplayer is playing sound or not. (Accessed by settings)
+     */
     public void toggleSound() {
         if(isPlaying) {
             mediaPlayer.setVolume(0f,0f);
@@ -60,6 +88,9 @@ public class MediaPlayerManager {
         }
     }
 
+    /**
+     * Releases MediaPlayer object, normally upon exit of the entire app.
+     */
     public void releasePlayer() {
         mediaPlayer.release();
     }

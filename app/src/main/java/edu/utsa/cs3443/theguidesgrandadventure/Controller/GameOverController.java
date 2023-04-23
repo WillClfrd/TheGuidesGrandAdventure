@@ -14,11 +14,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Log;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,9 +54,12 @@ public class GameOverController implements View.OnClickListener{
     private TextView followerText;
     private int nameLengthLimit = 15;
 
+    Handler handler = new Handler();
+
     @SuppressLint("SetTextI18n")
     public GameOverController(GameOverActivity activity){
         this.activity = activity;
+        String key = "score";
         this.score = activity.getIntent().getIntExtra(key, 0);
         this.charName = findCharName(charId);
         this.scores = new Leaderboard();
@@ -81,14 +84,19 @@ public class GameOverController implements View.OnClickListener{
         followerText = activity.findViewById(R.id.follower_textview);
         System.out.println("testing");
 
-        if((score / 5) == 1) {
+        if(score == 0) {
+            followerText.setText("How did you even manage this???");
+        }
+        else if(score == 5) {
             followerText.setText("You Found " + (score / 5) + " Lost Tour Member!");
+        }
+        else if(score == 10) {
+            followerText.setText("You Found " + (score / 5) + " Lost Tour Members!");
         }
         else {
             followerText.setText("You Found " + (score / 5) + " Lost Tour Members!");
         }
 
-        Log.d("checkForHighScore Result", String.valueOf(checkForHighScore()));
         if(checkForHighScore() == -1 && scores.getScoresSize() < 5){
             addUsernamePopup();
         }
@@ -98,10 +106,28 @@ public class GameOverController implements View.OnClickListener{
         else{
             addUsernamePopup();
         }
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if(score >= 10) {
+                    int color = Color.rgb(
+                            (int) (Math.random() * 255),
+                            (int) (Math.random() * 255),
+                            (int) (Math.random() * 255)
+                    );
+                    scoreText.setTextColor(color);
+                    followerText.setTextColor(color);
+                    handler.postDelayed(this, 250);
+                }
+            }
+        };
+        handler.post(runnable);
     }
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         if(view.getId() == R.id.end_game_main_menu_button){
             intent = new Intent(activity, MainActivity.class);
             activity.startActivity(intent);

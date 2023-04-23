@@ -2,6 +2,7 @@ package edu.utsa.cs3443.theguidesgrandadventure;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -10,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.CollectibleThread;
@@ -24,15 +27,15 @@ public class GameActivity extends AppCompatActivity {
     private GameController controller;
     private CharacterThread characterThread;
     private CollectibleThread collectibleThread;
-    private MediaPlayerManager mediaPlayerManager;
 
+    @SuppressLint("AppCompatMethod")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         setContentView(R.layout.activity_game);
 
@@ -44,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
         controller = new GameController(this);
 
         if(MediaPlayerManager.isPlaying) {
-            mediaPlayerManager = MediaPlayerManager.getInstance(this);
+            MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
             mediaPlayerManager.playMusic(R.raw.gamemusic);
         }
 

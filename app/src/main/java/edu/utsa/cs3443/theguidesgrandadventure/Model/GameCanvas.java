@@ -161,13 +161,10 @@ public class GameCanvas extends View {
 
         if(this.isInitialDraw) {
             this.background = Bitmap.createScaledBitmap(this.background, getWidth(), getHeight(), true);
-
             this.character.setCharImageRight(Bitmap.createScaledBitmap(this.character.getCharImageRight(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
             this.character.setCharImageLeft(Bitmap.createScaledBitmap(this.character.getCharImageLeft(), this.character.getObjectOffset(),this.character.getObjectOffset(),true));
             this.character.setCharImage(this.character.getCharImageRight());
-
             this.collectible.setCharImage(Bitmap.createScaledBitmap(this.collectible.getCharImage(), this.collectible.getObjectOffset(), this.collectible.getObjectOffset(), true));
-
             this.character.setX((int)((int)(getWidth() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
             this.character.setY((int)((int)(getHeight() / 2) / this.character.getObjectOffset()) * this.character.getObjectOffset());
 
@@ -183,33 +180,33 @@ public class GameCanvas extends View {
             this.isInitialDraw = false;
         }
 
-
-
         canvas.drawBitmap(this.background, 0,0,this.paint);
         canvas.drawBitmap(this.character.getCharImage(), this.character.getX(), this.character.getY(), this.paint);
         canvas.drawBitmap(this.collectible.getCharImage(), this.collectible.getX(), this.collectible.getY(), this.paint);
         for(i = 0; i < this.followers.size(); ++i){
             canvas.drawBitmap(this.followers.get(i).getCharImage(), this.followers.get(i).getX(), this.followers.get(i).getY(), this.paint);
         }
-        if(SettingsController.bkgId == 3 || SettingsController.bkgId == 6) {
+        int acTest = SettingsController.bkgId;
+
+        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
             this.paint.setColor(getResources().getColor(R.color.light_blue));
         }
         else {
-            this.paint.setColor(getResources().getColor(R.color.blue_200));
+            this.paint.setColor(getResources().getColor(R.color.navy_blue));
         }
         this.paint.setTextSize(60);
-        typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
+        typeface = ResourcesCompat.getFont(getContext(), R.font.retro_computer_personal_use);
         this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
 
-        if(SettingsController.bkgId == 3 || SettingsController.bkgId == 6) {
-            this.paint.setColor(getResources().getColor(R.color.blue_200));
+        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
+            this.paint.setColor(getResources().getColor(R.color.navy_blue));
         }
         else {
             this.paint.setColor(getResources().getColor(R.color.light_blue));
         }
         this.paint.setTextSize(60);
-        typeface = ResourcesCompat.getFont(getContext(), R.font.mainfont);
+        typeface = ResourcesCompat.getFont(getContext(), R.font.retro_computer_personal_use);
         this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 50, 100, this.paint);
     }

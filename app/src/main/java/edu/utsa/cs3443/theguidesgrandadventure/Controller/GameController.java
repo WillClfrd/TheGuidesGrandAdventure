@@ -25,16 +25,16 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
 //GameView controller
 //William
+@SuppressWarnings("ALL")
 public class GameController implements View.OnClickListener{
-    private GameActivity activity;
+    private final GameActivity activity;
     private FrameLayout gameLayout;
     private LinearLayout inGameMenu;
     private boolean isInGameMenuUp;
-    private int menuHeaderId = 1;
-    private int mainMenuId = 2;
-    private int settingsId = 3;
-    private int newGameId = 4;
-    private int returnId = 5;
+    private final int mainMenuId = 2;
+    private final int settingsId = 3;
+    private final int newGameId = 4;
+    private final int returnId = 5;
 
     public GameController(GameActivity activity){
         this.activity = activity;
@@ -93,22 +93,24 @@ public class GameController implements View.OnClickListener{
 
         this.gameLayout = this.activity.findViewById(R.id.game_frame_layout);
 
-        Typeface mainT = ResourcesCompat.getFont(activity, R.font.mainfont);
-        int blue = activity.getResources().getColor(R.color.light_blue);
-        int navy = activity.getResources().getColor(R.color.navy);
+        Typeface headT = ResourcesCompat.getFont(activity, R.font.mainfont);
+        Typeface mainT = ResourcesCompat.getFont(activity, R.font.retro_computer_personal_use);
+        int lBlue = activity.getResources().getColor(R.color.light_blue);
+        int nBlue = activity.getResources().getColor(R.color.navy);
 
         inGameMenu = new LinearLayout(this.activity);
         inGameMenu.setOrientation(VERTICAL);
         inGameMenu.setGravity(CENTER);
-        inGameMenu.setBackgroundColor(navy);
+        inGameMenu.setBackgroundColor(nBlue);
         inGameMenu.setAlpha((float)0.9);
         this.gameLayout.addView(inGameMenu, menuParams);
 
         TextView menuHeader = new TextView(this.activity);
-        inGameMenu.setId(this.menuHeaderId);
-        menuHeader.setTypeface(mainT);
-        menuHeader.setTextSize((float)32.0);
-        menuHeader.setTextColor(blue);
+        int menuHeaderId = 1;
+        inGameMenu.setId(menuHeaderId);
+        menuHeader.setTypeface(headT);
+        menuHeader.setTextSize((float)30.0);
+        menuHeader.setTextColor(lBlue);
         menuHeader.setPadding(0,0,0,40);
         menuHeader.setText("GAME PAUSED");
         inGameMenu.addView(menuHeader, headerParams);
@@ -118,7 +120,7 @@ public class GameController implements View.OnClickListener{
         mainMenuButton.setId(this.mainMenuId);
         mainMenuButton.setTypeface(mainT);
         mainMenuButton.setTextSize((float)20.0);
-        mainMenuButton.setTextColor(blue);
+        mainMenuButton.setTextColor(lBlue);
         mainMenuButton.getBackground().setColorFilter(ContextCompat.getColor(activity, R.color.blue_200), PorterDuff.Mode.SRC);
         mainMenuButton.setText("Main Menu");
         inGameMenu.addView(mainMenuButton, buttonParams);
@@ -129,7 +131,7 @@ public class GameController implements View.OnClickListener{
         settingsButton.setId(this.settingsId);
         settingsButton.setTypeface(mainT);
         settingsButton.setTextSize((float)20.0);
-        settingsButton.setTextColor(blue);
+        settingsButton.setTextColor(lBlue);
         settingsButton.getBackground().setColorFilter(ContextCompat.getColor(activity, R.color.blue_200), PorterDuff.Mode.SRC);
         settingsButton.setText("Settings");
         inGameMenu.addView(settingsButton, buttonParams);
@@ -140,7 +142,7 @@ public class GameController implements View.OnClickListener{
         newGameButton.setId(this.newGameId);
         newGameButton.setTypeface(mainT);
         newGameButton.setTextSize((float)20.0);
-        newGameButton.setTextColor(blue);
+        newGameButton.setTextColor(lBlue);
         newGameButton.getBackground().setColorFilter(ContextCompat.getColor(activity, R.color.blue_200), PorterDuff.Mode.SRC);
         newGameButton.setText("New Game");
         inGameMenu.addView(newGameButton, buttonParams);
@@ -151,7 +153,7 @@ public class GameController implements View.OnClickListener{
         returnToGameButton.setId(this.returnId);
         returnToGameButton.setTypeface(mainT);
         returnToGameButton.setTextSize((float)20.0);
-        returnToGameButton.setTextColor(blue);
+        returnToGameButton.setTextColor(lBlue);
         returnToGameButton.getBackground().setColorFilter(ContextCompat.getColor(activity, R.color.blue_200), PorterDuff.Mode.SRC);
         returnToGameButton.setText("Resume");
         inGameMenu.addView(returnToGameButton, buttonParams);

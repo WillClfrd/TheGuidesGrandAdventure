@@ -31,10 +31,14 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        // New SettingsController for this activity.
         settingsController = new SettingsController(this);
+
+        // Initializes music and sound toggle buttons.
         ToggleButton musicToggleButton = findViewById(R.id.music_button);
         ToggleButton soundToggleButton = findViewById(R.id.sound_button);
 
+        // Initializes character choice buttons.
         Button characterButton = findViewById(R.id.chr_button1);
         Button characterButton2 = findViewById(R.id.chr_button2);
         Button characterButton3 = findViewById(R.id.chr_button3);
@@ -45,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         Button characterButton8 = findViewById(R.id.chr_button8);
         Button characterButton9 = findViewById(R.id.chr_button9);
 
+        // Initializes background choice buttons.
         Button backgroundButton = findViewById(R.id.bkg_button1);
         Button backgroundButton2 = findViewById(R.id.bkg_button2);
         Button backgroundButton3 = findViewById(R.id.bkg_button3);
@@ -54,9 +59,11 @@ public class SettingsActivity extends AppCompatActivity {
         Button backgroundButton7 = findViewById(R.id.bkg_button7);
         Button returnMenuButton = findViewById(R.id.return_button);
 
+        // Sets toggle buttons for music and sounds on settings view.
         setupButton(musicToggleButton);
         setupButton(soundToggleButton);
 
+        // Sets up character choice buttons on settings view.
         setupButton(characterButton);
         setupButton(characterButton2);
         setupButton(characterButton3);
@@ -67,6 +74,7 @@ public class SettingsActivity extends AppCompatActivity {
         setupButton(characterButton8);
         setupButton(characterButton9);
 
+        // Sets up background choice buttons on settings view.
         setupButton(backgroundButton);
         setupButton(backgroundButton2);
         setupButton(backgroundButton3);
@@ -75,11 +83,11 @@ public class SettingsActivity extends AppCompatActivity {
         setupButton(backgroundButton6);
         setupButton(backgroundButton7);
 
+        // Sets up return button on settings view.
         setupButton(returnMenuButton);
     }
 
     /**
-     *
      * @param view This is a view item from the settings xml file, normally a button.
      */
     private void setupButton(View view){
