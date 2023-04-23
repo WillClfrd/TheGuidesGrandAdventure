@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
                     if(countingUp) {
                         counter = counter + 0.25;
-                        titleImage.setRotationY((float) counter);
-                        if (counter == 10) {
+                        titleImage.setRotationY((float) counter - 10);
+                        if (counter == 20) {
                             countingUp = false;
                         }
                     }
                     else {
                         counter = counter - 0.25;
-                        titleImage.setRotationY((float) counter);
+                        titleImage.setRotationY((float) counter - 10);
                             if (counter == 0) {
                                 countingUp = true;
                             }

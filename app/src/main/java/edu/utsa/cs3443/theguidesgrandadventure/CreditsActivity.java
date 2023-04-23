@@ -1,8 +1,12 @@
 package edu.utsa.cs3443.theguidesgrandadventure;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +24,9 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.CreditsController;
 public class CreditsActivity extends AppCompatActivity {
 
     private CreditsController creditsController;
+    Handler handler = new Handler();
+
+    boolean countingUp = true;
 
     /**
      * onCreate method for SettingsActivity that creates a controller, and a return button.
@@ -33,7 +40,39 @@ public class CreditsActivity extends AppCompatActivity {
         creditsController = new CreditsController(this);
 
         Button returnMenuButton = findViewById(R.id.credit_return_button);
+        ImageView will = findViewById(R.id.dev_image1);
+        ImageView rob = findViewById(R.id.dev_image2);;
+        ImageView meag = findViewById(R.id.dev_image3);;
         setupButton(returnMenuButton);
+
+        int willLeft = R.drawable.will_left;
+        int willRight = R.drawable.will_right;
+        int robLeft = R.drawable.rob_left;
+        int robRight = R.drawable.rob_right;
+        int meagLeft = R.drawable.meagan_left;
+        int meagRight = R.drawable.meagan_right;
+
+        // Character walking runnable.
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+
+                if(countingUp) {
+                    will.setImageResource(willLeft);
+                    rob.setImageResource(robLeft);
+                    meag.setImageResource(meagLeft);
+                    countingUp = false;
+                }
+                else if(!countingUp){
+                    will.setImageResource(willRight);
+                    rob.setImageResource(robRight);
+                    meag.setImageResource(meagRight);
+                    countingUp = true;
+                }
+                handler.postDelayed(this, 500);
+            }
+        };
+        handler.post(runnable);
     }
 
     /**
