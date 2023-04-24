@@ -67,7 +67,7 @@ https://pixabay.com/ - Royalty Free Music and Sounds.
 
 https://freesound.org/ - Royalty Free Sounds.
 
-https://www.dafont.com/ - Fonts and Typefaces for free personal/complete use.
+https://www.dafont.com/ - Fonts and Typefaces for free personal/complete use. (Highly reccomend for fellow graphic designer nerds!)
 
 https://www.spriters-resource.com/ds_dsi/pokemonblack2white2/ - Pokemon Black/White 2 Spritesheets 
 
