@@ -95,10 +95,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#181245"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Guide"
                     android:textColor="#78d1f2"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -111,10 +111,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#455daa"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Rob"
                     android:textColor="#FF8F8F"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -127,10 +127,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#b8b8c0"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Will"
                     android:textColor="#302f2f"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -145,10 +145,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#b71f40"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Megan"
                     android:textColor="#49030f"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -163,10 +163,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#313050"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Iker"
                     android:textColor="#a1b9c9"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -181,10 +181,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#141414"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Joao"
                     android:textColor="#eebf1c"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -199,10 +199,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#a21d21"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Addy"
                     android:textColor="#fedf8b"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -217,10 +217,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#9b1c1f"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Trent"
                     android:textColor="#FFFFFF"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -235,10 +235,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#ECEBEB"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Serena"
                     android:textColor="#171717"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -273,10 +273,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#036304"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Grass"
                     android:textColor="#ACFFA6"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -289,10 +289,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#d0c880"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Sand"
                     android:textColor="#7A6D4D"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -305,10 +305,10 @@
                     android:layout_gravity="center"
                     android:alpha=".75"
                     android:backgroundTint="#d8e8f0"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Snow"
                     android:textColor="#387695"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -323,10 +323,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#5878d8"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Ocean"
                     android:textColor="#08257C"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -341,10 +341,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#b8a088"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="Cave"
                     android:textColor="#5E4B38"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -359,10 +359,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#c8c8c8"
-                    android:fontFamily="sans-serif-condensed"
+                    android:fontFamily="@font/buttonfont"
                     android:text="City"
                     android:textColor="#5C5C5C"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <Space
                     android:layout_width="15sp"
@@ -377,10 +377,10 @@
                     android:layout_weight="1"
                     android:alpha=".75"
                     android:backgroundTint="#e08878"
-                    android:fontFamily="sans-serif-condensed"
-                    android:text="Volcano"
+                    android:fontFamily="@font/buttonfont"
+                    android:text="Vol"
                     android:textColor="#752F23"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </HorizontalScrollView>

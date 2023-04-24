@@ -55,9 +55,6 @@ public class GameCanvas extends View {
         this.followerImagesLeft = new Bitmap[this.numberOfFollowers];
 
             switch (SettingsController.chrId) {
-                case(1):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
-                    break;
                 case(2):
                     this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.rob_right), BitmapFactory.decodeResource(getResources(), R.drawable.rob_left));
                     break;
@@ -88,9 +85,6 @@ public class GameCanvas extends View {
             }
 
             switch(SettingsController.bkgId) {
-                case(1):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
-                    break;
                 case(2):
                     this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
                     break;
@@ -110,7 +104,7 @@ public class GameCanvas extends View {
                     this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
                     break;
                 default:
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.game_background);
+                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
                     break;
             }
 
@@ -179,7 +173,8 @@ public class GameCanvas extends View {
 
             this.isInitialDraw = false;
         }
-
+        updateImage();
+        updateBackground();
         canvas.drawBitmap(this.background, 0,0,this.paint);
         canvas.drawBitmap(this.character.getCharImage(), this.character.getX(), this.character.getY(), this.paint);
         canvas.drawBitmap(this.collectible.getCharImage(), this.collectible.getX(), this.collectible.getY(), this.paint);
@@ -188,7 +183,7 @@ public class GameCanvas extends View {
         }
         int acTest = SettingsController.bkgId;
 
-        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
+        if((acTest == 2) || (acTest == 3) || (acTest == 5) || (acTest == 6) || (acTest == 7)) {
             this.paint.setColor(getResources().getColor(R.color.light_blue));
         }
         else {
@@ -199,7 +194,7 @@ public class GameCanvas extends View {
         this.paint.setTypeface(typeface);
         canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
 
-        if(acTest == 0 || acTest == 2 || acTest == 3 || acTest == 6) {
+        if((acTest == 2) || (acTest == 3) || (acTest == 5) || (acTest == 6) || (acTest == 7)) {
             this.paint.setColor(getResources().getColor(R.color.navy_blue));
         }
         else {
@@ -304,6 +299,73 @@ public class GameCanvas extends View {
             }
 
             ++this.scoreCount;
+        }
+    }
+
+    public void updateImage() {
+        switch (SettingsController.chrId) {
+            case(2):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.rob_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.rob_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(3):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.will_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.will_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(4):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.meagan_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.meagan_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(5):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gman_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.gman_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(6):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.joao_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.joao_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(7):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.addy_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.addy_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(8):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.trent_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.trent_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            case(9):
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.serena_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.serena_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+            default:
+                this.character.setCharImageLeft(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.character_left), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                this.character.setCharImageRight(Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), this.defaultObjectOffset, this.defaultObjectOffset, true));
+                break;
+        }
+    }
+
+    public void updateBackground() {
+        switch(SettingsController.bkgId) {
+            case(2):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background), getWidth(), getHeight(), true);
+                break;
+            case(3):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background), getWidth(), getHeight(), true);
+                break;
+            case(4):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background), getWidth(), getHeight(), true);
+                break;
+            case(5):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.cave_background), getWidth(), getHeight(), true);
+                break;
+            case(6):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.brick_background), getWidth(), getHeight(), true);
+                break;
+            case(7):
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background), getWidth(), getHeight(), true);
+                break;
+            default:
+                this.background = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background), getWidth(), getHeight(), true);
+                break;
         }
     }
 
