@@ -41,9 +41,13 @@ Made with [contrib.rocks](https://contrib.rocks).
 These apply to assets in the game that were sourced from outside creators.
 
 https://pixabay.com/ - Royalty Free Music and Sounds.
+
 https://freesound.org/ - Royalty Free Sounds.
+
 https://www.dafont.com/ - Fonts and Typefaces for free personal/complete use.
+
 https://www.spriters-resource.com/ds_dsi/pokemonblack2white2/ - Pokemon Black/White 2 Spritesheets 
+
 (Used mainly for inspiration with some of the more basic characters directly used.)
 
 ## License
