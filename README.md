@@ -17,13 +17,21 @@ The Guides Grand Adventure is a simple android java game inspired by the old 8-b
 ## Program Examples
 
 <p align="center">
- <img src="https://media.giphy.com/media/F3wPk4Bf4SLpCHkT40/giphy.gif" width="238" height="480">
- <img  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk5NWQ1MTVjMmI0MjYyMTVkMjc5NTk1NzJlM2QwZGQ3ZjQ1ZTViMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KyZa2SMrEAN4LW6C6c/giphy.gif" width="238" height="480">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjQyNWMzYjQ4ZTYzMGViNDAyMTlhOTFkYWM3ZDFhYTA0N2U2YTg3YyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/AxgLIm8odemBFVSXoe/giphy.gif" width="238" height="480">
+Regular Menu Views
+ </p>
+ 
+<p align="center">
+ <img src="https://media.giphy.com/media/F3wPk4Bf4SLpCHkT40/giphy.gif" width="150" height="300">
+ <img  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk5NWQ1MTVjMmI0MjYyMTVkMjc5NTk1NzJlM2QwZGQ3ZjQ1ZTViMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KyZa2SMrEAN4LW6C6c/giphy.gif" width="150" height="300">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjQyNWMzYjQ4ZTYzMGViNDAyMTlhOTFkYWM3ZDFhYTA0N2U2YTg3YyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/AxgLIm8odemBFVSXoe/giphy.gif" width="150" height="300">
  
   </p>
   
-<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVlMjRjN2Q4YTNhNGU5ZDRhMTIxMmMxMTY4MzM2ODA4ODdkMjdmOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Hmmi8Pu62toz3ZAZoQ/giphy.gif" </p>
+  <p align="center">
+Game/Game Engine Example
+ </p>
+  
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVlMjRjN2Q4YTNhNGU5ZDRhMTIxMmMxMTY4MzM2ODA4ODdkMjdmOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Hmmi8Pu62toz3ZAZoQ/giphy.gif" width="450" height="225" </p>
 
 ## Motivation
  
