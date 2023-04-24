@@ -3,13 +3,14 @@
 This is a Repository for Roadrunner Interactive's (Team 11) Application Programming semester project.
 
 <p align="center">
- <img src="./app/src/main/res/drawable/main_menu_logo2.png" width="500" length="600" />
+ <img src="./app/src/main/res/drawable/main_menu_logo.png" width="500" length="600" />
  </p>
 
 <p align="center">
- <img src="./app/src/main/res/drawable/team_logo.png" width="600" length="125" />
+ <img src="./app/src/main/res/drawable/team_logo.png" width="300" length="75" />
  </p>
-## What is this?
+ 
+ 
 
 The Guides Grand Adventure is a simple android java game inspired by the old 8-bit platform style of games. The project was mainly done in Android Studio, with some outside programs such as Adobe Illustrator and Photoshop used for asset creation and development. The files can easily be imported as an android studio project from this repository, instructions will be listed below. Various assets in the game were sourced from the public, the credits are listed in the credits section.
 
@@ -44,6 +45,8 @@ TODO
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+
+@Will
 
 ## Credits
 
