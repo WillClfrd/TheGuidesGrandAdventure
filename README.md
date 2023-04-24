@@ -37,17 +37,21 @@ Game/Game Engine Example
  
 At the start of the semester we (RR Int.) had a debate on what would motivate us the most to create, and the consensus was a video game! Making games are fun, challenging, and rewarding to create, as well as play, so the decision was a win/win on both fronts. Throughout creating many aspects of the project we learned  valuable lessions about teamwork and java/android programming that will serve us well in future classes and in the carreers we pursue. The game also gave us a chance to demonstrate the creative side of our team, as many of the image files were created by team members, barring some site logos that were included for crediting. In short, this project exists as a demonstration of the lessons we (RR Int.) learned and how we can implement and apply them to a stand-alone android app program.
 
-## Technical Concepts
+## Notable Technical Concepts
 
- //TODO - Technical Concepts and important
+ Related to CS3443, some important concepts implemented into this game include:
+ 
+ TODO:
+ Threading - (Will)
+ Game Engine - (Will)
+ Game Canvas - (Will)
+ Media/Sound Managing - (Robert)
+ Live Settings Image Changing - (Robert)
+ Runnables? - (Robert)
  
 ## Installation
 
-You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio. Make sure that in the local.properties file in the repositorie's root directory, that the filepath directs to your local Android SDK. Then once your gradle build finishes you can run the project without any other configurations. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get best performance.)
- 
-## Tests
-
-TODO
+You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio. Make sure that in the local.properties file in the repositorie's root directory, that the filepath directs to your local Android SDK. Then once your gradle build finishes you can run the project without any other configurations. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get intended performance.)
 
 ## Contributors
 
