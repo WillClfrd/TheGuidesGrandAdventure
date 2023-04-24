@@ -14,26 +14,27 @@ This is a Repository for Roadrunner Interactive's (Team 11) Application Programm
 
 The Guides Grand Adventure is a simple android java game inspired by the old 8-bit platform style of games. The project was mainly done in Android Studio, with some outside programs such as Adobe Illustrator and Photoshop used for asset creation and development. The files can easily be imported as an android studio project from this repository, instructions will be listed below. Various assets in the game were sourced from the public, the credits are listed in the credits section.
 
-## Code Example
+## Program Examples
 
-TODO
+<p align="center">
+ <img src="https://media.giphy.com/media/F3wPk4Bf4SLpCHkT40/giphy.gif" width="238" height="480">
+ <img  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk5NWQ1MTVjMmI0MjYyMTVkMjc5NTk1NzJlM2QwZGQ3ZjQ1ZTViMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KyZa2SMrEAN4LW6C6c/giphy.gif" width="238" height="480">
+  </p>
+  
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIwMDE2YmE5MTNhY2ZhMDEzOGIyYjY5NTNlZTI5NGU0ODEzYWNkYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/GB93S0zwJe7e8IWpxI/giphy.gif" </p>
 
 ## Motivation
-
+ 
 At the start of the semester we (RR Int.) had a debate on what would motivate us the most to create, and the consensus was a video game! Making games are fun, challenging, and rewarding to create, as well as play, so the decision was a win/win on both fronts. Throughout creating many aspects of the project we learned  valuable lessions about teamwork and java/android programming that will serve us well in future classes and in the carreers we pursue. The game also gave us a chance to demonstrate the creative side of our team, as many of the image files were created by team members, barring some site logos that were included for crediting. In short, this project exists as a demonstration of the lessons we (RR Int.) learned and how we can implement and apply them to a stand-alone android app program.
-
-//TODO - Technical Concepts and important
 
 ## Technical Concepts
 
+ //TODO - Technical Concepts and important
+ 
 ## Installation
 
 You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio. Make sure that in the local.properties file in the repositorie's root directory, that the filepath directs to your local Android SDK. Then once your gradle build finishes you can run the project without any other configurations. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get best performance.)
-
-## API Reference
-
-TODO
-
+ 
 ## Tests
 
 TODO
@@ -43,10 +44,6 @@ TODO
 <a href="https://github.com/WillClfrd/GuidesGrandAdventure/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=WillClfrd/GuidesGrandAdventure" />
 </a>
-
-Made with [contrib.rocks](https://contrib.rocks).
-
-@Will
 
 ## Credits
 
