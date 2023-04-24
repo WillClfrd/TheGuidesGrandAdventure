@@ -51,11 +51,9 @@ public class GameController implements View.OnClickListener{
         }
         else if(view.getId() == R.id.left_arrow){
             this.activity.getGameCanvas().getCharacter().setOrientation('l');
-            this.activity.getGameCanvas().getCharacter().setCharImage(this.activity.getGameCanvas().getCharacter().getCharImageLeft());
         }
         else if(view.getId() == R.id.right_arrow){
             this.activity.getGameCanvas().getCharacter().setOrientation('r');
-            this.activity.getGameCanvas().getCharacter().setCharImage(this.activity.getGameCanvas().getCharacter().getCharImageRight());
         }
         else if(view.getId() == R.id.in_game_menu_button){
             if(!(this.isInGameMenuUp)) {

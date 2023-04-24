@@ -267,6 +267,8 @@ public class GameCanvas extends View {
                 this.followers.get(i).setOrientation(this.followers.get(i - 1).getOrientation());
             }
 
+            walkCharacter(followers.get(i));
+
             switch(this.followers.get(i).getOrientation()){
                 case 'r':
                     this.followers.get(i).setCharImage(this.followers.get(i).getCharImageRight());
@@ -299,6 +301,23 @@ public class GameCanvas extends View {
             }
 
             ++this.scoreCount;
+        }
+    }
+
+    public void walkCharacter(GameObject object){
+        switch(object.getCurrentSprite()){
+            case 'r':
+                object.setCharImage(object.getCharImageLeft());
+                object.setCurrentSprite('l');
+                break;
+            case 'l':
+                object.setCharImage(object.getCharImageRight());
+                object.setCurrentSprite('r');
+                break;
+            default:
+                object.setCharImage(object.getCharImageRight());
+                object.setCurrentSprite('r');
+                break;
         }
     }
 

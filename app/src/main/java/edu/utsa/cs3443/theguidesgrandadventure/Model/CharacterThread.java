@@ -33,6 +33,7 @@ public class CharacterThread extends Thread {
                     if(!(activity.getGameCanvas().updateCharacters())){
                         isRunning = false;
                     }
+                    activity.getGameCanvas().walkCharacter(activity.getGameCanvas().getCharacter());
                     activity.getGameCanvas().invalidate();
                 }
             } catch (Exception ignored) {

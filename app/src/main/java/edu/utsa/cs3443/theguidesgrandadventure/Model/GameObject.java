@@ -13,6 +13,7 @@ public class GameObject {
     private int prevY;
     private int objectOffset;
     private char objectType;
+    private char currentSprite;
 
     public GameObject(char orientation, Bitmap charImage, int x, int y){
         this.orientation = orientation;
@@ -24,6 +25,7 @@ public class GameObject {
     public GameObject(Bitmap charImageRight, Bitmap charImageLeft){
         this.orientation = 'r';
         this.charImage = charImageRight;
+        this.currentSprite ='r';
         this.charImageRight = charImageRight;
         this.charImageLeft = charImageLeft;
     }
@@ -66,6 +68,8 @@ public class GameObject {
 
     public char getObjectType(){ return this.objectType; }
 
+    public char getCurrentSprite(){ return this.currentSprite; }
+
     public void setOrientation(char newOrientation){
         this.orientation = newOrientation;
     }
@@ -101,4 +105,6 @@ public class GameObject {
     public void setObjectOffset(int objectOffset){ this.objectOffset = objectOffset; }
 
     public void setObjectType(char objectType){ this.objectType = objectType; }
+
+    public void setCurrentSprite(char currentSprite){ this.currentSprite = currentSprite; }
 }
