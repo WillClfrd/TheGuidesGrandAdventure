@@ -2,7 +2,9 @@
 
 Temporary Repository for Roadrunner Interactive's (Team 11) Application Programming semester project.
 
-![My Image](./app/src/main/res/drawable/main_menu_logo2.png)
+<p align="center">
+ <img src="./app/src/main/res/drawable/main_menu_logo2.png" width="500" length="600" />
+ </p>
 
 
 ## Code Example
