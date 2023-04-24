@@ -8,6 +8,7 @@ This is a Repository for Roadrunner Interactive's (Team 11) Application Programm
 
 <p align="center">
  <img src="./app/src/main/res/drawable/team_logo.png" width="300" length="75" />
+ <img src="./app/src/main/res/drawable/utsacs.png" width="300" length="75" />
  </p>
  
 
