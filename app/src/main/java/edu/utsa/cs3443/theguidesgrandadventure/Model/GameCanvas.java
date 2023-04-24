@@ -34,14 +34,10 @@ public class GameCanvas extends View {
     private Typeface typeface;
     private SoundManager soundManager;
 
-    Activity activity;
-
     public GameCanvas(Context context) {
         super(context);
 
         this.paint = new Paint();
-
-        this.activity = activity;
 
         this.rand = new Random();
 

@@ -8,9 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -21,10 +18,10 @@ import edu.utsa.cs3443.theguidesgrandadventure.GameOverActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
 public class Leaderboard {
-    private ArrayList<UserRecord> scores;
+    private final ArrayList<UserRecord> scores;
 
     public Leaderboard(){
-        scores = new ArrayList<UserRecord>();
+        scores = new ArrayList<>();
     }
 
     public void loadLeaderboard(AssetManager manager, GameOverActivity activity) throws IOException {
@@ -48,11 +45,9 @@ public class Leaderboard {
             line = read.nextLine();
             lineTokens = line.split(",");
             tempImage = findCharacterImage(lineTokens[2], activity);
-            if(line != null) {
-                Log.d("Line value", line);
-                tempRecord = new UserRecord(lineTokens[0], parseInt(lineTokens[1]), lineTokens[2], tempImage);
-                scores.add(tempRecord);
-            }
+            Log.d("Line value", line);
+            tempRecord = new UserRecord(lineTokens[0], parseInt(lineTokens[1]), lineTokens[2], tempImage);
+            scores.add(tempRecord);
         }
         inFile.close();
         read.close();

@@ -18,8 +18,8 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
  * @author Will Clifford
  * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-20
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 public class MainActivity extends AppCompatActivity {
     private MainController controller;
@@ -40,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         controller = new MainController(this);
 
+        // MediaPlayer toggle check.
         if(MediaPlayerManager.isPlaying) {
             mediaPlayerManager = MediaPlayerManager.getInstance(this);
             mediaPlayerManager.playMusic(R.raw.mainmenu);
         }
 
+        // View object setups.
         ImageView titleImage = findViewById(R.id.title_logo);
         Button gameTestButton = findViewById(R.id.game_test_button);
         Button settingsButton = findViewById(R.id.settings_button);
@@ -80,11 +82,17 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(runnable);
             }
 
+    /**
+     * onDestroy method that releases the music player upon exiting the app.
+     */
     protected void onDestroy() {
         super.onDestroy();
-        mediaPlayerManager.releasePlayer();
+        mediaPlayerManager.releasePlayer(); // Releases media.
     }
 
+    /**
+     * @param view This is a view item from the settings xml file, normally a button.
+     */
     private void setupButton(View view){
         view.setOnClickListener(controller);
     }

@@ -40,16 +40,14 @@ public class GameOverController implements View.OnClickListener{
     private final LinearLayout leaderboardList;
     private final Button leaderboardBackButton;
     private final LinearLayout highScoreLayout;
-    EditText userInputBox;
-    ImageView userInputEnter;
+    private final EditText userInputBox;
+    private final ImageView userInputEnter;
     private final Leaderboard scores;
-    private final String key = "score";
     private String charName;
     private final int score;
     private final TextView scoreText;
     private final TextView followerText;
-
-    Handler handler = new Handler();
+    private final Handler handler = new Handler();
 
     @SuppressLint("SetTextI18n")
     public GameOverController(GameOverActivity activity){
@@ -96,9 +94,8 @@ public class GameOverController implements View.OnClickListener{
         if(checkForHighScore() == -1 && scores.getScoresSize() < 5){
             addUsernamePopup();
         }
-        else if(checkForHighScore() == -1){
-
-        }
+        //else if(checkForHighScore() == -1){
+        //}
         else{
             addUsernamePopup();
         }
@@ -234,7 +231,7 @@ public class GameOverController implements View.OnClickListener{
         }
     }
 
-    public int checkForHighScore(){
+    public int checkForHighScore() {
         int i;
 
         if(scores.getScoresSize() == 0){
@@ -263,6 +260,7 @@ public class GameOverController implements View.OnClickListener{
         userInputBox.setEnabled(false);
     }
 
+    @SuppressLint("RtlHardcoded")
     private void addLeaderboardPopup(){
         leaderboardLayout.setAlpha((float)1.0);
         leaderboardBackButton.setClickable(true);

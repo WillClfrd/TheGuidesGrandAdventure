@@ -15,13 +15,6 @@ public class GameObject {
     private char objectType;
     private char currentSprite;
 
-    public GameObject(char orientation, Bitmap charImage, int x, int y){
-        this.orientation = orientation;
-        this.charImage = charImage;
-        this.x = x;
-        this.y = y;
-    }
-
     public GameObject(Bitmap charImageRight, Bitmap charImageLeft){
         this.orientation = 'r';
         this.charImage = charImageRight;

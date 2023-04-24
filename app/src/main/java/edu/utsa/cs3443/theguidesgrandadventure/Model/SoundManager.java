@@ -14,8 +14,8 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * button interactions or game interactions.
  *
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-22
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 @SuppressWarnings("ALL")
 public class SoundManager {
@@ -24,11 +24,10 @@ public class SoundManager {
     private static final int DEFAULT_PRIORITY = 1;
     private static final int DEFAULT_LOOP = 0;
     private static final float DEFAULT_RATE = 1f;
-    static boolean soundPlaying = true;
     private final Context context;
     private final SoundPool soundPool;
-
     private final Map<Integer, Integer> soundIds = new HashMap<>();
+    public static boolean soundPlaying = true;
 
     /**
      * Class constructor that creates a SoundManager.

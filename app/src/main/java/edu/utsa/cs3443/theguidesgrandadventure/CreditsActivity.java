@@ -16,14 +16,13 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.CreditsController;
  * this program.
  *
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-20
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 public class CreditsActivity extends AppCompatActivity {
 
     private CreditsController creditsController;
-    Handler handler = new Handler();
-
+    private final Handler handler = new Handler();
     boolean countingUp = true;
 
     /**
@@ -37,12 +36,14 @@ public class CreditsActivity extends AppCompatActivity {
 
         creditsController = new CreditsController(this);
 
+        // View object setup.
         Button returnMenuButton = findViewById(R.id.credit_return_button);
         ImageView will = findViewById(R.id.dev_image1);
         ImageView rob = findViewById(R.id.dev_image2);
         ImageView meag = findViewById(R.id.dev_image3);
         setupButton(returnMenuButton);
 
+        // Variables for use with the runnable.
         int willLeft = R.drawable.will_left;
         int willRight = R.drawable.will_right;
         int robLeft = R.drawable.rob_left;
@@ -50,7 +51,7 @@ public class CreditsActivity extends AppCompatActivity {
         int meagLeft = R.drawable.meagan_left;
         int meagRight = R.drawable.meagan_right;
 
-        // Character walking runnable.
+        // Character walking animation runnable.
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -67,7 +68,7 @@ public class CreditsActivity extends AppCompatActivity {
                     meag.setImageResource(meagRight);
                     countingUp = true;
                 }
-                handler.postDelayed(this, 500);
+                handler.postDelayed(this, 500); // Change int value to inc/dec speed.
             }
         };
         handler.post(runnable);

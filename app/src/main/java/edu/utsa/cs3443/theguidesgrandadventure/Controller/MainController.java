@@ -16,8 +16,8 @@ import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
  * @author Will Clifford
  * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-22
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 public class MainController implements View.OnClickListener{
     private final MainActivity activity;

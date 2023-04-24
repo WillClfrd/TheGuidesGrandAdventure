@@ -11,8 +11,8 @@ public class CharacterThread extends Thread {
     private boolean isRunning;
     private boolean isPaused;
     private final int initInterval;
-    private SoundManager soundManager;
-    private String key = "score";
+    private final SoundManager soundManager;
+    //private final String key = "score";
 
     public CharacterThread(GameActivity activity){
         this.activity = activity;

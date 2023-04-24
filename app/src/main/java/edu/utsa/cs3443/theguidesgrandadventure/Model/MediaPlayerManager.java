@@ -12,10 +12,11 @@ import java.io.IOException;
  * the audio being played.
  *
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-22
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 public class MediaPlayerManager {
+
     private static MediaPlayerManager instance;
     private MediaPlayer mediaPlayer;
     private final Resources resources;

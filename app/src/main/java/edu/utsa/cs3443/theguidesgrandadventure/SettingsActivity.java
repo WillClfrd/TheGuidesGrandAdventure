@@ -14,8 +14,8 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
  * settings view of the app.
  *
  * @author Jose Gracia
- * @version 1.0
- * @since 2023-04-20
+ * @version 1.4.15
+ * @since 2023-04-24
  */
 public class SettingsActivity extends AppCompatActivity {
     private SettingsController settingsController;

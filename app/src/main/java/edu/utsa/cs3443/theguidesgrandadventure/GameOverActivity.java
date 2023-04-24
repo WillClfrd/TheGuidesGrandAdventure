@@ -60,7 +60,7 @@ public class GameOverActivity extends AppCompatActivity {
         setupButton(backButton);
     }
 
-    public void setupButton(View view){
+    private void setupButton(View view){
         view.setOnClickListener(controller);
     }
 }
