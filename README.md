@@ -1,1 +1,1 @@
-# FitRack
+# The Guides Grand Adventure
