@@ -17,11 +17,13 @@ The Guides Grand Adventure is a simple android java game inspired by the old 8-b
 
 TODO
 
-## Motivation / Technical Concepts
+## Motivation
 
 At the start of the semester we (RR Int.) had a debate on what would motivate us the most to create, and the consensus was a video game! Making games are fun, challenging, and rewarding to create, as well as play, so the decision was a win/win on both fronts. Throughout creating many aspects of the project we learned  valuable lessions about teamwork and java/android programming that will serve us well in future classes and in the carreers we pursue. The game also gave us a chance to demonstrate the creative side of our team, as many of the image files were created by team members, barring some site logos that were included for crediting. In short, this project exists as a demonstration of the lessons we (RR Int.) learned and how we can implement and apply them to a stand-alone android app program.
 
 //TODO - Technical Concepts and important
+
+## Technical Concepts
 
 ## Installation
 
