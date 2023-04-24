@@ -25,7 +25,7 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 
 ## Installation
 
-You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio and launch it without any configuration necessary. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get best performance.)
+You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio. Make sure that in the local.properties file in the repositorie's root directory, that the filepath directs to your local Android SDK. Then once your gradle build finishes you can run the project without any other configurations. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get best performance.)
 
 ## API Reference
 
@@ -42,8 +42,6 @@ TODO
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
-
-<
 
 ## Credits
 
@@ -62,4 +60,3 @@ https://www.spriters-resource.com/ds_dsi/pokemonblack2white2/ - Pokemon Black/Wh
 ## License
 
 MIT © RR Interactive
-
