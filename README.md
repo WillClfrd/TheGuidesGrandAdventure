@@ -1,6 +1,6 @@
 # The Guides Grand Adventure
 
-This is a temporary Repository for Roadrunner Interactive's (Team 11) Application Programming semester project.
+This is a Repository for Roadrunner Interactive's (Team 11) Application Programming semester project.
 
 <p align="center">
  <img src="./app/src/main/res/drawable/main_menu_logo2.png" width="500" length="600" />
