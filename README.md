@@ -19,9 +19,11 @@ The Guides Grand Adventure is a simple android java game inspired by the old 8-b
 <p align="center">
  <img src="https://media.giphy.com/media/F3wPk4Bf4SLpCHkT40/giphy.gif" width="238" height="480">
  <img  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk5NWQ1MTVjMmI0MjYyMTVkMjc5NTk1NzJlM2QwZGQ3ZjQ1ZTViMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KyZa2SMrEAN4LW6C6c/giphy.gif" width="238" height="480">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjQyNWMzYjQ4ZTYzMGViNDAyMTlhOTFkYWM3ZDFhYTA0N2U2YTg3YyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/AxgLIm8odemBFVSXoe/giphy.gif" width="238" height="480">
+ 
   </p>
   
-<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGIwMDE2YmE5MTNhY2ZhMDEzOGIyYjY5NTNlZTI5NGU0ODEzYWNkYyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/GB93S0zwJe7e8IWpxI/giphy.gif" </p>
+<p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGVlMjRjN2Q4YTNhNGU5ZDRhMTIxMmMxMTY4MzM2ODA4ODdkMjdmOSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/Hmmi8Pu62toz3ZAZoQ/giphy.gif" </p>
 
 ## Motivation
  
