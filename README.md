@@ -1,6 +1,6 @@
 # GuidesGrandAdventure
 
-Temporary Repository for the RRI (Group 11) CS App Programming project. 
+Temporary Repository for Roadrunner Interactive's (Team 11) Application Programming semester project.
 
 ## Code Example
 
