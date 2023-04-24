@@ -18,7 +18,8 @@
             android:layout_gravity="center|center_horizontal"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/layout_background" />
+            app:srcCompat="@drawable/layout_background"
+            android:contentDescription="@string/background_image_of_the_main_menu" />
 
         <LinearLayout
             android:layout_width="match_parent"

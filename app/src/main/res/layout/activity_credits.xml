@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000C38">
@@ -10,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/layout_background" />
+        app:srcCompat="@drawable/layout_background"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +31,8 @@
             android:id="@+id/rri_logo"
             android:layout_width="wrap_content"
             android:layout_height="100sp"
-            app:srcCompat="@drawable/team_logo" />
+            app:srcCompat="@drawable/team_logo"
+            tools:ignore="ContentDescription" />
 
         <Space
             android:layout_width="match_parent"
@@ -44,7 +47,8 @@
             android:gravity="center"
             android:text="CREDITS:"
             android:textColor="#83B6FF"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
 
         <Space
             android:layout_width="match_parent"
@@ -68,7 +72,8 @@
                     android:gravity="center"
                     android:text="PROJECT DEVELOPERS:"
                     android:textColor="#83B6FF"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -83,7 +88,8 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/will_left" />
+                            app:srcCompat="@drawable/will_left"
+                            tools:ignore="ContentDescription" />
                     </FrameLayout>
 
                     <LinearLayout
@@ -100,7 +106,8 @@
                             android:gravity="center"
                             android:text="Will C."
                             android:textColor="#83B6FF"
-                            android:textSize="20sp" />
+                            android:textSize="20sp"
+                            tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/dev_title1"
@@ -109,7 +116,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/retro_computer_personal_use"
                             android:gravity="center"
-                            android:text="WillClfrd"
+                            android:text="@string/willclfrd"
                             android:textColor="#83B6FF"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -133,7 +140,8 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/rob_left" />
+                            app:srcCompat="@drawable/rob_left"
+                            android:contentDescription="@string/this_is_a_content_description" />
                     </FrameLayout>
 
                     <LinearLayout
@@ -148,7 +156,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/mainfont"
                             android:gravity="center"
-                            android:text="Jose G."
+                            android:text="@string/jose_g"
                             android:textColor="#83B6FF"
                             android:textSize="20sp" />
 
@@ -159,7 +167,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/retro_computer_personal_use"
                             android:gravity="center"
-                            android:text="Jrgg1"
+                            android:text="@string/jrgg1"
                             android:textColor="#83B6FF"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -183,7 +191,8 @@
                             android:layout_width="80sp"
                             android:layout_height="80sp"
                             android:layout_gravity="center"
-                            app:srcCompat="@drawable/meagan_left" />
+                            app:srcCompat="@drawable/meagan_left"
+                            android:contentDescription="@string/this_is_a_content_description" />
                     </FrameLayout>
 
                     <LinearLayout
@@ -198,7 +207,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/mainfont"
                             android:gravity="center"
-                            android:text="Meagan B."
+                            android:text="@string/meagan_b"
                             android:textColor="#83B6FF"
                             android:textSize="20sp" />
 
@@ -209,7 +218,7 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/retro_computer_personal_use"
                             android:gravity="center"
-                            android:text="Mea08"
+                            android:text="@string/mea08"
                             android:textColor="#83B6FF"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -227,7 +236,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/mainfont"
                     android:gravity="center"
-                    android:text="SPECIAL THANKS TO:"
+                    android:text="@string/special_thanks_to"
                     android:textColor="#83B6FF"
                     android:textSize="16sp" />
 
@@ -238,7 +247,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <TextView
                         android:id="@+id/music_header"
@@ -247,15 +257,17 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/retro_computer_personal_use"
                         android:gravity="center"
-                        android:text="Music From:"
+                        android:text="@string/music_from"
                         android:textColor="#83B6FF"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:ignore="TextContrastCheck" />
 
                     <ImageView
                         android:id="@+id/logo_pixabay"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        app:srcCompat="@drawable/pixabay_icon" />
+                        app:srcCompat="@drawable/pixabay_icon"
+                        android:contentDescription="@string/this_is_a_content_description" />
                 </LinearLayout>
 
                 <Space
@@ -265,7 +277,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
 
                     <TextView
                         android:id="@+id/sound_header"
@@ -274,7 +287,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/retro_computer_personal_use"
                         android:gravity="center"
-                        android:text="Sounds from:"
+                        android:text="@string/sounds_from"
                         android:textColor="#83B6FF"
                         android:textSize="20sp" />
 
@@ -283,7 +296,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         app:srcCompat="@drawable/freesound_icon"
-                        android:contentDescription="" />
+                        android:contentDescription="@string/this_is_a_content_description" />
                 </LinearLayout>
 
                 <Space
@@ -302,7 +315,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/retro_computer_personal_use"
                         android:gravity="center"
-                        android:text="Graphics from:"
+                        android:text="@string/graphics_from"
                         android:textColor="#83B6FF"
                         android:textSize="20sp" />
 
@@ -311,7 +324,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         app:srcCompat="@drawable/team_logo"
-                        android:contentDescription="TODO" />
+                        android:contentDescription="@string/this_is_a_content_description" />
 
                     <TextView
                         android:id="@+id/gfx_desc"
@@ -335,7 +348,7 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="#0C2E8E"
             android:fontFamily="@font/mainfont"
-            android:text="Back"
+            android:text="@string/back"
             android:textColor="#83B6FF"
             android:textSize="20sp" />
 

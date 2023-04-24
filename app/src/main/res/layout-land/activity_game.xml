@@ -19,14 +19,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/layout_background" />
+            app:srcCompat="@drawable/layout_background"
+            android:contentDescription="@string/this_is_a_content_description" />
 
         <View
             android:id="@+id/color_bar_l"
             android:layout_width="3sp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
-            android:background="#83B6FF" />
+            android:background="#83B6FF"
+            tools:ignore="RtlHardcoded" />
 
         <LinearLayout
             android:layout_width="100sp"
@@ -54,7 +56,7 @@
                     android:layout_height="60sp"
                     android:layout_gravity="center"
                     android:background="@color/clear"
-                    android:contentDescription="@string/placeholder_string"
+                    android:contentDescription="@string/stop_crying_android"
                     android:scaleType="fitCenter"
                     android:translationX="15sp"
                     app:srcCompat="@drawable/menu_bars" />
@@ -90,14 +92,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/layout_background" />
+            app:srcCompat="@drawable/layout_background"
+            android:contentDescription="@string/this_is_a_content_description" />
 
         <View
             android:id="@+id/color_bar_r"
             android:layout_width="3sp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:background="#83B6FF" />
+            android:background="#83B6FF"
+            tools:ignore="RtlHardcoded" />
 
         <ImageView
             android:id="@+id/team_logo_game"
@@ -105,7 +109,8 @@
             android:layout_height="70sp"
             android:layout_gravity="bottom|center_horizontal"
             android:translationY="-10sp"
-            app:srcCompat="@drawable/team_logo2" />
+            app:srcCompat="@drawable/team_logo2"
+            android:contentDescription="@string/this_is_a_content_description" />
 
         <LinearLayout
             android:id="@+id/arrow_layout_2"
@@ -140,7 +145,7 @@
                         android:layout_height="55sp"
                         android:layout_gravity="center"
                         android:background="@color/clear"
-                        android:contentDescription="@string/placeholder_string"
+                        android:contentDescription="@string/this_is_an_up_arrow"
                         android:foregroundGravity="center"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/up_arrow" />
@@ -157,7 +162,7 @@
                         android:layout_height="55sp"
                         android:layout_gravity="center"
                         android:background="@color/clear"
-                        android:contentDescription="@string/placeholder_string"
+                        android:contentDescription="@string/this_is_a_left_arrow"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/left_arrow" />
 
@@ -166,7 +171,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:scaleType="center"
-                        app:srcCompat="@drawable/pad_center" />
+                        app:srcCompat="@drawable/pad_center"
+                        android:contentDescription="@string/this_is_a_content_description" />
 
                     <ImageButton
                         android:id="@+id/right_arrow"
@@ -174,7 +180,7 @@
                         android:layout_height="55sp"
                         android:layout_gravity="center"
                         android:background="@color/clear"
-                        android:contentDescription="@string/placeholder_string"
+                        android:contentDescription="@string/this_is_a_right_arrow"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/right_arrow" />
                 </TableRow>
@@ -190,7 +196,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:background="@color/clear"
-                        android:contentDescription="@string/placeholder_string"
+                        android:contentDescription="@string/this_is_a_down_arrow"
                         android:foregroundGravity="center"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/down_arrow" />
