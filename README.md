@@ -39,7 +39,7 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 
  Related to CS3443, some important concepts implemented into this game include:
  
-** CONTROLLERS **
+**CONTROLLER PACKAGE**
 
 - MainController:        Controls activity_main.xml view and shows the main menu page.
 - CreditsController:     Controls activity_credits.xml view and shows a list of credits and awknowledgements for the game.
@@ -47,11 +47,11 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 - GameOverController:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
 - SettingsController:    Controls activity_settings.xml view and manages UI's across the program.
 
-** MODEL **
+**MODEL PACKAGE**
 
 -TODO
 
-** ACTIVITY **
+**ACTIVITY CLASSES**
 
 -TODO
  
