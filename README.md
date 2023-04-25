@@ -42,18 +42,31 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 **CONTROLLER PACKAGE**
 
 - MainController:        Controls activity_main.xml view and shows the main menu page.
+ ()Method here.
 - CreditsController:     Controls activity_credits.xml view and shows a list of credits and awknowledgements for the game.
+ ()Method here.
 - GameController:        Controls activity_game.xml view and implements the game engine, along with the in game menu.
+ ()Method here.
 - GameOverController:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
+ ()Method here.
 - SettingsController:    Controls activity_settings.xml view and manages UI's across the program.
+ ()Method here.
 
 **MODEL PACKAGE**
 
--TODO
-
+- MediaPlayerManager:    Controls music audio through out the program and has a master toggle in the settings.
+- SoundManager:          Manages a list of sounds to be used depending on interactions in the GameCanvas.
+- GameCanvas
+- CollectibleThread
+- CharacterThread
+ 
 **ACTIVITY CLASSES**
 
--TODO
+- MainActivty
+- CreditsActivty
+- GameController
+- GameOverController
+- SettingsController
  
 ## Installation
 
