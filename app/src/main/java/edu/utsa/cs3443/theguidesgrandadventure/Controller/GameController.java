@@ -23,9 +23,17 @@ import edu.utsa.cs3443.theguidesgrandadventure.MainActivity;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 import edu.utsa.cs3443.theguidesgrandadventure.SettingsActivity;
 
-//GameView controller
-//William
-@SuppressWarnings("ALL")
+/**
+ * This class represents GameController objects.
+ * The GameController class maintains the activity, gameLayout, inGameMenu, isInGameMenuUp, mainMenuId, settingsId, newGameId, and returnId attributes as well as handling click events for the GameActivity class.
+ * The GameController class implements the View.OnClickListener interface.
+ *
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
+ */
 public class GameController implements View.OnClickListener{
     private final GameActivity activity;
     private FrameLayout gameLayout;
@@ -36,11 +44,22 @@ public class GameController implements View.OnClickListener{
     private final int newGameId = 4;
     private final int returnId = 5;
 
+    /**
+     * Creates GameController objects.
+     * Initializes the activity and isInGameMenuUp attributes.
+     *
+     * @param activity the GameActivity to be assigned to the activity attribute.
+     */
     public GameController(GameActivity activity){
         this.activity = activity;
         this.isInGameMenuUp = false;
     }
 
+    /**
+     * Maintains onClickListeners for views of the GameController activity attribute which have been assigned onClickListeners.
+     *
+     * @param view the View object passed as a parameter from the detected click event.
+     */
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.up_arrow){
@@ -84,6 +103,9 @@ public class GameController implements View.OnClickListener{
         }
     }
 
+    /**
+     * Adds views to the gameLayout FrameLayout in order to display the GameActivity in-game menu.
+     */
     private void createMenuLayout(){
         ViewGroup.LayoutParams menuParams = new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT);
         ViewGroup.LayoutParams headerParams = new ViewGroup.LayoutParams(WRAP_CONTENT, WRAP_CONTENT);
@@ -158,6 +180,9 @@ public class GameController implements View.OnClickListener{
         returnToGameButton.setOnClickListener(this);
     }
 
+    /**
+     * Removes child views of the inGameMenu layout as well as removing the inGameMenu view from the gameLayout view in order to remove the GameActivity in-game menu
+     */
     private void removeMenuLayout(){
         inGameMenu.removeAllViews();
         this.gameLayout.removeView(this.inGameMenu);

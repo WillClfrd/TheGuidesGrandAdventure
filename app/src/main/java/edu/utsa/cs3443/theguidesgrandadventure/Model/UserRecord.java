@@ -6,7 +6,9 @@ import android.graphics.Bitmap;
  * This class represents UserRecord objects.
  * The UserRecord class maintains the userName, score, charName, and charImage attribute for UserRecord objects.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */

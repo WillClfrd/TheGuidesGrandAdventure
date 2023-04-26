@@ -20,14 +20,29 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.CharacterThread;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
-//GameView activity
-//William
+/**
+ * This class represents GameActivity objects.
+ * Each GameActivity object is instantiated with a Bundle object.
+ * GameActivity objects are responsible for initializing the activity_game layout.
+ * The GameActivity class extends the AppCompatActivity class.
+ *
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
+ */
 public class GameActivity extends AppCompatActivity {
     private GameCanvas gameCanvas;
     private GameController controller;
     private CharacterThread characterThread;
     private CollectibleThread collectibleThread;
 
+    /**
+     * This method is responsible for initializing the application view for the activity_game layout.
+     *
+     * @param savedInstanceState a Bundle class object that is passed into the inherited class onCreate method.
+     */
     @SuppressLint("AppCompatMethod")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,18 +87,38 @@ public class GameActivity extends AppCompatActivity {
         characterThread.start();
     }
 
+    /**
+     * This method establishes an onClickListener for the view parameter View object.
+     *
+     * @param view the View that is assigned an OnClickListener
+     */
     private void setupButton(View view){
         view.setOnClickListener(controller);
     }
 
+    /**
+     * Returns the GameActivity gameCanvas attribute.
+     *
+     * @return the GameActivity gameCanvas attribute.
+     */
     public GameCanvas getGameCanvas(){
         return this.gameCanvas;
     }
 
+    /**
+     * Returns the GameActivity characterThread attribute.
+     *
+     * @return the GameActivity characterThread attribute.
+     */
     public CharacterThread getCharacterThread(){
         return this.characterThread;
     }
 
+    /**
+     * Returns the GameActivity collectibleThread attribute.
+     *
+     * @return the GameActivity collectibleThread attribute.
+     */
     public CollectibleThread getCollectibleThread(){
         return this.collectibleThread;
     }

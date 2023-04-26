@@ -16,9 +16,26 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameOverController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
+/**
+ * This class represents GameOverActivity objects.
+ * Each GameOverActivity object is instantiated with a Bundle object.
+ * GameOverActivity objects are responsible for initializing the activity_gameover layout.
+ * The GameOverActivity class extends the AppCompatActivity class.
+ *
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
+ */
 public class GameOverActivity extends AppCompatActivity {
     private GameOverController controller;
 
+    /**
+     * This method is responsible for initializing the application view for the activity_gameover layout.
+     *
+     * @param savedInstanceState a Bundle class object that is passed into the inherited class onCreate method.
+     */
     @SuppressLint("AppCompatMethod")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +77,11 @@ public class GameOverActivity extends AppCompatActivity {
         setupButton(backButton);
     }
 
+    /**
+     * This method establishes an onClickListener for the view parameter View object.
+     *
+     * @param view the View that is assigned an OnClickListener
+     */
     private void setupButton(View view){
         view.setOnClickListener(controller);
     }

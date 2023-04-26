@@ -34,6 +34,17 @@ import edu.utsa.cs3443.theguidesgrandadventure.Model.Leaderboard;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.UserRecord;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
+/**
+ * This class represents GameOverController objects.
+ * The GameOverController class maintains the activity, leaderboardLayout, leaderboardList, leaderboardBackButton, highScoreLayout, userInputBox, userInputEnter, scores, charName, score, scoreText, followerText, and handler attributes as well as handling click events for the GameOverActivity class.
+ * The GameOverController class implements the View.OnClickListener interface.
+ *
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
+ */
 public class GameOverController implements View.OnClickListener{
     private final GameOverActivity activity;
     private final LinearLayout leaderboardLayout;
@@ -49,6 +60,12 @@ public class GameOverController implements View.OnClickListener{
     private final TextView followerText;
     private final Handler handler = new Handler();
 
+    /**
+     * Creates GameOverController objects.
+     * Initializes the activity, score, charName, scores, leaderboardLayout, highScoreLayout, userInputBox, userInputEnter, leaderboardBackButton, leaderboardList attributes.
+     *
+     * @param activity the GameOverActivity to be assigned to the activity attribute.
+     */
     @SuppressLint("SetTextI18n")
     public GameOverController(GameOverActivity activity){
         this.activity = activity;
@@ -118,6 +135,11 @@ public class GameOverController implements View.OnClickListener{
         handler.post(runnable);
     }
 
+    /**
+     * Maintains onClickListeners for views of the GameOverController activity attribute which have been assigned onClickListeners.
+     *
+     * @param view the View object passed as a parameter from the detected click event.
+     */
     @Override
     public void onClick(View view) {
         Intent intent;
@@ -165,6 +187,12 @@ public class GameOverController implements View.OnClickListener{
         }
     }
 
+    /**
+     * Used to return a String corresponding to the given id parameter.
+     *
+     * @param id the value used to determine the correct String to return.
+     * @return the String corresponding to the given id.
+     */
     private String findCharName(int id){
         String name;
 
@@ -201,6 +229,12 @@ public class GameOverController implements View.OnClickListener{
         return name;
     }
 
+    /**
+     * Used to return a Bitmap corresponding to the given charName parameter.
+     *
+     * @param charName the value used to determine the correct Bitmap to return.
+     * @return the Bitmap corresponding to the given charName.
+     */
     private Bitmap findCharacterImage(String charName){
         if(charName.equalsIgnoreCase("Rob")){
             return BitmapFactory.decodeResource(activity.getResources(), R.drawable.rob_left);
@@ -231,6 +265,11 @@ public class GameOverController implements View.OnClickListener{
         }
     }
 
+    /**
+     * Iterates through records contained in the Leaderboard.scores ArrayList in order to compare the UserRecord.score attribute against the GameOveActivity.score attribute in order to determine if a new UserRecord should be added to the Leaderboard.scores ArrayList.
+     *
+     * @return an integer, 0 if the Leaderboard.scores ArrayList is of size 0, the index where a new record should be inserted if a new record should be inserted, 99 if the Leaderboard.score ArrayList is smaller than size 5, but larger than 0, otherwise -1.
+     */
     public int checkForHighScore() {
         int i;
 
@@ -248,18 +287,27 @@ public class GameOverController implements View.OnClickListener{
         return -1;
     }
 
+    /**
+     * Used to make views related to the GameOverActivity userNamePopup visible and interactable.
+     */
     private void addUsernamePopup(){
         highScoreLayout.setAlpha((float)1.0);
         userInputEnter.setClickable(true);
         userInputBox.setEnabled(true);
     }
 
+    /**
+     * Used to make views related to the GameOverActivity userNamePopup non-visible and non-interactable.
+     */
     private void removeUsernamePopup(){
         highScoreLayout.setAlpha((float)0.0);
         userInputEnter.setClickable(false);
         userInputBox.setEnabled(false);
     }
 
+    /**
+     * Used to make views related to the GameOverActivity leaderboardPopup visible and interactable.
+     */
     @SuppressLint("RtlHardcoded")
     private void addLeaderboardPopup(){
         leaderboardLayout.setAlpha((float)1.0);
@@ -303,6 +351,9 @@ public class GameOverController implements View.OnClickListener{
         }
     }
 
+    /**
+     * Used to make views related to the GameOverActivity leaderboardPopup non-visible and non-interactable.
+     */
     private void removeLeaderboardPopup(){
         leaderboardLayout.setAlpha((float)0.0);
         leaderboardList.removeAllViews();

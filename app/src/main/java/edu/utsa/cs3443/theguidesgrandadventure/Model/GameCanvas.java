@@ -22,7 +22,9 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * The GameObject class also maintains the followers ArrayList, followerImagesLeft array, and the followerImagesRight array.
  * The GameObject class extends the View class.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */

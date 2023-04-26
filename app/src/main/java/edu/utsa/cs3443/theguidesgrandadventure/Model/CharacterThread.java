@@ -11,7 +11,9 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * The CharacterThread class maintains the activity, isRunning, isPaused, initInterval, and soundManager attributes.
  * The CharacterThread class extends the Thread class.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */

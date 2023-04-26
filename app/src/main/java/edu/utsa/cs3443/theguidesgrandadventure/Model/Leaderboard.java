@@ -22,7 +22,9 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * This class represents Leaderboard objects.
  * The Leaderboard class maintains the scores ArrayList, which is an ArrayList of UserRecord objects.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */

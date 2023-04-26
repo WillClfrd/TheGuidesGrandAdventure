@@ -7,7 +7,9 @@ import edu.utsa.cs3443.theguidesgrandadventure.GameActivity;
  * The CollectibleThread class maintains the activity, isRunning, isPaused, and interval attributes.
  * The CollectibleThread class extends the Thread class.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */

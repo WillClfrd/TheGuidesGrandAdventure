@@ -6,7 +6,9 @@ import android.graphics.Bitmap;
  * This class represents GameObject objects.
  * The GameObject class maintains the orientation, charImage, charImageRight, charImageLeft, x, y, prevX, prevY, objectOffset, objectType, and currentSprite GameObject attributes.
  *
- * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * @author Will Clifford
+ * @author Meagan Baty
+ * @author Jose Gracia
  * UTSA CS 3443 - Semester Project
  * Spring 2023
  */
