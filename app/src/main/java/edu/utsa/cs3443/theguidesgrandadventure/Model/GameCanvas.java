@@ -1,6 +1,5 @@
 package edu.utsa.cs3443.theguidesgrandadventure.Model;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,23 +16,39 @@ import java.util.Random;
 import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
 import edu.utsa.cs3443.theguidesgrandadventure.R;
 
+/**
+ * This class represents GameCanvas objects.
+ * The GameObject class maintains the paint, character, collectible, background, scoreCount, hasCollectible, isInitialDraw, rand, numberOfFollowers, defaultObjectOffset, and soundManager properties.
+ * The GameObject class also maintains the followers ArrayList, followerImagesLeft array, and the followerImagesRight array.
+ * The GameObject class extends the View class.
+ *
+ * @author William Clifford (rye747), Meagan Baty (), Jose Gracia ()
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
+ */
 public class GameCanvas extends View {
-    private Paint paint;
-    private GameObject character;
-    private GameObject collectible;
+    private final Paint paint;
+    private final GameObject character;
+    private final GameObject collectible;
     private Bitmap background;
-    private ArrayList<GameObject> followers;
-    private Bitmap[] followerImagesRight;
-    private Bitmap[] followerImagesLeft;
+    private final ArrayList<GameObject> followers;
+    private final Bitmap[] followerImagesRight;
+    private final Bitmap[] followerImagesLeft;
     public static int scoreCount;
     private boolean hasCollectible;
     private boolean isInitialDraw;
-    private Random rand;
-    private int numberOfFollowers;
-    private int defaultObjectOffset;
-    private Typeface typeface;
-    private SoundManager soundManager;
+    private final Random rand;
+    private final int numberOfFollowers;
+    private final int defaultObjectOffset;
+    private final SoundManager soundManager;
 
+    /**
+     * Creates a GameCanvas object.
+     * Initializes GameCanvas object paint, rand, soundManager, numberOfFollowers, defaultObjectOffset, character, background, collectible, and isInitialDraw properties.
+     * Initializes the followerImagesLeft and followerImagesRight arrays, as well as the followers ArrayList.
+     *
+     * @param context
+     */
     public GameCanvas(Context context) {
         super(context);
 
@@ -50,59 +65,59 @@ public class GameCanvas extends View {
         this.followerImagesRight = new Bitmap[this.numberOfFollowers];
         this.followerImagesLeft = new Bitmap[this.numberOfFollowers];
 
-            switch (SettingsController.chrId) {
-                case(2):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.rob_right), BitmapFactory.decodeResource(getResources(), R.drawable.rob_left));
-                    break;
-                case(3):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.will_right), BitmapFactory.decodeResource(getResources(), R.drawable.will_left));
-                    break;
-                case(4):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.meagan_right), BitmapFactory.decodeResource(getResources(), R.drawable.meagan_left));
-                    break;
-                case(5):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.gman_right), BitmapFactory.decodeResource(getResources(), R.drawable.gman_left));
-                    break;
-                case(6):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.joao_right), BitmapFactory.decodeResource(getResources(), R.drawable.joao_left));
-                    break;
-                case(7):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.addy_right), BitmapFactory.decodeResource(getResources(), R.drawable.addy_left));
-                    break;
-                case(8):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.trent_right), BitmapFactory.decodeResource(getResources(), R.drawable.trent_left));
-                    break;
-                case(9):
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.serena_right), BitmapFactory.decodeResource(getResources(), R.drawable.serena_left));
-                    break;
-                default:
-                    this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
-                    break;
-            }
+        switch (SettingsController.chrId) {
+            case(2):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.rob_right), BitmapFactory.decodeResource(getResources(), R.drawable.rob_left));
+                break;
+            case(3):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.will_right), BitmapFactory.decodeResource(getResources(), R.drawable.will_left));
+                break;
+            case(4):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.meagan_right), BitmapFactory.decodeResource(getResources(), R.drawable.meagan_left));
+                break;
+            case(5):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.gman_right), BitmapFactory.decodeResource(getResources(), R.drawable.gman_left));
+                break;
+            case(6):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.joao_right), BitmapFactory.decodeResource(getResources(), R.drawable.joao_left));
+                break;
+            case(7):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.addy_right), BitmapFactory.decodeResource(getResources(), R.drawable.addy_left));
+                break;
+            case(8):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.trent_right), BitmapFactory.decodeResource(getResources(), R.drawable.trent_left));
+                break;
+            case(9):
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.serena_right), BitmapFactory.decodeResource(getResources(), R.drawable.serena_left));
+                break;
+            default:
+                this.character = new GameObject(BitmapFactory.decodeResource(getResources(), R.drawable.character_right), BitmapFactory.decodeResource(getResources(), R.drawable.character_left));
+                break;
+        }
 
-            switch(SettingsController.bkgId) {
-                case(2):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
-                    break;
-                case(3):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background);
-                    break;
-                case(4):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background);
-                    break;
-                case(5):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.cave_background);
-                    break;
-                case(6):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.brick_background);
-                    break;
-                case(7):
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
-                    break;
-                default:
-                    this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
-                    break;
-            }
+        switch(SettingsController.bkgId) {
+            case(2):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.sandy_background);
+                break;
+            case(3):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.snowy_background);
+                break;
+            case(4):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.ocean_background);
+                break;
+            case(5):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.cave_background);
+                break;
+            case(6):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.brick_background);
+                break;
+            case(7):
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.volcano_background);
+                break;
+            default:
+                this.background = BitmapFactory.decodeResource(getResources(), R.drawable.grassy_background);
+                break;
+        }
 
         this.followerImagesRight[0] = BitmapFactory.decodeResource(getResources(), R.drawable.follower_1_right);
         this.followerImagesRight[0] = Bitmap.createScaledBitmap(this.followerImagesRight[0], this.defaultObjectOffset, this.defaultObjectOffset,true);
@@ -132,7 +147,7 @@ public class GameCanvas extends View {
 
         this.collectible = new GameObject(followerImagesRight[rand.nextInt(numberOfFollowers)], BitmapFactory.decodeResource(getResources(), R.drawable.collectible_item));
 
-        this.followers = new ArrayList<GameObject>();
+        this.followers = new ArrayList<>();
 
         this.character.setX(getWidth() / 2);
         this.character.setY(getHeight() / 2);
@@ -144,9 +159,15 @@ public class GameCanvas extends View {
         this.isInitialDraw = true;
     }
 
+    /**
+     * Responsible for drawing the character GameObject charImage, collectible GameObject charImage, and background Bitmaps onto the canvas object passed as a parameter as well as displaying text representing the scoreCount attribute.
+     *
+     * @param canvas the canvas object that the onDraw method draws the character and collectible charImage Bitmaps and the background Bitmap onto.
+     */
     @Override
     public void onDraw(Canvas canvas){
         super.onDraw(canvas);
+        Typeface typeface;
         int i;
 
         if(this.isInitialDraw) {
@@ -165,7 +186,7 @@ public class GameCanvas extends View {
 
             this.hasCollectible = true;
 
-            this.scoreCount = 0;
+            scoreCount = 0;
 
             this.isInitialDraw = false;
         }
@@ -188,7 +209,7 @@ public class GameCanvas extends View {
         this.paint.setTextSize(60);
         typeface = ResourcesCompat.getFont(getContext(), R.font.retro_computer_personal_use);
         this.paint.setTypeface(typeface);
-        canvas.drawText("Score: " + this.scoreCount, 60, 110, this.paint);
+        canvas.drawText("Score: " + scoreCount, 60, 110, this.paint);
 
         if((acTest == 2) || (acTest == 3) || (acTest == 5) || (acTest == 6) || (acTest == 7)) {
             this.paint.setColor(getResources().getColor(R.color.navy_blue));
@@ -199,9 +220,15 @@ public class GameCanvas extends View {
         this.paint.setTextSize(60);
         typeface = ResourcesCompat.getFont(getContext(), R.font.retro_computer_personal_use);
         this.paint.setTypeface(typeface);
-        canvas.drawText("Score: " + this.scoreCount, 50, 100, this.paint);
+        canvas.drawText("Score: " + scoreCount, 50, 100, this.paint);
     }
 
+    /**
+     * Responsible for updating the x and y properties as well as the prevX and prevY properties of GameObjects rendered on the GameCanvas.
+     * Returns true if GameObjects were successfully updated, otherwise returns false if the collision check for the character GameObject and the GameObjects in the followers ArrayList returns false.
+     *
+     * @return the boolean value representing the success of the update.
+     */
     public boolean updateCharacters(){
         int i;
         this.character.setPrevY(this.character.getY());
@@ -227,7 +254,7 @@ public class GameCanvas extends View {
             }
         }
 
-        if((this.scoreCount / 5) > this.followers.size()){
+        if((scoreCount / 5) > this.followers.size()){
 
             int followerIndex = this.rand.nextInt(this.numberOfFollowers);
             GameObject temp = new GameObject(this.followerImagesRight[followerIndex], this.followerImagesLeft[followerIndex]);
@@ -279,6 +306,9 @@ public class GameCanvas extends View {
         return true;
     }
 
+    /**
+     * Updates the collectible GameObject by generating new x and y coordinates and assigning a new charImage Bitmap.
+     */
     public void updateCollectibles(){
         if(!(this.hasCollectible)){
             do {
@@ -288,7 +318,7 @@ public class GameCanvas extends View {
             }while(!(isValidCollectibleLocation()));
 
             if(SoundManager.soundPlaying) {
-                if((this.scoreCount + 1) % 5 == 0) {
+                if((scoreCount + 1) % 5 == 0) {
                     soundManager.playSound(R.raw.upgrade);
                 }
                 else {
@@ -296,10 +326,15 @@ public class GameCanvas extends View {
                 }
             }
 
-            ++this.scoreCount;
+            ++scoreCount;
         }
     }
 
+    /**
+     * Alternates a GameObject's charImage attribute between the GameObject charImageRight and GameObject charImageLeft attributes.
+     *
+     * @param object the GameObject whose charImage attribute is to be modified.
+     */
     public void walkCharacter(GameObject object){
         switch(object.getCurrentSprite()){
             case 'r':
@@ -317,6 +352,9 @@ public class GameCanvas extends View {
         }
     }
 
+    /**
+     * Updates the character charImageRight and charImageLeft attributes based on the value of the chrId attribute of the SettingsController class.
+     */
     public void updateImage() {
         switch (SettingsController.chrId) {
             case(2):
@@ -358,6 +396,9 @@ public class GameCanvas extends View {
         }
     }
 
+    /**
+     * Updates the background attribute based on the value of the bkgId property of the SettingsController class.
+     */
     public void updateBackground() {
         switch(SettingsController.bkgId) {
             case(2):
@@ -384,11 +425,21 @@ public class GameCanvas extends View {
         }
     }
 
+    /**
+     * Generates a number from 0 to the value specified by upperBound.
+     *
+     * @param upperBound the upperBound for generated number.
+     * @return the value generated between 0 and the upperBound.
+     */
     private int generateCollectibleCoordinate(int upperBound){
-        int temp = this.collectible.getObjectOffset() * (this.rand.nextInt(upperBound - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset());
-        return temp;
+        return this.collectible.getObjectOffset() * (this.rand.nextInt(upperBound - this.collectible.getObjectOffset()) / this.collectible.getObjectOffset());
     }
 
+    /**
+     * Returns a boolean value dependent on the return values of collision checks between the character and collectible objects, and between the collectible object and member objects of the followers ArrayList..
+     *
+     * @return boolean true if there are no collisions, false otherwise.
+     */
     private boolean isValidCollectibleLocation(){
         int i;
 
@@ -404,6 +455,12 @@ public class GameCanvas extends View {
         return true;
     }
 
+    /**
+     * Checks for collisions between a GameObject and the GameCanvas boundaries.
+     *
+     * @param gameOb the object checked for collisions with the GameCanvas
+     * @return boolean true if there is a collision between the GameObject and the GameCanvas, false otherwise.
+     */
     public boolean boundaryCollisionCheck(GameObject gameOb){
         if((gameOb.getLeft() < 0) || (gameOb.getRight() > getWidth()) || (gameOb.getTop() < 0) || (gameOb.getBottom() >getHeight())){
             if(SoundManager.soundPlaying) {
@@ -414,6 +471,13 @@ public class GameCanvas extends View {
         return false;
     }
 
+    /**
+     * Checks for collisions between two GameObjects.
+     *
+     * @param gameOb1 the first GameObject to be used for collision checking.
+     * @param gameOb2 the second GameObject to be used for collision checking.
+     * @return boolean true if a collision is detected between the two GameObjects, false otherwise.
+     */
     public boolean objectCollisionCheck(GameObject gameOb1, GameObject gameOb2){
         int sideCollCount = 0;
         if(Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) < 10){ ++sideCollCount; }
@@ -430,12 +494,7 @@ public class GameCanvas extends View {
         }
 
         if((gameOb1.getObjectType() == 'p') && (gameOb2.getObjectType() == 'p')){
-            if((Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) <= 10) && (Math.abs(gameOb1.getRight() - gameOb2.getRight()) <= 10) && (Math.abs(gameOb1.getTop() - gameOb2.getTop()) <= 10) && (Math.abs(gameOb1.getBottom() - gameOb2.getBottom()) <= 10)){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return (Math.abs(gameOb1.getLeft() - gameOb2.getLeft()) <= 10) && (Math.abs(gameOb1.getRight() - gameOb2.getRight()) <= 10) && (Math.abs(gameOb1.getTop() - gameOb2.getTop()) <= 10) && (Math.abs(gameOb1.getBottom() - gameOb2.getBottom()) <= 10);
         }
 
         if((gameOb1.getLeft() >= gameOb2.getLeft() && gameOb1.getLeft() <= gameOb2.getRight()) && ((gameOb1.getTop() >= gameOb2.getTop() && gameOb1.getTop() <= gameOb2.getBottom()) || (gameOb1.getBottom() >= gameOb2.getTop() && gameOb1.getBottom() <= gameOb2.getBottom()))){
@@ -448,28 +507,47 @@ public class GameCanvas extends View {
         return false;
     }
 
+    /**
+     * Returns the GameCanvas character attribute.
+     *
+     * @return the GameCanvas character attribute.
+     */
     public GameObject getCharacter(){
         return this.character;
     }
 
+    /**
+     * Returns the GameCanvas collectible attribute.
+     *
+     * @return the GameCanvas collectible attribute.
+     */
     public GameObject getCollectible(){
         return this.collectible;
     }
 
+    /**
+     * Returns the GameCanvas scoreCount attribute.
+     *
+     * @return the GameCanvas scoreCount attribute.
+     */
     public int getScoreCount(){
-        return this.scoreCount;
+        return scoreCount;
     }
 
-    public static int getScoreGO(){ // To Will - I added this so that I could pass an int to the gameover activity for sound selection. Sorry in advance if this has any inintended side-effects.
-        int send = scoreCount;
-        return send;
-    }
-    public boolean getHasCollectible(){return this.hasCollectible;}
-
+    /**
+     * Sets the value of the GameCanvas scoreCount attribute to the specified value.
+     *
+     * @param newScoreCount the value to be assigned to the GameCanvas scoreCount attribute.
+     */
     public void setScoreCount(int newScoreCount){
-        this.scoreCount = newScoreCount;
+        scoreCount = newScoreCount;
     }
 
+    /**
+     * Sets the value of the GameCanvas hasCollectible attribute to the specified value.
+     *
+     * @param hasCollectible the value to be assigned to the GameCanvas hasCollectible attribute.
+     */
     public void setHasCollectible(boolean hasCollectible){
         this.hasCollectible = hasCollectible;
     }

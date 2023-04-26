@@ -16,8 +16,6 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.GameOverController;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.GameCanvas;
 import edu.utsa.cs3443.theguidesgrandadventure.Model.MediaPlayerManager;
 
-//In game menu activity
-//Anyone
 public class GameOverActivity extends AppCompatActivity {
     private GameOverController controller;
 
@@ -32,12 +30,14 @@ public class GameOverActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_gameover);
 
+        String key = "score";
+        int gameScore = this.getIntent().getIntExtra(key,0 );
         if(MediaPlayerManager.isPlaying) {
             MediaPlayerManager mediaPlayerManager = MediaPlayerManager.getInstance(this);
-            if(GameCanvas.getScoreGO() == 0) {
+            if(gameScore == 0) {
                 mediaPlayerManager.playMusic(R.raw.youstink);
             }
-           else if(GameCanvas.getScoreGO() < 10) {
+           else if(gameScore < 10) {
                 mediaPlayerManager.playMusic(R.raw.gameover);
             }
             else {
