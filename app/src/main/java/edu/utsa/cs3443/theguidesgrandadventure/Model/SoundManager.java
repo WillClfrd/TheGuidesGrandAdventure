@@ -13,11 +13,12 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * across the different views of the app, more specifically for playing sounds depending on
  * button interactions or game interactions.
  *
+ * @author Will Clifford
+ * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.4.15
- * @since 2023-04-24
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
  */
-@SuppressWarnings("ALL")
 public class SoundManager {
 
     private static final int MAX_STREAMS = 5;
@@ -57,6 +58,7 @@ public class SoundManager {
      *
      * @param soundId - Integer id of the R.raw.sound object.
      */
+    @SuppressWarnings("ConstantConditions")
     public void playSound(int soundId) {
         if(soundPlaying) {
             if(soundId == R.raw.footstep) {

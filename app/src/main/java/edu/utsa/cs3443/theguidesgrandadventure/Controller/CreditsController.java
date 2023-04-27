@@ -9,9 +9,11 @@ import edu.utsa.cs3443.theguidesgrandadventure.R;
  * The CreditsController class implements the OnClickListener and controls events for
  * CreditsActivity. The class also holds a class constructor and onClick for button interactions.
  *
+ * @author Will Clifford
+ * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.4.15
- * @since 2023-04-24
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
  */
 public class CreditsController implements View.OnClickListener {
 

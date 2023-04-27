@@ -72,7 +72,7 @@ public class UserRecord {
     /**
      * Sets the value of the UserRecord userName attribute to the specified value.
      *
-     * @return the value to be assigned to the UserRecord userName attribute.
+     * @param userName the value to be assigned to the UserRecord userName attribute.
      */
     public void setUserName(String userName){
         this.userName = userName;
@@ -81,7 +81,7 @@ public class UserRecord {
     /**
      * Sets the value of the UserRecord score attribute to the specified value.
      *
-     * @return the value to be assigned to the UserRecord score attribute.
+     * @param score the value to be assigned to the UserRecord score attribute.
      */
     public void setScore(int score){
         this.score = score;
@@ -90,7 +90,7 @@ public class UserRecord {
     /**
      * Sets the value of the UserRecord charName attribute to the specified value.
      *
-     * @return the value to be assigned to the UserRecord charName attribute.
+     * @param charName the value to be assigned to the UserRecord charName attribute.
      */
     public void setCharName(String charName){
         this.charName = charName;
@@ -99,7 +99,7 @@ public class UserRecord {
     /**
      * Sets the value of the UserRecord charImage attribute to the specified object.
      *
-     * @return the object to be assigned to the UserRecord charImage attribute.
+     * @param charImage the object to be assigned to the UserRecord charImage attribute.
      */
     public void setCharImage(Bitmap charImage){
         this.charImage = charImage;

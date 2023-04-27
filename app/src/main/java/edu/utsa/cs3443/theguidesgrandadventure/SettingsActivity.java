@@ -13,9 +13,11 @@ import edu.utsa.cs3443.theguidesgrandadventure.Controller.SettingsController;
  * The SettingsActivity class creates a SettingsController and acts as the activity for the
  * settings view of the app.
  *
+ * @author Will Clifford
+ * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.4.15
- * @since 2023-04-24
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
  */
 public class SettingsActivity extends AppCompatActivity {
     private SettingsController settingsController;

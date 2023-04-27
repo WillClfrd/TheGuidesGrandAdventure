@@ -11,9 +11,11 @@ import java.io.IOException;
  * across the different views of the app, more specifically for playing/pausing or changing
  * the audio being played.
  *
+ * @author Will Clifford
+ * @author Meagan Baty
  * @author Jose Gracia
- * @version 1.4.15
- * @since 2023-04-24
+ * UTSA CS 3443 - Semester Project
+ * Spring 2023
  */
 public class MediaPlayerManager {
 
