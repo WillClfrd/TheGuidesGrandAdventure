@@ -22,7 +22,6 @@ This is a Repository for Roadrunner Interactive's (Team 11) Application Programm
 <p align="center">
  <img src="https://media.giphy.com/media/F3wPk4Bf4SLpCHkT40/giphy.gif" width="150" height="300">
  <img  src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk5NWQ1MTVjMmI0MjYyMTVkMjc5NTk1NzJlM2QwZGQ3ZjQ1ZTViMiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/KyZa2SMrEAN4LW6C6c/giphy.gif" width="150" height="300">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjQyNWMzYjQ4ZTYzMGViNDAyMTlhOTFkYWM3ZDFhYTA0N2U2YTg3YyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/AxgLIm8odemBFVSXoe/giphy.gif" width="150" height="300">
   </p>
   
   <p align="center">
@@ -37,36 +36,77 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 
 ## Notable Technical Concepts
 
- Related to CS3443, some important concepts implemented into this game include:
+ Related to CS3443, some important classes and concepts implemented into this game include:
  
 **CONTROLLER PACKAGE**
 
-- MainController:        Controls activity_main.xml view and shows the main menu page.
- ()Method here.
+
 - CreditsController:     Controls activity_credits.xml view and shows a list of credits and awknowledgements for the game.
- ()Method here.
+
 - GameController:        Controls activity_game.xml view and implements the game engine, along with the in game menu.
- ()Method here.
+
+  * createMenuLayout():
+
 - GameOverController:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
- ()Method here.
+
+  * checkForHighscore():
+  
+  * addLeaderboardPopup():
+  
+  * addUsernamePopup():
+
+- MainController:        Controls activity_main.xml and is the primary controller of the program.
+
 - SettingsController:    Controls activity_settings.xml view and manages UI's across the program.
- ()Method here.
+
 
 **MODEL PACKAGE**
 
+
+- CharacterThread:       TODO
+
+- CollectibleThread:     TODO
+
+- GameCanvas:            TODO
+
+- GameObject:            TODO
+
+- Leaderboard:           TODO
+
 - MediaPlayerManager:    Controls music audio through out the program and has a master toggle in the settings.
+
+  * playMusic():           Plays audio file associated with method call.
+  
+  * toggleSound():         Implements a global on/off for music FX.
+
 - SoundManager:          Manages a list of sounds to be used depending on interactions in the GameCanvas.
-- GameCanvas
-- CollectibleThread
-- CharacterThread
+
+  * loadSounds():          Loads up the soundpool for use in the program.
+
+  * playSound():           Plays sound file associated with method call.
+  
+  * setSound():            Implements a global on/off for SFX.
+
+- UserRecord:            TODO
+
  
 **ACTIVITY CLASSES**
 
-- MainActivty
-- CreditsActivty
-- GameController
-- GameOverController
-- SettingsController
+
+- CreditsActivity:       Credits view, this activity just creates a runnable to give the sprites animation, and has a back button.
+
+  * run():                 Uses a runnable to create a character walking animation.
+
+- GameActivity:          Live game component, initializes game objects and sets up the GameCanvas for the user to play the game.
+
+- GameOverActivity:      Post game view, shows the user the game score and the top 5 scores leaderboard.
+
+- MainActivity:          Main menu component of the program, allows user to access all other views aside from game over through this activity.
+
+  * run():                 Uses a runnable to make the title image sway on its Y axis.
+
+- SettingsActivity:      Settings view, gives the user aesthetic and audio options to tailor to their liking.
+
  
 ## Installation
 
