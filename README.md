@@ -64,14 +64,46 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 
 
 - CharacterThread:       TODO
+ 
+   * run():
+ 
+   * calcInterval():
 
 - CollectibleThread:     TODO
+ 
+   * run():
 
-- GameCanvas:            TODO
+- GameCanvas:            Maintains the game itself, including the paint, character, background, score, soundManger, and various other properties.
+ 
+   * onDraw():
+ 
+   * updateCharacters():
+ 
+   * updateCollectibles():
+ 
+   * updateImage():        Updates the sprite images of the current game depending on user selection in settings activity.
+ 
+   * updateBackground():   Updates the background image of the current game depending on user selection in settings activity.
+ 
+   * generateCollectibleCoordinate():
+ 
+   * boundaryCollisionCheck():
+ 
+   * objectCollisionCheck():
 
-- GameObject:            TODO
+- GameObject:            Maintains the data associated with the game object, including orientation, charImage, X/Y coords, etc.
 
-- Leaderboard:           TODO
+- Leaderboard:           Maintains an ArrayList of UserRecord objects, basically the highest 5 scores played.
+ 
+   * loadLeaderboard():
+ 
+   * findCharacterImage():
+ 
+   * saveLeaderboard():
+ 
+   * getRecord():
+ 
+   * removeEndScore():
 
 - MediaPlayerManager:    Controls music audio through out the program and has a master toggle in the settings.
 
@@ -87,7 +119,7 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
   
   * setSound():            Implements a global on/off for SFX.
 
-- UserRecord:            TODO
+- UserRecord:            Creates a record of the game activity that was completed, consisting of a username that the user inputs, a score, and the character used.
 
  
 **ACTIVITY CLASSES**
