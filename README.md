@@ -41,13 +41,13 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 **CONTROLLER PACKAGE**
 
 
-- CreditsController:     Controls activity_credits.xml view and shows a list of credits and awknowledgements for the game.
+- **CreditsController**:     Controls activity_credits.xml view and shows a list of credits and awknowledgements for the game.
 
-- GameController:        Controls activity_game.xml view and implements the game engine, along with the in game menu.
+- **GameController**:        Controls activity_game.xml view and implements the game engine, along with the in game menu.
 
   * createMenuLayout():
 
-- GameOverController:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
+- **GameOverController**:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
 
   * checkForHighscore():
   
@@ -55,25 +55,25 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
   
   * addUsernamePopup():
 
-- MainController:        Controls activity_main.xml and is the primary controller of the program.
+- **MainController**:        Controls activity_main.xml and is the primary controller of the program.
 
-- SettingsController:    Controls activity_settings.xml view and manages UI's across the program.
+- **SettingsController**:    Controls activity_settings.xml view and manages UI's across the program.
 
 
 **MODEL PACKAGE**
 
 
-- CharacterThread:       TODO
+- **CharacterThread**:       TODO
  
    * run():
  
    * calcInterval():
 
-- CollectibleThread:     TODO
+- **CollectibleThread**:     TODO
  
    * run():
 
-- GameCanvas:            Maintains the game itself, including the paint, character, background, score, soundManger, and various other properties.
+- **GameCanvas**:            Maintains the game itself, including the paint, character, background, score, soundManger, and various other properties.
  
    * onDraw():
  
@@ -91,9 +91,9 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
  
    * objectCollisionCheck():
 
-- GameObject:            Maintains the data associated with the game object, including orientation, charImage, X/Y coords, etc.
+- **GameObject**:            Maintains the data associated with the game object, including orientation, charImage, X/Y coords, etc.
 
-- Leaderboard:           Maintains an ArrayList of UserRecord objects, basically the highest 5 scores played.
+- **Leaderboard**:           Maintains an ArrayList of UserRecord objects, basically the highest 5 scores played.
  
    * loadLeaderboard():
  
@@ -105,13 +105,13 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
  
    * removeEndScore():
 
-- MediaPlayerManager:    Controls music audio through out the program and has a master toggle in the settings.
+- **MediaPlayerManager**:    Controls music audio through out the program and has a master toggle in the settings.
 
   * playMusic():           Plays audio file associated with method call.
   
   * toggleSound():         Implements a global on/off for music FX.
 
-- SoundManager:          Manages a list of sounds to be used depending on interactions in the GameCanvas.
+- **SoundManager**:          Manages a list of sounds to be used depending on interactions in the GameCanvas.
 
   * loadSounds():          Loads up the soundpool for use in the program.
 
@@ -119,25 +119,25 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
   
   * setSound():            Implements a global on/off for SFX.
 
-- UserRecord:            Creates a record of the game activity that was completed, consisting of a username that the user inputs, a score, and the character used.
+- **UserRecord**:            Creates a record of the game activity that was completed, consisting of a username that the user inputs, a score, and the character used.
 
  
 **ACTIVITY CLASSES**
 
 
-- CreditsActivity:       Credits view, this activity just creates a runnable to give the sprites animation, and has a back button.
+- **CreditsActivity**:       Credits view, this activity just creates a runnable to give the sprites animation, and has a back button.
 
   * run():                 Uses a runnable to create a character walking animation.
 
-- GameActivity:          Live game component, initializes game objects and sets up the GameCanvas for the user to play the game.
+- **GameActivity**:          Live game component, initializes game objects and sets up the GameCanvas for the user to play the game.
 
-- GameOverActivity:      Post game view, shows the user the game score and the top 5 scores leaderboard.
+- **GameOverActivity**:      Post game view, shows the user the game score and the top 5 scores leaderboard.
 
-- MainActivity:          Main menu component of the program, allows user to access all other views aside from game over through this activity.
+- **MainActivity**:          Main menu component of the program, allows user to access all other views aside from game over through this activity.
 
   * run():                 Uses a runnable to make the title image sway on its Y axis.
 
-- SettingsActivity:      Settings view, gives the user aesthetic and audio options to tailor to their liking.
+- **SettingsActivity**:      Settings view, gives the user aesthetic and audio options to tailor to their liking.
 
  
 ## Installation
