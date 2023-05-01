@@ -45,15 +45,15 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 
 - **GameController**:        Controls activity_game.xml view and implements the game engine, along with the in game menu.
 
-  * createMenuLayout():
+  * createMenuLayout():      Creates the in game menu view by drawing in view elements over the game canvas.
 
 - **GameOverController**:    Controls activity_gameover.xml view and manages file I/O for the high score leaderboard.
 
-  * checkForHighscore():
+  * checkForHighscore():     Checks for additions to the game leaderboard.
   
-  * addLeaderboardPopup():
+  * addLeaderboardPopup():   Makes the game leaderboard visible and interactable.
   
-  * addUsernamePopup():
+  * addUsernamePopup():      Makes the view for adding user information to leaderboard visible and interactable.
 
 - **MainController**:        Controls activity_main.xml and is the primary controller of the program.
 
@@ -63,47 +63,47 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
 **MODEL PACKAGE**
 
 
-- **CharacterThread**:       TODO
+- **CharacterThread**:       The thread that monitors several things including character movement and follower movement.
  
-   * run():
+   * run():                  Begins execution of the thread.
  
-   * calcInterval():
+   * calcInterval():         Calculates the sleep interval for the thread, decreasing the interval as the user score increases.
 
-- **CollectibleThread**:     TODO
+- **CollectibleThread**:     The thread that monitors collectile item spawning and collectile item collection.
  
-   * run():
+   * run():                  Begins execution of the thread.
 
 - **GameCanvas**:            Maintains the game itself, including the paint, character, background, score, soundManger, and various other properties.
  
-   * onDraw():
+   * onDraw():               Draws the in game elements which include; controllable character, collectible objects, follower characters, and player score.
  
-   * updateCharacters():
+   * updateCharacters():     Updates the position of the player character and the follower characters.
  
-   * updateCollectibles():
+   * updateCollectibles():   Updates the position of the collectible object.
  
    * updateImage():        Updates the sprite images of the current game depending on user selection in settings activity.
  
    * updateBackground():   Updates the background image of the current game depending on user selection in settings activity.
  
-   * generateCollectibleCoordinate():
+   * generateCollectibleCoordinate():     Generates coordinates on the game canvas for the collectible object to be placed at.
  
-   * boundaryCollisionCheck():
+   * boundaryCollisionCheck():     Checks the player character for collision with the boundaries of the game canvas.
  
-   * objectCollisionCheck():
+   * objectCollisionCheck():    Checks for collisions between two game objects.
 
 - **GameObject**:            Maintains the data associated with the game object, including orientation, charImage, X/Y coords, etc.
 
 - **Leaderboard**:           Maintains an ArrayList of UserRecord objects, basically the highest 5 scores played.
  
-   * loadLeaderboard():
+   * loadLeaderboard():      Loads the current leaderboard by reading in from a csv file.
  
-   * findCharacterImage():
+   * findCharacterImage():   Assigns the correct Bimtap corresponding to a character name.
  
-   * saveLeaderboard():
+   * saveLeaderboard():      Writes the current working leaderboard to a file.
  
-   * getRecord():
+   * getRecord():            Returns the specified UserRecord object.
  
-   * removeEndScore():
+   * removeEndScore():       Pops the last element from the leaderboard when the leaderboard exceeds a limit of 5 entries.
 
 - **MediaPlayerManager**:    Controls music audio through out the program and has a master toggle in the settings.
 
