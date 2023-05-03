@@ -142,7 +142,7 @@ At the start of the semester we (RR Int.) had a debate on what would motivate us
  
 ## Installation
 
-You can get the project simply by downloading the code from this repository. From there you can import the project to your android studio. Make sure that in the local.properties file in the repository's root directory the filepath directs to your local Android SDK. After you have ensured that the filepath is directed to your local Android SDK, build the project. Once the gradle build is finshed, create a new build configuration, be sure to select The_Guide's_Grand_Adventure as the configuration module, and save the new run configuration. Once these steps are completed you should be ready to play without any further setup required. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get intended performance.)
+You can get the project simply by downloading the code from this repository, this can be done by cloning the repository. After cloning the repository import the project into your android studio by going to File->New->Import Project. Next, wait until the gradle build finishes synchronizing. Once these steps are completed you should be ready to play without any further setup required. (Though setting your android emulator device to a Pixel 6 API 32 is reccomended to get intended performance.)
 
 ### Prerequisites
 

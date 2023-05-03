@@ -111,8 +111,8 @@ public class GameOverController implements View.OnClickListener{
         if(checkForHighScore() == -1 && scores.getScoresSize() < 5){
             addUsernamePopup();
         }
-        //else if(checkForHighScore() == -1){
-        //}
+        else if(checkForHighScore() == -1){
+        }
         else{
             addUsernamePopup();
         }
